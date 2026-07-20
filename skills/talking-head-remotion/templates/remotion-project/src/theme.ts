@@ -25,21 +25,25 @@ if (typeof document !== "undefined" && !document.getElementById("studio-font-fac
   document.head.appendChild(style);
 }
 
+// 「乳白瓦楞玻璃」视觉体系：冷调乳白底 + 暖桃光透 + 淡紫冰蓝呼吸
 export const colors = {
-  canvas: "#f7f8f3",
-  ink: "#151922",
-  muted: "#747982",
-  weak: "#b6bbb5",
-  line: "rgba(28,38,54,0.10)",
-  lineStrong: "rgba(28,38,54,0.14)",
-  accent: "#2f6fff",
-  topbar: "#202024",
-  topbarMuted: "rgba(255,255,255,0.62)",
-  topbarSeparator: "#8a8a86",
-  gridLine: "rgba(44,58,78,0.30)",
-  gridLineStrong: "rgba(47,111,255,0.26)",
-  gridWarm: "rgba(235,178,82,0.24)",
-  glass: "rgba(255,255,255,0.74)",
+  canvas: "#f4f4f7", // 乳白底色（偏冷灰紫，像磨砂陶瓷）
+  ink: "#1f2430", // 主文字：石板蓝黑
+  muted: "#7a7f8e", // 次级文字：冷灰
+  weak: "#b8bcc8", // 弱文字
+  line: "rgba(31,36,48,0.10)",
+  lineStrong: "rgba(31,36,48,0.14)",
+  accent: "#5b6cff", // 强调色：柔和长春花蓝（配合 pastel 体系）
+  peach: "#f07a4a", // 前景暖橙：柔和珊瑚橙（呼应背景暖光）
+  glow: "rgba(255,152,92,0.52)", // 背景暖桃光晕
+  lilac: "rgba(196,186,238,0.22)", // 淡紫呼吸
+  iceBlue: "rgba(168,196,236,0.20)", // 冰蓝呼吸
+  topbar: "rgba(252,252,254,0.86)", // 顶栏：磨砂浅玻璃
+  topbarMuted: "rgba(31,36,48,0.42)", // 顶栏未播章节文字
+  topbarSeparator: "rgba(31,36,48,0.20)", // 顶栏章节分隔
+  glass: "rgba(255,255,255,0.66)", // 磨砂玻璃卡片底
+  glassBorder: "rgba(255,255,255,0.85)", // 玻璃卡片描边
+  darkPanel: "#1b1f2a", // 深色代码卡（体系内唯一深色，做对比锚点）
   white: "#ffffff",
 };
 

@@ -45,6 +45,26 @@ assets/library/
 | `ErrorPopup.tsx` | 翻车/警告弹窗层，进场震动并持续辉光 | 报错、风险、警告、上下文超限等情绪点 | 承载整屏内容或常驻信息面板 | appearAt 落地帧可配 `sfx-deep-impact.mp3` 或轻量变体 |
 | `FlowDiagram.tsx` | 节点 + 连线逐段生长的示意动画 | 流程、管线、因果链、三五个节点的架构关系 | 复杂自动排版图、长文本节点 | 节点落位帧轻 pop；关键连线长完帧轻 sweep |
 | `StatCounter.tsx` | 数字滚动和横向数据条推进 | 倍数、比例、耗时、返工率、前后对比 | 没有数据含义的装饰性大数字 | 数字落定帧、每条 bar 到位帧 |
+| `BigNumberConclusion.tsx` | 巨型数字 + 单项结论的左右构图 | 核心 KPI、倍数、比例、增长和耗时结论 | 多指标仪表盘、无数据依据的装饰数字 | `valueAt` 数字落位轻 hit；`emphasizeAt` 二次回点 |
+| `BeforeAfterStat.tsx` | 优化前后的双面板强对比 | 旧方法 vs 新方法、时间/成本/错误率变化 | 三个以上对象排名、口径不同的比较 | `beforeAt` / `afterAt` 轻 pop；`resultAt` 确认 beep |
+| `ThreeStepFlow.tsx` | 三节点 SOP 沿连线依次建立 | 三步方法、教程、输入—处理—输出 | 四步以上流程、带分支架构图、长文案节点 | 各 `appearAt` 轻 pop；连线抵达时轻 sweep |
+| `KeyPointMarker.tsx` | 磨砂玻璃重点句 + 渐变扫线 | 结论、提醒、原则、章节转折金句 | 长段落、普通字幕、多条要点列表 | `appearAt` 轻 pop；`markerAt` 轻 sweep |
+| `TimelineScan.tsx` | 三节点曲线时间线逐段点亮 | 版本变化、项目阶段、历史演进 | 精确比例时间轴、四个以上密集节点 | 各节点 `appearAt` 轻 pop；末端确认 beep |
+| `BarChartGrow.tsx` | 多组柱状数据依次生长 | 季度、部门、阶段数据对比（3–8 组） | 超过 8 组、需要精确坐标轴的分析图 | 各柱落位轻 pop；最高柱到位轻 hit |
+| `NumberCounter.tsx` | 巨型累计数字 + 环形刻度 | 用户数、金额、里程碑、累计量 | 多指标并列、没有数字依据的装饰数 | 数字落定轻 hit；说明出现轻 beep |
+| `LineChartDraw.tsx` | 趋势折线从左到右绘制 | 月度趋势、增长过程、阶段变化 | 需要精确交互读数的分析图 | 路径起笔 sweep；终点轻 hit |
+| `MetricPulse.tsx` | 单项巨型指标 + 迷你趋势条 | 增长率、转化率、周/月变化 | 多维报表、指标口径不一致 | 数字落定 hit；趋势条逐项 pop |
+| `HorizontalBarCompare.tsx` | 两条横向数据条强对比 | 同口径双对象效率/成本对比 | 三项以上排名 | 两条 bar 到位轻 sweep；结论 beep |
+| `TopRankList.tsx` | Top 3 排名条依次落位 | 影响因素、原因排名、优先级 | 超过 5 项的密集榜单 | 每行轻 pop；第一名到位 hit |
+| `TurningPointLine.tsx` | 先平缓后上扬的拐点曲线 | 关键变化、增长拐点、策略转向 | 精确数据分析或多条趋势 | 拐点圆环出现轻 hit |
+| `SourceCitationCard.tsx` | 来源 + 引用结论 + 单项数据 | 复盘数据、研究结论、证据摘要 | 需要展示原始证据时替代真实截图 | 引用线 sweep；数字落定 hit |
+| `StatDuel.tsx` | 双指标圆环对决 | 两个接近数据的强比较 | 没有可比口径的指标 | 左右值各轻 pop；比较符号 hit |
+| `StatusSplit.tsx` | 左右状态转折 | 常态→异常、旧→新、前→后 | 三阶段以上流程 | 中央转向 sweep；右侧状态 hit |
+| `NumberImpact.tsx` | 巨型百分比 + 竖直极值刻度 | 极端值、接近上限、饱和度 | 普通 KPI 或多项数据 | 液位到顶 hit；结论 beep |
+| `ConceptSpotlight.tsx` | 概念定义 + 三关键词节点 | 知识解释、术语定义、方法框架 | 长段落、超过三个关键词 | 节点逐个 pop；中心符号轻 pulse |
+| `MythFactSwap.tsx` | 误区划掉并替换为事实 | 单条纠错、认知反转 | 多项 FAQ 或长篇辩论 | 划线 sweep；事实落位 hit |
+| `ChecklistPop.tsx` | 检查项逐条出现并划勾 | 3–5 条交付前核对 | 长任务管理、复杂待办 | 每个勾选轻 click；完成 beep |
+| `CauseChain.tsx` | 三段因果链依次建立 | 原因→机制→结果、三段管线 | 分支流程、四段以上密集链路 | 节点 pop；连线抵达 sweep |
 
 ## 待沉淀组件（优先级清单）
 

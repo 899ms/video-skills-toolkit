@@ -10,6 +10,7 @@ import {
   useVideoConfig,
 } from "remotion";
 import {colors, fonts, layout} from "./theme";
+import {BlurredImageCard} from "./BlurredImageCard";
 
 type Tone = "accent" | "white" | "muted";
 
@@ -99,7 +100,19 @@ type OutroScene = {
   subtitle: string;
 };
 
-export type StudioScene = CoverScene | ListScene | StatScene | CompareScene | OutroScene;
+export type ImageScene = {
+  kind: "image";
+  start: number;
+  /** public/ 目录下的相对路径，或者完整 URL */
+  src: string;
+  alt?: string;
+  width?: number | string;
+  height?: number | string;
+  edgeBlur?: number;
+  borderRadius?: number;
+};
+
+export type StudioScene = CoverScene | ListScene | StatScene | CompareScene | OutroScene | ImageScene;
 
 export type StudioTalkingHeadProps = {
   title: string;
@@ -195,7 +208,7 @@ export const StudioTalkingHead = ({
 
   return (
     <AbsoluteFill style={stageStyle}>
-      <PremiumGridBackground />
+      <FlutedGlassBackground />
       {voiceAudio ? <Audio src={staticFile(voiceAudio)} volume={1} /> : null}
       {sfxCues.map((cue) => (
         <Sequence
@@ -231,110 +244,34 @@ export const StudioTalkingHead = ({
   );
 };
 
-const PremiumGridBackground = () => {
+// 「乳白瓦楞玻璃」背景：暖桃光晕在瓦楞玻璃（fluted glass）后缓慢漂移，
+// 静谧展厅质感——彻底取代旧版上下双层镜像透视网格。
+const FlutedGlassBackground = () => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const seconds = frame / fps;
-  const glow = 0.5 + Math.sin(seconds * 0.48) * 0.5;
 
   return (
     <AbsoluteFill style={premiumBackgroundStyle}>
+      {/* 底层：乳白渐变 + 淡紫/冰蓝角落呼吸 */}
       <AbsoluteFill style={ambientWashStyle(seconds)} />
-      <PerspectiveGrid seconds={seconds} glow={glow} />
-      <div style={{...horizonLineStyle, top: 184, opacity: 0.32 + glow * 0.08}} />
-      <div style={{...horizonLineStyle, bottom: 184, opacity: 0.32 + glow * 0.08}} />
+      {/* 暖桃光团：藏在两侧玻璃后面，缓慢漂移与呼吸 */}
+      <div style={warmGlowStyle(seconds, "left")} />
+      <div style={warmGlowStyle(seconds, "right")} />
+      {/* 左右两排竖向瓦楞玻璃棱线：棱线本身持续横向流动，是最直观的动效 */}
+      <div style={flutedPanelStyle("left", seconds)} />
+      <div style={flutedPanelStyle("right", seconds)} />
+      {/* 高光扫带：一条柔焦对角光带缓慢横扫全屏，是主要的"看得出在动"的动效 */}
+      <div style={lightSweepStyle(seconds)} />
+      {/* 漂浮光斑：几颗大而柔的玻璃光斑缓慢上浮漂移，增加空气感 */}
+      {bokehOrbs.map((orb, index) => (
+        <div key={index} style={bokehOrbStyle(orb, seconds)} />
+      ))}
+      {/* 中央留白帷幕：保证字幕与内容区可读性 */}
       <AbsoluteFill style={centerVeilStyle} />
+      {/* 细噪点：消除渐变色带，增加胶片质感 */}
       <AbsoluteFill style={grainStyle(seconds)} />
     </AbsoluteFill>
-  );
-};
-
-const PerspectiveGrid = ({seconds, glow}: {seconds: number; glow: number}) => {
-  const canvasHeight = 1080;
-  const nearY = -78;
-  const farY = 342;
-  const planeHeight = farY - nearY;
-  const rowStep = 62;
-  const rowDrift = (seconds * 34) % rowStep;
-  const rows = Array.from({length: 8}, (_, index) => nearY + ((index * rowStep + rowDrift) % planeHeight));
-  const verticals = Array.from({length: 23}, (_, index) => index - 11);
-  const project = (y: number) => {
-    const t = clamp((y - nearY) / planeHeight, 0, 1);
-    return {left: -230 + t * 420, right: 2150 - t * 420};
-  };
-  const mirrorY = (y: number) => canvasHeight - y;
-  const nearX = (index: number) => 960 + index * 154;
-  const farX = (index: number) => 960 + index * 76;
-
-  return (
-    <svg viewBox="0 0 1920 1080" style={perspectiveGridSvgStyle}>
-      <defs>
-        <linearGradient id="grid-stroke" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stopColor="rgba(44,58,78,0.16)" />
-          <stop offset="52%" stopColor="rgba(47,111,255,0.30)" />
-          <stop offset="100%" stopColor="rgba(235,178,82,0.22)" />
-        </linearGradient>
-      </defs>
-      <g opacity={0.72 + glow * 0.08}>
-        {rows.map((y) => {
-          const projected = project(y);
-          return (
-            <line
-              key={`top-row-${y.toFixed(2)}`}
-              x1={projected.left}
-              x2={projected.right}
-              y1={y}
-              y2={y}
-              stroke="rgba(37,50,72,0.30)"
-              strokeWidth={3.1}
-              strokeLinecap="round"
-            />
-          );
-        })}
-        {verticals.map((index) => (
-          <line
-            key={`top-col-${index}`}
-            x1={nearX(index)}
-            y1={nearY}
-            x2={farX(index)}
-            y2={farY}
-            stroke="url(#grid-stroke)"
-            strokeWidth={2}
-            strokeLinecap="round"
-          />
-        ))}
-      </g>
-      <g opacity={0.72 + glow * 0.08}>
-        {rows.map((topY) => {
-          const y = mirrorY(topY);
-          const projected = project(topY);
-          return (
-            <line
-              key={`bottom-row-${y.toFixed(2)}`}
-              x1={projected.left}
-              x2={projected.right}
-              y1={y}
-              y2={y}
-              stroke="rgba(37,50,72,0.30)"
-              strokeWidth={3.1}
-              strokeLinecap="round"
-            />
-          );
-        })}
-        {verticals.map((index) => (
-          <line
-            key={`bottom-col-${index}`}
-            x1={farX(index)}
-            y1={mirrorY(farY)}
-            x2={nearX(index)}
-            y2={mirrorY(nearY)}
-            stroke="url(#grid-stroke)"
-            strokeWidth={2}
-            strokeLinecap="round"
-          />
-        ))}
-      </g>
-    </svg>
   );
 };
 
@@ -360,9 +297,23 @@ const SceneRenderer = ({
       {scene.kind === "stat" ? <StatSceneView scene={scene} /> : null}
       {scene.kind === "compare" ? <CompareSceneView scene={scene} /> : null}
       {scene.kind === "outro" ? <OutroSceneView scene={scene} /> : null}
+      {scene.kind === "image" ? <ImageSceneView scene={scene} /> : null}
     </AbsoluteFill>
   );
 };
+
+const ImageSceneView = ({scene}: {scene: ImageScene}) => (
+  <div style={{...sceneContentStyle, alignItems: "center", justifyContent: "center"}}>
+    <BlurredImageCard
+      src={scene.src}
+      alt={scene.alt}
+      width={scene.width}
+      height={scene.height}
+      edgeBlur={scene.edgeBlur}
+      borderRadius={scene.borderRadius}
+    />
+  </div>
+);
 
 const Eyebrow = ({children, style}: {children: ReactNode; style?: CSSProperties}) => (
   <div style={{...eyebrowStyle, ...style}}>
@@ -519,20 +470,28 @@ const CaptionPill = ({caption}: {caption: Caption}) => {
   );
 };
 
+// PIP 头像：悬浮圆形玻璃卡——磨砂白包边 + 上下轻浮动，
+// 影子随浮动反向缩放，强化"悬在页面上方"的感觉
 const PipFrame = ({talkingHeadVideo}: {talkingHeadVideo?: string}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
+  const seconds = frame / fps;
   const p = progress(frame, 0.7 * fps, 0.45 * fps);
+  // 悬浮动画：约 4.2 秒一个起伏周期
+  const bob = Math.sin(seconds * 1.5);
+  const floatY = bob * 7;
+  // 卡片浮得越高，影子越大越淡（视差暗示高度）
+  const shadowLift = (1 - bob) * 0.5;
 
   return (
     <div
       style={{
         ...pipFrameStyle,
         opacity: p,
-        transform: `translateX(${(1 - p) * 18}px) scale(${0.9 + p * 0.1})`,
+        transform: `translateX(${(1 - p) * 18}px) translateY(${floatY}px) scale(${0.9 + p * 0.1})`,
+        boxShadow: `0 ${26 + shadowLift * 16}px ${58 + shadowLift * 26}px rgba(31,38,68,${0.2 - shadowLift * 0.06}), 0 4px 14px rgba(31,38,68,0.08)`,
       }}
     >
-      <div style={pipRingStyle} />
       <div style={pipInnerStyle}>
         <div style={pipMaskStyle}>
           {talkingHeadVideo ? (
@@ -566,26 +525,51 @@ const TopBar = ({chapters, durationSeconds}: {chapters: Chapter[]; durationSecon
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const time = frame / fps;
-  const progressWidth = interpolate(time, [0, durationSeconds], [16, 100], {
+  const progressWidth = interpolate(time, [0, durationSeconds], [0, 100], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
+  const currentChapterIndex = chapters.reduce((activeIndex, chapter, index) => (time >= chapter.start ? index : activeIndex), 0);
+  const renderChapterLabels = (
+    colorForChapter: (index: number) => string,
+    weightForChapter: (index: number) => number = () => 600,
+  ) => (
+    <>
+      {chapters.map((chapter, index) => {
+        const centerPct = ((index + 0.5) / chapters.length) * 100;
+        return (
+          <span
+            key={chapter.label}
+            style={{
+              ...chapterLabelStyle,
+              left: `${centerPct}%`,
+              color: colorForChapter(index),
+              fontWeight: weightForChapter(index),
+            }}
+          >
+            {chapter.label}
+          </span>
+        );
+      })}
+      {chapters.slice(0, -1).map((chapter, index) => (
+        <span key={`${chapter.label}-boundary`} style={{...chapterBoundaryStyle, left: `${((index + 1) / chapters.length) * 100}%`}}>
+          |
+        </span>
+      ))}
+    </>
+  );
 
   return (
     <div style={topbarStyle}>
+      <div style={chapterTrackStyle}>
+        {renderChapterLabels(
+          (index) => (index === currentChapterIndex ? colors.ink : colors.topbarMuted),
+          (index) => (index === currentChapterIndex ? 700 : 500),
+        )}
+      </div>
       <div style={{...navFillStyle, width: `${progressWidth}%`}} />
-      <div style={chapterRowStyle}>
-        {chapters.map((chapter, index) => {
-          const reached = time >= chapter.start;
-          return (
-            <span key={chapter.label} style={chapterGroupStyle}>
-              <span style={{...chapterLabelStyle, color: reached ? colors.ink : colors.topbarMuted, fontWeight: reached ? 600 : 500}}>
-                {chapter.label}
-              </span>
-              {index < chapters.length - 1 ? <span style={chapterSepStyle}>|</span> : null}
-            </span>
-          );
-        })}
+      <div style={{...filledChapterMaskStyle, width: `${progressWidth}%`}}>
+        <div style={filledChapterTrackStyle}>{renderChapterLabels(() => colors.white, () => 600)}</div>
       </div>
     </div>
   );
@@ -614,79 +598,115 @@ const premiumBackgroundStyle: CSSProperties = {
   overflow: "hidden",
 };
 
+// 底层乳白渐变：中间偏暖白、四角淡紫/冰蓝极浅呼吸（缓慢漂移）
 const ambientWashStyle = (seconds: number): CSSProperties => ({
   background: [
-    `radial-gradient(760px 520px at ${18 + Math.sin(seconds * 0.22) * 4}% ${8 + Math.cos(seconds * 0.18) * 3}%, rgba(47,111,255,0.10), transparent 66%)`,
-    `radial-gradient(720px 500px at ${84 + Math.cos(seconds * 0.2) * 4}% ${18 + Math.sin(seconds * 0.19) * 3}%, rgba(246,196,102,0.10), transparent 64%)`,
-    "linear-gradient(180deg, #fbfcf8 0%, #f2f6f8 46%, #fbfaf4 100%)",
+    `radial-gradient(900px 640px at ${16 + Math.sin(seconds * 0.2) * 3}% ${86 + Math.cos(seconds * 0.17) * 3}%, ${colors.lilac}, transparent 68%)`,
+    `radial-gradient(860px 600px at ${86 + Math.cos(seconds * 0.18) * 3}% ${12 + Math.sin(seconds * 0.16) * 3}%, ${colors.iceBlue}, transparent 66%)`,
+    "linear-gradient(165deg, #fafafc 0%, #f1f1f6 44%, #f6f4f4 100%)",
   ].join(", "),
 });
 
-const gridImage = [
-  `linear-gradient(${colors.gridLine} 2px, transparent 2px)`,
-  `linear-gradient(90deg, ${colors.gridLine} 2px, transparent 2px)`,
-  `linear-gradient(${colors.gridLineStrong} 1px, transparent 1px)`,
-  `linear-gradient(90deg, ${colors.gridWarm} 1px, transparent 1px)`,
-].join(", ");
-
-const gridPlaneStyle: CSSProperties = {
-  position: "absolute",
-  left: -420,
-  width: 2760,
-  height: 760,
-  backgroundImage: gridImage,
-  backgroundSize: "128px 128px, 128px 128px, 32px 32px, 32px 32px",
-  borderRadius: 18,
-  filter: "drop-shadow(0 16px 28px rgba(47,111,255,0.08))",
+// 暖桃光团：模拟透过玻璃渗出来的暖橙光，左右各一团、相位错开
+const warmGlowStyle = (seconds: number, side: "left" | "right"): CSSProperties => {
+  const phase = side === "left" ? 0 : 2.4; // 两侧呼吸错开，避免同频闪烁感
+  const breathe = 0.72 + Math.sin(seconds * 0.42 + phase) * 0.28;
+  const drift = Math.sin(seconds * 0.2 + phase) * 130;
+  return {
+    position: "absolute",
+    top: side === "left" ? 40 + drift : undefined,
+    bottom: side === "right" ? 60 - drift : undefined,
+    [side]: -180,
+    width: 980,
+    height: 860,
+    borderRadius: "50%",
+    background: `radial-gradient(closest-side, ${colors.glow}, rgba(255,188,138,0.22) 52%, transparent 76%)`,
+    opacity: breathe,
+    filter: "blur(4px)",
+  };
 };
 
-const topGridPlaneStyle: CSSProperties = {
-  top: -330,
-  transform: "perspective(780px) rotateX(-62deg) scaleX(1.08)",
-  transformOrigin: "center top",
-  WebkitMaskImage: "linear-gradient(180deg, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.74) 48%, transparent 92%)",
-  maskImage: "linear-gradient(180deg, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.74) 48%, transparent 92%)",
+// 竖向瓦楞玻璃板：重复渐变模拟棱线明暗，棱线随时间持续横向流动（外侧向内滚动），
+// backdrop blur 把身后的光团折射成柔焦光带，mask 让棱线向画面中心渐隐
+const flutedPanelStyle = (side: "left" | "right", seconds: number): CSSProperties => {
+  const fade = side === "left" ? "to right" : "to left";
+  // 两侧向相反方向流动，速度约 22px/s，肉眼可明确感知
+  const flow = seconds * 22 * (side === "left" ? 1 : -1);
+  return {
+    position: "absolute",
+    top: 0,
+    bottom: 0,
+    [side]: 0,
+    width: 470,
+    background: [
+      `repeating-linear-gradient(90deg, rgba(255,255,255,0) 0px, rgba(255,255,255,0.72) 16px, rgba(172,176,198,0.34) 34px, rgba(255,255,255,0.14) 46px, rgba(255,255,255,0) 52px)`,
+    ].join(", "),
+    backgroundPosition: `${flow}px 0`,
+    backdropFilter: "blur(26px) saturate(1.2)",
+    WebkitBackdropFilter: "blur(26px) saturate(1.2)",
+    maskImage: `linear-gradient(${fade}, rgba(0,0,0,0.9), rgba(0,0,0,0.55) 55%, transparent 100%)`,
+    WebkitMaskImage: `linear-gradient(${fade}, rgba(0,0,0,0.9), rgba(0,0,0,0.55) 55%, transparent 100%)`,
+  };
 };
 
-const bottomGridPlaneStyle: CSSProperties = {
-  bottom: -360,
-  transform: "perspective(820px) rotateX(62deg) scaleX(1.08)",
-  transformOrigin: "center bottom",
-  WebkitMaskImage: "linear-gradient(0deg, rgba(0,0,0,0.98) 0%, rgba(0,0,0,0.72) 52%, transparent 94%)",
-  maskImage: "linear-gradient(0deg, rgba(0,0,0,0.98) 0%, rgba(0,0,0,0.72) 52%, transparent 94%)",
+// 高光扫带：一条倾斜的柔焦白光带，约 11 秒横扫一次全屏（含屏外余量）
+const lightSweepStyle = (seconds: number): CSSProperties => {
+  const period = 11; // 一轮扫过的周期（秒）
+  const progressValue = (seconds % period) / period;
+  const x = -900 + progressValue * 3700; // 从屏左外扫到屏右外
+  return {
+    position: "absolute",
+    top: -200,
+    bottom: -200,
+    left: x,
+    width: 720,
+    background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.85) 42%, rgba(255,214,178,0.6) 58%, transparent)",
+    transform: "rotate(14deg)",
+    filter: "blur(26px)",
+    opacity: 0.75,
+    mixBlendMode: "soft-light",
+  };
 };
 
-const horizonLineStyle: CSSProperties = {
-  position: "absolute",
-  left: 0,
-  right: 0,
-  height: 1,
-  background:
-    "linear-gradient(90deg, transparent 4%, rgba(47,111,255,0.26) 32%, rgba(246,196,102,0.18) 62%, transparent 96%)",
-  boxShadow: "0 0 24px rgba(47,111,255,0.12)",
+// 漂浮光斑参数：大小/水平位置/相位/漂速各不相同（写死避免随机数破坏渲染确定性）
+const bokehOrbs = [
+  {size: 190, x: 12, phase: 0.0, speed: 0.075, opacity: 0.72},
+  {size: 120, x: 26, phase: 2.1, speed: 0.1, opacity: 0.58},
+  {size: 240, x: 72, phase: 4.2, speed: 0.065, opacity: 0.62},
+  {size: 100, x: 86, phase: 1.3, speed: 0.115, opacity: 0.54},
+  {size: 150, x: 55, phase: 3.4, speed: 0.085, opacity: 0.46},
+];
+
+// 漂浮光斑：柔焦玻璃泡缓慢上浮 + 轻微左右摆动，循环往复
+const bokehOrbStyle = (orb: (typeof bokehOrbs)[number], seconds: number): CSSProperties => {
+  const travel = 1080 + orb.size * 2; // 从屏下浮到屏上的总行程
+  const y = 1080 + orb.size - ((seconds * orb.speed * travel + orb.phase * 300) % travel);
+  const sway = Math.sin(seconds * 0.4 + orb.phase) * 26;
+  return {
+    position: "absolute",
+    left: `calc(${orb.x}% + ${sway}px)`,
+    top: y,
+    width: orb.size,
+    height: orb.size,
+    borderRadius: "50%",
+    background: "radial-gradient(circle at 34% 30%, rgba(255,255,255,0.75), rgba(255,255,255,0.16) 58%, transparent 74%)",
+    boxShadow: "inset 0 0 30px rgba(255,255,255,0.35)",
+    filter: "blur(7px)",
+    opacity: orb.opacity,
+  };
 };
 
+// 中央留白帷幕：让字幕/内容区落在干净的乳白上
 const centerVeilStyle: CSSProperties = {
-  background: [
-    "linear-gradient(180deg, transparent 0%, rgba(247,248,243,0.08) 16%, rgba(247,248,243,0.78) 34%, rgba(247,248,243,0.94) 50%, rgba(247,248,243,0.78) 66%, rgba(247,248,243,0.08) 84%, transparent 100%)",
-    "radial-gradient(58% 34% at 50% 51%, rgba(255,255,255,0.72), transparent 72%)",
-  ].join(", "),
+  background: "linear-gradient(180deg, transparent 0%, rgba(244,244,247,0.08) 16%, rgba(244,244,247,0.82) 37%, rgba(244,244,247,0.92) 50%, rgba(244,244,247,0.82) 63%, rgba(244,244,247,0.08) 84%, transparent 100%)",
 };
 
 const grainStyle = (seconds: number): CSSProperties => ({
-  opacity: 0.06,
-  backgroundImage: "radial-gradient(rgba(21,25,34,0.35) 0.7px, transparent 0.7px)",
+  opacity: 0.045,
+  backgroundImage: "radial-gradient(rgba(31,36,48,0.35) 0.7px, transparent 0.7px)",
   backgroundSize: "4px 4px",
   backgroundPosition: `${Math.round(seconds * 3) % 4}px ${Math.round(seconds * 2) % 4}px`,
 });
-
-const perspectiveGridSvgStyle: CSSProperties = {
-  position: "absolute",
-  inset: 0,
-  width: "100%",
-  height: "100%",
-  filter: "drop-shadow(0 18px 30px rgba(47,111,255,0.08))",
-};
 
 const sceneShellStyle: CSSProperties = {
   padding: `${layout.safeTop}px ${layout.safeX}px ${layout.safeBottom}px`,
@@ -953,6 +973,7 @@ const captionLayerStyle: CSSProperties = {
   pointerEvents: "none",
 };
 
+// 字幕：磨砂玻璃药丸底，保证在光晕/玻璃棱线上依然干净可读
 const captionStyle: CSSProperties = {
   position: "absolute",
   left: "50%",
@@ -964,8 +985,16 @@ const captionStyle: CSSProperties = {
   lineHeight: 1.25,
   textAlign: "center",
   letterSpacing: 0,
+  padding: "14px 38px",
+  borderRadius: 999,
+  background: "rgba(255,255,255,0.58)",
+  border: `1px solid ${colors.glassBorder}`,
+  backdropFilter: "blur(18px)",
+  WebkitBackdropFilter: "blur(18px)",
+  boxShadow: "0 12px 36px rgba(31,38,68,0.08)",
 };
 
+// PIP 悬浮头像外框：圆形玻璃卡（阴影在组件内随浮动动态计算）
 const pipFrameStyle: CSSProperties = {
   position: "absolute",
   right: layout.pipRight,
@@ -976,20 +1005,14 @@ const pipFrameStyle: CSSProperties = {
   borderRadius: "50%",
 };
 
-const pipRingStyle: CSSProperties = {
-  position: "absolute",
-  inset: -11,
-  borderRadius: "50%",
-  border: "1.5px solid rgba(20,82,255,0.55)",
-};
-
+// 白色玻璃包边层
 const pipInnerStyle: CSSProperties = {
   position: "absolute",
   inset: 0,
   borderRadius: "50%",
-  padding: 5,
-  backgroundColor: colors.white,
-  boxShadow: "0 16px 40px rgba(0,0,0,0.14)",
+  padding: 7,
+  backgroundColor: "rgba(255,255,255,0.92)",
+  border: `1px solid ${colors.glassBorder}`,
   overflow: "hidden",
 };
 
@@ -998,7 +1021,7 @@ const pipMaskStyle: CSSProperties = {
   height: "100%",
   borderRadius: "50%",
   overflow: "hidden",
-  background: "linear-gradient(160deg,#e3e3df,#cdccc7)",
+  background: "#dcdce2",
   display: "flex",
   alignItems: "flex-end",
   justifyContent: "center",
@@ -1030,50 +1053,72 @@ const avatarBodyStyle: CSSProperties = {
   backgroundColor: "#a9a9a3",
 };
 
+// 顶栏：悬浮玻璃胶囊——不再贴边，四周留空 + 全圆角 + 悬浮阴影
 const topbarStyle: CSSProperties = {
   position: "absolute",
-  top: 0,
-  left: 0,
-  right: 0,
-  height: layout.topbarHeight,
+  top: 18,
+  left: 28,
+  right: 28,
+  height: layout.topbarHeight - 14,
   zIndex: 120,
   backgroundColor: colors.topbar,
+  backdropFilter: "blur(20px) saturate(1.2)",
+  WebkitBackdropFilter: "blur(20px) saturate(1.2)",
+  border: `1px solid ${colors.glassBorder}`,
+  borderRadius: 999,
+  boxShadow: "0 14px 40px rgba(31,38,68,0.14), 0 2px 8px rgba(31,38,68,0.06)",
   overflow: "hidden",
 };
 
+// 进度填充：墨色胶囊，跟随外框全圆角
 const navFillStyle: CSSProperties = {
   position: "absolute",
-  top: 7,
-  bottom: 7,
-  left: 0,
-  backgroundColor: colors.white,
-  borderRadius: "0 14px 14px 0",
+  top: 6,
+  bottom: 6,
+  left: 6,
+  zIndex: 2,
+  backgroundColor: colors.ink,
+  borderRadius: 999,
 };
 
-const chapterRowStyle: CSSProperties = {
+const chapterTrackStyle: CSSProperties = {
   position: "absolute",
   inset: 0,
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "space-between",
-  padding: "0 34px",
   fontSize: 22,
   lineHeight: 1,
   whiteSpace: "nowrap",
   zIndex: 1,
 };
 
-const chapterGroupStyle: CSSProperties = {
-  display: "inline-flex",
-  alignItems: "center",
-  gap: 28,
+const filledChapterMaskStyle: CSSProperties = {
+  position: "absolute",
+  top: 0,
+  bottom: 0,
+  left: 0,
+  zIndex: 3,
+  overflow: "hidden",
+  pointerEvents: "none",
+};
+
+// 填充层轨道宽度 = 胶囊内宽（1920 - 左右各 28 边距），保证与底层文字逐像素对齐
+const filledChapterTrackStyle: CSSProperties = {
+  ...chapterTrackStyle,
+  width: layout.width - 56,
+  zIndex: 3,
 };
 
 const chapterLabelStyle: CSSProperties = {
+  position: "absolute",
+  top: "50%",
+  transform: "translate(-50%, -50%)",
   fontWeight: 500,
   letterSpacing: 0,
+  textAlign: "center",
 };
 
-const chapterSepStyle: CSSProperties = {
+const chapterBoundaryStyle: CSSProperties = {
+  position: "absolute",
+  top: "50%",
+  transform: "translate(-50%, -50%)",
   color: colors.topbarSeparator,
 };

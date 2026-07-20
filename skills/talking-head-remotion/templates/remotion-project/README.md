@@ -32,4 +32,8 @@ npm run render
 - BGM：`public/assets/music/`
 - 可复用动效组件：从 skill 素材库 `assets/library/animations/` 拷进 `src/library/` 使用
 
+## 居中虚化图片场景
+
+图片放入 `public/assets/screenshots/` 后，在 `scenes` 中使用 `{kind: "image", start: 3.2, src: "assets/screenshots/example.png"}`。主图完整居中显示，组件尺寸跟随原图，只在图片边缘虚化，不铺额外背景。可选参数包括 `width`、`height`、`edgeBlur` 和 `borderRadius`。
+
 修改 `src/demoData.ts` 里的 `voiceAudio`、`talkingHeadVideo`、`scenes`、`captions` 和 `chapters` 后重新预览。

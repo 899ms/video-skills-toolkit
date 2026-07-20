@@ -1,11 +1,11 @@
 ---
 name: talking-head-remotion
-description: 用 Remotion 制作可复用的口播视频工程：支持口播音频/视频、右下角圆形 PIP、底部同步字幕、顶部章节进度条、Studio 现代主题、SFX/BGM 规划和可运行 React composition。当用户要创建或修改口播视频工程、把现有 HyperFrames 口播模板迁移到 Remotion、搭建 Remotion 视频项目目录、或把脚本和素材变成 Remotion 成片时，必须使用这个 skill。
+description: 用 Remotion 制作可复用的口播视频工程：支持口播音频/视频、右下角圆形 PIP、底部同步字幕、顶部章节进度条、乳白瓦楞玻璃主题、SFX/BGM 规划和可运行 React composition。当用户要创建或修改口播视频工程、把现有 HyperFrames 口播模板迁移到 Remotion、搭建 Remotion 视频项目目录、或把脚本和素材变成 Remotion 成片时，必须使用这个 skill。
 ---
 
 # Talking Head Remotion
 
-一个 Studio 风格的 Remotion 口播视频模板：脚手架一键生成可运行的 demo 项目，配一个跨项目公共素材库（字体、SFX、BGM、可复用动效组件）。
+一个乳白瓦楞玻璃风格的 Remotion 口播视频模板：脚手架一键生成可运行的 demo 项目，配一个跨项目公共素材库（字体、SFX、BGM、可复用动效组件）。
 
 ## 输入要求
 
@@ -92,7 +92,7 @@ Remotion 入口是 `src/index.ts`，composition 在 `src/Root.tsx` 注册，demo
 - 主画面文字宁少勿多（一屏 ≤5 个文字元素，可以无字）：只放关键词、短语、数字、证据截图或短 CTA；完整句子只放字幕，禁止把逐字稿搬上画面。
 - **丰富度靠非文字层，不靠加字**：每屏至少一个非文字视觉主体（图示/仿真 UI/录屏/数据可视化/图形动画）；任一时刻至少一层持续动效在动；同一版式连续不超过 2 个场景；讲到能截图/录屏的具体东西必须给真实或仿真界面。动效要覆盖进场/持续/强调/示意四类，不能只有进场（详见 visual-guide 的"画面丰富度硬规则"和"动效词汇表"）。
 - 口播人像是右下角圆形 PIP（看到头和肩膀）；没有视频时用中性占位。
-- **默认画幅是 16:9 横屏（1920x1080）**；模板的固定层（顶部进度条、右下 PIP、字幕安全区、透视格子）都按横屏设计，做竖屏（9:16）需要单独调整这些层，不是开箱即用。默认 1920x1080 全画幅 Studio 主题：暖白画布 + 上下双层镜像透视格子背景；不要把内容包进白色圆角卡片、缩小画板或网页 preview 容器。`PremiumGridBackground` 必须实际调用 `PerspectiveGrid`。
+- **默认画幅是 16:9 横屏（1920x1080）**；模板的固定层（顶部进度条、右下 PIP、字幕安全区、瓦楞玻璃背景）都按横屏设计，做竖屏（9:16）需要单独调整这些层，不是开箱即用。默认 1920x1080 全画幅乳白瓦楞玻璃主题：乳白瓦楞玻璃画布 + 暖桃光透 + 磨砂玻璃悬浮层；不要把内容包进白色圆角卡片、缩小画板或网页 preview 容器。`FlutedGlassBackground` 必须包含棱线流动、暖光团、扫光带、漂浮光斑、中央帷幕、噪点全部层。
 - 动画只用 `useCurrentFrame()` + `interpolate()` + `Sequence` 帧驱动；不要 CSS animation/transition 或浏览器计时器（HyperFrames 的 GSAP timeline 不能照搬）。
 - 资产放 `public/` 用 `staticFile()` 引用；字体默认用本地 `@font-face` 非阻塞注册或稳定系统字体栈。不要默认用 `@remotion/fonts/loadFont()` 阻塞全片渲染，因为它依赖 `delayRender()`，字体加载偶发卡住会让长视频在任意帧超时失败。只有确实需要阻塞字体一致性时才使用，并先用低清 proof 验证。
 - 初始模板的中间舞台刻意留空（只有背景、顶栏、PIP 框和字幕样式示例）；制作时按字幕逐元素填充场景，空间系统、固定层和背景结构不变。
