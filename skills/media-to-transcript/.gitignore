@@ -1,0 +1,15 @@
+.DS_Store
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+outputs/
+audio/
+media/
+asr/
+*.mp3
+*.mp4
+*.wav
+*.m4a
+*.mov

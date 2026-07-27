@@ -45,4 +45,4 @@ from minimax_tts import text_to_audio
 
 `list_voices()`、`voice_clone()` 和 `voice_design()` 保留为旧项目兼容函数，不属于三阶段导演主路径。由于 MiniMax 声音管理端点会演进，每次执行克隆、设计或删除前都要先核对当前官方文档，不得因为函数存在就假定端点仍然有效。
 
-音乐、BGM、歌曲和 cover 任务路由到 `minimax-music-gen`。底层模块中的历史音乐函数只为不破坏旧导入而保留，不在本 skill 主流程中暴露。
+音乐、BGM、歌曲和 cover 任务路由到同级 `music`（ElevenLabs Music API）。底层模块中的历史音乐函数只为不破坏旧导入而保留，不在本 skill 主流程中暴露。

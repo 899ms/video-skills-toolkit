@@ -1,0 +1,4 @@
+interface:
+  display_name: "内容二创"
+  short_description: "将已拆解的爆款机制迁移成泊舟自己的小红书图文与抖音口播草稿"
+  default_prompt: "使用 $content-remix 基于已完成的爆款拆解，生成不照搬的小红书图文或抖音口播草稿。"

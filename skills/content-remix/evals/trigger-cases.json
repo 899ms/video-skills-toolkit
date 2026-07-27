@@ -1,0 +1,38 @@
+[
+  {
+    "query": "这个爆款已经拆完了，按它的机制做成我的小红书版本。",
+    "should_trigger": true
+  },
+  {
+    "query": "参考这个对标，但不要照抄，帮我重新创作一条抖音口播。",
+    "should_trigger": true
+  },
+  {
+    "query": "把八步拆解里的可复用点迁移到我的 Agent 实战经历上。",
+    "should_trigger": true
+  },
+  {
+    "query": "同一个爆款机制分别做一份小红书图文和一份抖音脚本。",
+    "should_trigger": true
+  },
+  {
+    "query": "判断这个链接是不是低粉爆款。",
+    "should_trigger": false
+  },
+  {
+    "query": "拆解这个小红书图文为什么爆。",
+    "should_trigger": false
+  },
+  {
+    "query": "这篇是我自己写的，帮我去 AI 味。",
+    "should_trigger": false
+  },
+  {
+    "query": "这条已经发布了，复盘一下数据。",
+    "should_trigger": false
+  },
+  {
+    "query": "给这个选题想五个角度。",
+    "should_trigger": false
+  }
+]

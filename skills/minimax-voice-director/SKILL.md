@@ -1,6 +1,6 @@
 ---
 name: minimax-voice-director
-description: 用 MiniMax 云端为视频制作可审批的声音导演稿，再生成、挑选和验收人声，最后以定稿音频产生字幕。用于用户明确选择 MiniMax 配音、继续已有 MiniMax 视频配音项目，或明确请求 MiniMax Voice ID/克隆/设计。泛指本地 TTS 或 IndexTTS 不使用本 skill；音乐、BGM、歌曲使用 minimax-music-gen。
+description: 用 MiniMax 云端为视频制作可审批的声音导演稿，再生成、挑选和验收人声，最后以定稿音频产生字幕。用于用户明确选择 MiniMax 配音、继续已有 MiniMax 视频配音项目，或明确请求 MiniMax Voice ID/克隆/设计。泛指本地 TTS 或 IndexTTS 不使用本 skill；音乐、BGM、歌曲使用同级 music Skill。
 metadata:
   tags: minimax, tts, voice-director, voiceover, subtitles, cloud-api
 ---
@@ -14,7 +14,7 @@ metadata:
 - 用户明确选择 MiniMax 配音，或当前项目已经用 MiniMax：进入三阶段主流程。
 - 用户只说 TTS、旁白、自己的声音，但没有选 MiniMax：不自动替换引擎，先根据上下文路由到合适的本地或云端工作流。
 - 用户要 MiniMax Voice ID、声音克隆、声音设计或旧函数兼容：读 `references/runtime.md`，该分支不自动触发配音主流程。
-- 音乐、BGM、歌曲或 cover：改用 `minimax-music-gen`。
+- 音乐、BGM、歌曲或 cover：改用同级 `music`（ElevenLabs Music API）。
 - 不因其他 TTS 失败而静默转用 MiniMax；先说明云端费用、声音差异和数据上传。
 
 ## 三阶段主流程

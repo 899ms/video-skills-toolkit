@@ -1,0 +1,4 @@
+interface:
+  display_name: "Media To Transcript"
+  short_description: "Turn media into corrected transcripts with chunked Volcengine ASR"
+  default_prompt: "Use $media-to-transcript to turn this video or audio into a corrected transcript."

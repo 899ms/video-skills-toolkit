@@ -26,7 +26,7 @@ description: 判断、扫描、拆解并归档抖音视频、小红书图文或�
 - `references/analysis-schema.md`：子 Agent 的只读证据包输入、八段 JSON 输出、平台适配器和校验规则。
 - `references/storage-schema.md`：基线、爆款笔记、选题合并和安全写入格式。
 
-涉及转写时读取并调用 `media-to-transcript` Skill；分析开头时读取 `hook-writing` Skill 的类型与情绪机制，但不要修改钩子库。涉及 `.base` 时遵循 `obsidian-bases` Skill。
+涉及转写时读取并调用同级 `media-to-transcript` Skill；分析开头时读取同级 `hook-writing` Skill 的类型与情绪机制，但不要修改钩子库。涉及 `.base` 时遵循同级 `obsidian-bases` Skill。这 3 个依赖均随本仓库安装；如果缺失就停止对应步骤，不用猜测逻辑代替。
 
 ## 单条链接流程
 
@@ -106,7 +106,7 @@ python3 "$SKILL_DIR/scripts/calculate_virality.py" --input /tmp/viral-video-inpu
 
 ### 6. 按路径采集内容证据
 
-抖音或小红书视频调用 `media-to-transcript` Skill 处理原链接。必须完成它的纠错步骤并写出 `run-summary.json` 中 `finalTranscriptTarget` 指向的最终逐字稿；原始 ASR 不是最终稿。
+抖音或小红书视频调用 `media-to-transcript` Skill 处理原链接。每次运行创建唯一目录 `<NOTES_VAULT>/AI Wiki/raw/音频转写/{platform}-{post_id}-{timestamp}/`，并将该目录显式传给 `media-to-transcript --out-dir`；不使用其 Skill 安装目录下的默认 `outputs/`。必须完成它的纠错步骤并写出 `run-summary.json` 中 `finalTranscriptTarget` 指向的最终逐字稿；原始 ASR 不是最终稿。
 
 视频转写完成后执行：
 
