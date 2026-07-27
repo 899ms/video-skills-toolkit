@@ -1,0 +1,12 @@
+{
+  "base": "valid-runtime-adaptation.json",
+  "mutation": {
+    "beatId": "B02",
+    "set": {
+      "primaryMotionId": "pulse-evidence",
+      "continuousMotions": ["decorative-glow-loop"],
+      "readableHold.static": false
+    }
+  },
+  "expectedDiagnostic": "ADAPT_HOLD_STATIC"
+}

@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "pipeline": "hyperframes",
+  "fps": 30,
+  "timeline": {
+    "programDurationSeconds": 6,
+    "audioDurationSeconds": 5.5,
+    "captionsEndSeconds": 5.4
+  },
+  "sourceHashes": {
+    "directorScript": "1111111111111111111111111111111111111111111111111111111111111111",
+    "productionSpec": "2222222222222222222222222222222222222222222222222222222222222222",
+    "assetPlan": "3333333333333333333333333333333333333333333333333333333333333333",
+    "audio": "4444444444444444444444444444444444444444444444444444444444444444",
+    "captionsAligned": "5555555555555555555555555555555555555555555555555555555555555555"
+  },
+  "hardRejections": [
+    "repeated-generic-entrance",
+    "decorative-continuous-motion",
+    "unanchored-decoration",
+    "generic-ai-decoration",
+    "empty-reset-transition",
+    "unreadable-transition-midpoint"
+  ],
+  "fixedStage": {
+    "template": "studio-warm-grid",
+    "contentMotionDefault": "none",
+    "globalSceneTransition": "none",
+    "continuousMotionAllowlist": ["studio-background"]
+  },
+  "beats": [
+    {
+      "beatId": "HF-B01",
+      "startSeconds": 0,
+      "endSeconds": 3,
+      "mode": "motion",
+      "state": {
+        "from": "The check is pending.",
+        "to": "The check resolves as passed.",
+        "newUnderstanding": "The viewer sees a verified result."
+      },
+      "primaryMotion": {
+        "id": "resolve-validation-state",
+        "semanticReason": "The check changes from pending to passed."
+      },
+      "supportMotion": null,
+      "continuousMotions": [],
+      "stillReason": null,
+      "readableHold": {
+        "startSeconds": 1.8,
+        "endSeconds": 2.7,
+        "reason": "The passed state remains readable."
+      },
+      "handoff": {
+        "toBeatId": "HF-B02",
+        "object": "passed validation stamp",
+        "midpointSeconds": 2.8,
+        "midpointAssertion": "The passed stamp remains anchored while the conclusion appears."
+      },
+      "deletionTest": "Without the state resolution, no validation has been demonstrated.",
+      "rejectionConditions": ["A generic fade-up replaces the validation change."],
+      "acceptanceFrames": [
+        {
+          "atSeconds": 0,
+          "role": "start",
+          "assertions": ["The check is visibly pending."]
+        },
+        {
+          "atSeconds": 2,
+          "role": "state_complete",
+          "assertions": ["The passed check is readable."]
+        },
+        {
+          "atSeconds": 2.8,
+          "role": "transition_midpoint",
+          "assertions": ["The passed stamp remains visible."]
+        }
+      ]
+    },
+    {
+      "beatId": "HF-B02",
+      "startSeconds": 3,
+      "endSeconds": 6,
+      "mode": "readable-hold",
+      "state": {
+        "from": "The passed result has arrived.",
+        "to": "The conclusion remains available for inspection.",
+        "newUnderstanding": "The viewer can verify the final boundary."
+      },
+      "primaryMotion": null,
+      "supportMotion": null,
+      "continuousMotions": [],
+      "stillReason": "The conclusion needs stable reading time.",
+      "readableHold": {
+        "startSeconds": 3,
+        "endSeconds": 6,
+        "reason": "The conclusion remains static and legible."
+      },
+      "handoff": null,
+      "deletionTest": "Removing the hold makes the conclusion unreadable.",
+      "rejectionConditions": ["The final card floats or glows."],
+      "acceptanceFrames": [
+        {
+          "atSeconds": 3,
+          "role": "start",
+          "assertions": ["The conclusion is already established."]
+        },
+        {
+          "atSeconds": 5.4,
+          "role": "readable_hold",
+          "assertions": ["The conclusion is static and unobstructed."]
+        }
+      ]
+    }
+  ]
+}

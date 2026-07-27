@@ -1,0 +1,21 @@
+◆  Capturing 12 frames at [0.1s, 0.42s, 1.05s, 1.42s, 1.56s, 1.62s, 1.95s, 2.35s, 2.42s, 2.72s, 3.12s, 3.56s] from ready-project
+
+   Fonts: 11 loaded, 2 failed, 9 unused
+   Fonts FAILED: PingFang SC (normal normal), PingFang SC (normal normal)
+
+◇  12 snapshots saved to /Users/bozhou/my/视频工程/video-skills-toolkit/skills/hyperframes-scene-animator/evals/fixtures/ready-project/snapshots/acceptance
+   snapshots/acceptance/frame-00-at-0.1s.png
+   snapshots/acceptance/frame-01-at-0.42s.png
+   snapshots/acceptance/frame-02-at-1.05s.png
+   snapshots/acceptance/frame-03-at-1.42s.png
+   snapshots/acceptance/frame-04-at-1.56s.png
+   snapshots/acceptance/frame-05-at-1.62s.png
+   snapshots/acceptance/frame-06-at-1.95s.png
+   snapshots/acceptance/frame-07-at-2.35s.png
+   snapshots/acceptance/frame-08-at-2.42s.png
+   snapshots/acceptance/frame-09-at-2.72s.png
+   snapshots/acceptance/frame-10-at-3.12s.png
+   snapshots/acceptance/frame-11-at-3.56s.png
+   contact-sheet-1..2.jpg (grid view for AI review)
+[INFO] [Compiler] Fetched 4 font face(s) for "Consolas" from Google Fonts (cached to /Users/bozhou/.cache/hyperframes/fonts/consolas)
+[INFO] [Compiler] Injected deterministic @font-face rules for 2 requested font families

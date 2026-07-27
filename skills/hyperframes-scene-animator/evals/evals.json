@@ -1,0 +1,115 @@
+{
+  "skill_name": "hyperframes-scene-animator",
+  "evals": [
+    {
+      "id": 1,
+      "name": "reject-template-only-exactly",
+      "prompt": "这个 HyperFrames 工程的 manifest 还是 TEMPLATE_ONLY：最终人声音频路径为空，对齐字幕文件不存在，制作规格缺失，而且 motion contract 里导演稿的 source hash 与实物不一致。先随便做几个镜头让我看看。",
+      "expected_output": "Refuses before writing content and reports every concrete missing or invalid readiness item with path/hash evidence.",
+      "expectations": [
+        "明确拒绝 TEMPLATE_ONLY，不创建或修改内容 composition、场景、动效、转场或声音 cue",
+        "分别列出空的人声音频路径、不存在的字幕路径、缺失制作规格，以及导演稿期望/实际 source hash 不一致，而不是笼统回答资料不全",
+        "说明每项应回到 factory 或上游锁定资料处理，且不以临时导演或占位卡片绕过门禁"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "ready-main-director-static-first-preview",
+      "prompt": "口播工程已经 READY_FOR_EXECUTION，handoff 里的路径、SHA-256、字幕与音频时长、motion contract source hashes 都复核一致。请完成 HyperFrames 第一版预览，包括镜头、转场、声音、proof 和审片。",
+      "expected_output": "The main agent directs the subtitle-driven shot system, obtains approval for all final static shot pages, then delegates only bounded implementations and integrates proof through preview-v1.",
+      "expectations": [
+        "主 Agent 锁定字幕分镜、可见文字、布局、动效语义和验收帧，子 Agent 不得重做导演",
+        "先交付每个镜头的 1920x1080 最终静态页和整片联系表，用户明确批准整套版本后才开始动效",
+        "互不冲突的独立镜头优先交给快速 worker 子 Agent，但全局 timeline、shared styles、转场接力和最终集成仍由主 Agent 持有",
+        "每个真实 scene 有显式入口和语义转场，且不向固定模板加入通用 crossfade、enterStyle 或内容场景",
+        "产出 acceptance snapshots、cue 前后帧、转场中点、联系表、内部预览和执行报告，并用 gate receipt 绑定当前项目指纹与日志摘要",
+        "完成 Montage、Static、Motion、Delivery 四遍审查及 Anti-PPT/AI 味门，关闭 BLOCKER/MAJOR 后才输出 preview-v1"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "readable-hold-with-scene-contract",
+      "prompt": "READY 工程里有一段高密度代码证据，需要在已进入的 scene 里静止三秒给观众读；后面才切到一个新的验证 scene。不要再加扫光和呼吸，但也要符合 HyperFrames 的 scene 入口与转场要求。",
+      "expected_output": "Keeps the readable hold static inside the established scene while explicitly authoring the later real scene entrance and semantic transition.",
+      "expectations": [
+        "readable-hold 不创建新 scene，主/辅运动均为无，代码、光斑和装饰保持静止",
+        "后续真实验证 scene 有显式入口和可解释的对象、方向、遮罩、镜头、声音或因果接力",
+        "不使用通用全局 crossfade 或共享 enterStyle 解决平台要求",
+        "proof 同时包含 hold 可读状态、cue 前后状态和转场中点"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "revision-returns-to-owner",
+      "prompt": "lead review 找出两个 MAJOR。为了快点，请另开三个执行者分别改场景、动效和声音，然后合并回 READY 的 HyperFrames 工程。",
+      "expected_output": "Keeps one main director/integrator, rejects cross-cutting competing implementations, and only delegates bounded scene-file fixes under locked briefs.",
+      "expectations": [
+        "拒绝让三个人同时改全局场景、动效和声音所造成的并行竞争实现，主 Agent 仍是唯一导演和集成者",
+        "只在问题可分割为独立镜头文件时委派快速子 Agent，每个任务有锁定简报、文件所有权和验收帧",
+        "审查问题回到原镜头文件所有者或主 Agent，按影响范围修改并重跑对应 proof",
+        "MAJOR 清零并更新审查证据之前不输出 preview-v1",
+        "不把审查整改转交给 talking-head-hyperframes factory"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "reject-incomplete-proof-bundle",
+      "prompt": "READY 工程已经有一份联系表和几张好看的截图，但 lint、inspect、snapshot、animation-map 和 render 门禁没有完整通过，cue 前后、转场中点、可读停留、最宽字幕和音频首尾证据也有缺失。就按现有材料通过吧。",
+      "expected_output": "Rejects the bundle with exact failed gates and missing evidence roles instead of treating attractive stills as proof.",
+      "expectations": [
+        "逐项报出未通过或缺失的 CLI 门禁，不把 contact sheet 当成 lint、inspect、animation-map 或 render 的替代",
+        "根据 runtime-adaptation 对齐每个 source acceptance，并要求 cue_before、cue_after、transition_midpoint、readable_hold 和 widest_caption",
+        "要求实际可解码的内部预览、音频首尾、黑尾和静音尾证据",
+        "证据状态只接受 PASS、FAIL 或 NOT_APPLICABLE，不用 OK/APPROVED 等自定义值绕过"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "four-pass-methods-are-not-interchangeable",
+      "prompt": "为了节省时间，Montage 遍我会读字幕，Motion 遍只看联系表和转场中点截图，Delivery 遍看一下文件名就好。只要四项都写 PASS 就可以了吧？",
+      "expected_output": "Enforces the distinct Montage, Static, Motion, and Delivery methods and their concrete evidence.",
+      "expectations": [
+        "Montage 遍只看有序 contact sheet，显式不读字幕，用于判断节奏、重复和 AI/PPT 味",
+        "Static 遍核对 source acceptance、最宽字幕、安全区和 PIP 裁切处置",
+        "Motion 遍必须从头到尾播放完整 internal preview，静帧不能代替",
+        "Delivery 遍要求可解码的 1920x1080@30 带锁定音频的内部预览，并复核首尾音频、黑尾与静音尾"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "preview-v1-promotion-is-gated",
+      "prompt": "lead review 还有一个未关闭 BLOCKER 和一个未关闭 MAJOR，动画图也有未解释的 offscreen flag。不过 internal preview 能播放，请直接复制成 renders/preview-v1.mp4，后面再改。",
+      "expected_output": "Blocks promotion until approval, lifecycle, findings, animation-map explanations, and final proof validation are clear.",
+      "expectations": [
+        "未关闭 BLOCKER、MAJOR 或 blocksPreview 问题任一存在时，不创建 preview-v1",
+        "animation-map 每个 flag 都必须有 selector、flag、原因和可打开证据，不允许未解释 flag",
+        "preview-v1 晋升前要求显式审批且 lifecycle 为 REVIEW_APPROVED 或 PREVIEW_READY",
+        "审批必须绑定 proof version、项目指纹、执行锁和 internal preview SHA-256；复制后更新 preview_v1 证据并重跑最终 validator"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "static-approval-blocks-motion",
+      "prompt": "字幕和分镜都有了，但你还没给我看全部镜头的最终静态页。为了快一点，你先让几个子 Agent 把动画和转场都写完，我最后一起看。",
+      "expected_output": "Stops before motion, produces the complete static-shot review bundle, and waits for explicit approval of that exact version.",
+      "expectations": [
+        "按对齐字幕和语义边界划分全片镜头，每镜只有一个命题和一张信息完全呈现时的最终静态页",
+        "将全部 1920x1080 静态页、镜头清单和时序联系表交给用户，修改仍停留在静态阶段",
+        "未获得用户对当前整套版本的明确批准时，不写 GSAP、进场、转场、SFX 或整片预览",
+        "不用 proof PASS、主 Agent 判断或子 Agent 自检代替 STATIC_SCENES_APPROVED"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "audio-micro-edit-needs-audition",
+      "prompt": "请在一句口播中间加几个停顿。你可以直接根据 silencedetect 和字级时间戳改锁定人声，不用给我试听，字幕大概往后平移就行。",
+      "expected_output": "Refuses in-place voice mutation, requires phoneme-safe phrase boundaries and a short audition, then rebuilds and relocks all downstream timing from an EDL.",
+      "expectations": [
+        "不在本 Skill 中直接改锁定人声，不只依赖 silencedetect、波形或字级时间戳决定剪切点",
+        "停顿只放在完整语义短语边界，不切在一个字或辅音中间，先输出 6–10 秒试听给用户确认",
+        "每次从未修改的已批准母带按 EDL 重建，不在上一次微剪文件上累积修改",
+        "批准后按分段偏移同步所有下游字幕、cue、时长和 hash，重新回到上游锁定输入"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "id": "inspect",
+  "status": "PASS",
+  "command": [
+    "npx",
+    "--yes",
+    "hyperframes@0.7.65",
+    "inspect",
+    "--at",
+    "0.1,0.42,1.05,1.42,1.56,1.62,1.95,2.35,2.42,2.72,3.12,3.56",
+    "--at-transitions",
+    "--strict"
+  ],
+  "commandSha256": "318e9053954bd408be2178da2c3106c2ab71616ea9347b7eae4546f6c0e76497",
+  "cliVersion": "0.7.65",
+  "exitCode": 0,
+  "signal": null,
+  "timedOut": false,
+  "projectFingerprint": "635351c5f32db63b5fae5e5747ec05cec7d284d57b9ca032770b765b776b5d73",
+  "log": "review/cli/inspect.txt",
+  "logSha256": "9f9b87be73458a1d0d5193dd93f04a46a2e49dc9ddde8a885210a44827aa5241",
+  "startedAt": "2026-07-27T06:51:22.480Z",
+  "finishedAt": "2026-07-27T06:51:37.080Z",
+  "artifacts": []
+}

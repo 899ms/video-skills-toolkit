@@ -1,0 +1,4 @@
+interface:
+  display_name: "爆款视频拆解"
+  short_description: "按实时粉丝筛选对标池，用代码判级并证据化拆解抖音/小红书爆款"
+  default_prompt: "Use $viral-video-benchmark to refresh my follower count, screen the benchmark pool, classify this Douyin video or Xiaohongshu graphic/video, then build a validated evidence package and return the evidence-anchored eight-section analysis without drafting derivative content."

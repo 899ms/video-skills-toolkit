@@ -1,0 +1,62 @@
+{
+  "skill_name": "talking-head-hyperframes",
+  "evals": [
+    {
+      "id": 1,
+      "name": "template-only-fixed-stage",
+      "prompt": "先给我建一个 HyperFrames 口播固定舞台，项目目录已经定了，但音频、对齐字幕和制作资料都还没交。不要替我想镜头。",
+      "expected_output": "Creates and proves only the fixed stage, records a TEMPLATE_ONLY handoff with exact missing inputs, and stops.",
+      "expectations": [
+        "状态保持 TEMPLATE_ONLY，并逐项列出锁定音频、对齐字幕、已确认导演脚本、制作规格、素材计划和 motion contract 的缺失路径或校验状态",
+        "只运行固定舞台结构检查与 0/4/9s hash-locked SSIM stage proof，不创建标题页、卡片、TopBar、内容场景或示例动效",
+        "不渲染整片、不做声音设计、不审片，并在交付 manifest、handoff 和 stage proof 后停止"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "ready-route-to-executor",
+      "prompt": "固定舞台还没建，但锁定音频、有效对齐字幕、已确认导演稿、制作规格、素材计划和覆盖整片的 motion contract 都齐了，路径与 SHA-256 也一致。请先准备 HyperFrames 工程，然后继续完成镜头、动效、声音和审片。",
+      "expected_output": "Completes factory validation, marks the handoff READY_FOR_EXECUTION, then routes all content execution to hyperframes-scene-animator.",
+      "expectations": [
+        "manifest 与 handoff 记录项目相对路径、源路径、SHA-256、媒体/字幕校验和 contract source hash 比对，并仅在全部通过后写 READY_FOR_EXECUTION",
+        "明确路由到 hyperframes-scene-animator，并在交接中带上‘主 Agent 导演→全镜头最终静态页审核→明确批准→快速子 Agent 协助实现动效’门禁",
+        "不在 factory 中复制镜头、转场、声音、proof 或四遍审查流程",
+        "factory 自身不写内容 composition、不增加通用 enterStyle 或全局 crossfade，也不渲染整片"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "implementation-request-respects-boundary",
+      "prompt": "这个 HyperFrames 模板现在只是 TEMPLATE_ONLY。先随便做三张卡片和几个转场让我看看，资料以后再补。",
+      "expected_output": "Refuses to improvise content, reports the readiness blockers, and keeps execution out of the factory.",
+      "expectations": [
+        "不导演或实现三卡片、内容场景、语义动效、转场、SFX/BGM 或审片整改",
+        "读取实际 manifest/handoff 后精确报告每个缺失或无效输入，而不是只说资料不全",
+        "保持 TEMPLATE_ONLY，不调用下游 executor，不生成竞争性的内容实现"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "stage-repair-does-not-expand-scope",
+      "prompt": "现有 HyperFrames 口播工程的固定字幕层和 PIP 安全区坏了。只修模板并给我舞台证明，镜头内容先别碰。",
+      "expected_output": "Repairs and proves the fixed stage while leaving project scenes and review ownership untouched.",
+      "expectations": [
+        "修改范围仅限固定模板、输入记录、manifest/handoff 和舞台 proof",
+        "不改项目内容场景、语义动效、转场或声音设计，也不进行整片审查",
+        "返回可复现的项目 package-script 校验证据和当前 readiness 状态"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "pip-crop-and-background-contract",
+      "prompt": "把我的透明数字人装进 HyperFrames 模板右下角。请明确他在哪个区域、怎么裁切、背景怎么处理，并保证以后换项目不会再透出主画面网格或人物偏心。",
+      "expected_output": "Uses the fixed PIP contract, records the crop and opaque background in the generated template and manifest, and requires actual-encode zoom evidence before proof can pass.",
+      "expectations": [
+        "明确外圈 206px/right 104/bottom 150 与媒体区 190px/right 112/bottom 158 的层级和绝对区域",
+        "当前人物使用 cover + 66.7% 50%，说明 1920×1080 到正方形时的可见区域与左右裁切比例，并把值写入 manifest",
+        "真实媒体 wrapper 使用不透明 #f2f6f8 底加 C 方案渐变，禁止 transparent-only 背景和舞台网格穿透",
+        "动效前审查带 PIP 的全镜头静态页，发布前从实际编码视频生成 3x PIP crop，并要求显式通过人物安全区与无网格验收"
+      ]
+    }
+  ]
+}

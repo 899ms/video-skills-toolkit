@@ -1,0 +1,3 @@
+◆  Validating ready-project in headless Chrome
+◇  No console errors · 41 text elements pass WCAG AA
+'hyperframes validate' is deprecated and will be removed in a future release. Use 'hyperframes check' instead.

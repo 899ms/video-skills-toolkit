@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "id": "snapshot",
+  "status": "PASS",
+  "command": [
+    "npx",
+    "--yes",
+    "hyperframes@0.7.65",
+    "snapshot",
+    "--at",
+    "0.1,0.42,1.05,1.42,1.56,1.62,1.95,2.35,2.42,2.72,3.12,3.56",
+    "--no-end",
+    "--output",
+    "snapshots/acceptance",
+    "--describe",
+    "false"
+  ],
+  "commandSha256": "72af3aaff6c7fc49ca327a40344991b9ecf2a9111cec1c620a7f8d382b71da1d",
+  "cliVersion": "0.7.65",
+  "exitCode": 0,
+  "signal": null,
+  "timedOut": false,
+  "projectFingerprint": "635351c5f32db63b5fae5e5747ec05cec7d284d57b9ca032770b765b776b5d73",
+  "log": "review/cli/snapshot.txt",
+  "logSha256": "d443a86a4173d344272b6a7d1f24a21e1fea992a2f10d0b26c4088ce85e7c3fb",
+  "startedAt": "2026-07-27T06:51:45.809Z",
+  "finishedAt": "2026-07-27T06:51:57.537Z",
+  "artifacts": [
+    {
+      "path": "snapshots/acceptance/contact-sheet-1.jpg",
+      "sha256": "081d3d86f23e9aa1d07a8dd8140b4b2dd28b5bc984021b4e894190c6596dc6c3",
+      "bytes": 262951
+    },
+    {
+      "path": "snapshots/acceptance/contact-sheet-2.jpg",
+      "sha256": "f8aa33eac06f41b04409a5f7afcdb8248f264ae36510f38b53b17cc5b2f619d1",
+      "bytes": 89408
+    },
+    {
+      "path": "snapshots/acceptance/frame-00-at-0.1s.png",
+      "sha256": "4d8354e18f84e14598bb376ef153d2547ae9d01b79e8d4b395007c1b84266728",
+      "bytes": 376697
+    },
+    {
+      "path": "snapshots/acceptance/frame-01-at-0.42s.png",
+      "sha256": "c30473975f0fbb234763f271965be92c72b2080ef1dcbe0e8d14a09132561672",
+      "bytes": 395240
+    },
+    {
+      "path": "snapshots/acceptance/frame-02-at-1.05s.png",
+      "sha256": "da7c690ffc8107f680b9e5d76364d4f8e31a80f55f258697e7176c7017310039",
+      "bytes": 424376
+    },
+    {
+      "path": "snapshots/acceptance/frame-03-at-1.42s.png",
+      "sha256": "0587b480a9b436755198ceecef6907a0948fb647beeee669041b7420ade408b2",
+      "bytes": 421471
+    },
+    {
+      "path": "snapshots/acceptance/frame-04-at-1.56s.png",
+      "sha256": "11b829d15a2c44a15e0a0cc9654bf522e86d9ebdf4a34f25f17bdea38fdc892b",
+      "bytes": 420886
+    },
+    {
+      "path": "snapshots/acceptance/frame-05-at-1.62s.png",
+      "sha256": "0d96baad7a9a2d672989c8908d00cf6bd73c68d4f871e1baed3a9fa1a9206373",
+      "bytes": 422825
+    },
+    {
+      "path": "snapshots/acceptance/frame-06-at-1.95s.png",
+      "sha256": "cd765028caa8915ba9a7c9c4ea0352262dd14af8d524993db46e3c0b19c3a84a",
+      "bytes": 423323
+    },
+    {
+      "path": "snapshots/acceptance/frame-07-at-2.35s.png",
+      "sha256": "d6b0e7827c42a8f1bdd873e7d0736fe0ae52bc69549788beec0e7e525c55dc08",
+      "bytes": 420190
+    },
+    {
+      "path": "snapshots/acceptance/frame-08-at-2.42s.png",
+      "sha256": "1ce246d45d5d581b4036c2231df09c262310003276d4fed00d1efe42df9ddcd0",
+      "bytes": 420304
+    },
+    {
+      "path": "snapshots/acceptance/frame-09-at-2.72s.png",
+      "sha256": "e66f899449ecf0ea496b811e72b848b88305071165ace6caff6ec58bd894a92d",
+      "bytes": 394977
+    },
+    {
+      "path": "snapshots/acceptance/frame-10-at-3.12s.png",
+      "sha256": "25be6fc681e4eb8af40fa86023d007a82e17b854e079c74dd1a8df3066413690",
+      "bytes": 399768
+    },
+    {
+      "path": "snapshots/acceptance/frame-11-at-3.56s.png",
+      "sha256": "e54ed08a2c93a0366f7184f7c007fc9246023b75bfda24fc06691c7227cc6467",
+      "bytes": 409954
+    }
+  ]
+}

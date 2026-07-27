@@ -1,0 +1,4 @@
+◆  Inspecting layout for ready-project (12 explicit timestamp(s) + transition boundaries)
+
+◇  0 layout issues across 48 sample(s)
+'hyperframes inspect' is deprecated and will be removed in a future release. Use 'hyperframes check' instead.

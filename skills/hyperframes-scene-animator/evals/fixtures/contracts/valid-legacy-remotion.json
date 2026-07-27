@@ -1,0 +1,164 @@
+{
+  "version": 1,
+  "pipeline": "remotion",
+  "fps": 30,
+  "timeline": {
+    "programDurationSeconds": 12,
+    "audioDurationSeconds": 11.5,
+    "captionsEndSeconds": 11.4
+  },
+  "sourceHashes": {
+    "directorScript": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "productionSpec": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "assetPlan": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "audio": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captionsAligned": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+  },
+  "hardRejections": [
+    "repeated-generic-entrance",
+    "decorative-continuous-motion",
+    "unanchored-decoration",
+    "generic-ai-decoration",
+    "empty-reset-transition",
+    "unreadable-transition-midpoint"
+  ],
+  "fixedStage": {
+    "template": "studio-warm-grid",
+    "contentMotionDefault": "none",
+    "globalSceneTransition": "none",
+    "continuousMotionAllowlist": ["PremiumGridBackground"]
+  },
+  "beats": [
+    {
+      "beatId": "B01",
+      "startSeconds": 0,
+      "endSeconds": 4,
+      "mode": "motion",
+      "state": {
+        "from": "The claim is unproved.",
+        "to": "The source and result are connected.",
+        "newUnderstanding": "The viewer sees the causal relationship."
+      },
+      "primaryMotion": {
+        "id": "connect-source-to-result",
+        "semanticReason": "The route reveals which source produced the result."
+      },
+      "supportMotion": null,
+      "continuousMotions": [],
+      "stillReason": null,
+      "readableHold": {
+        "startSeconds": 2.6,
+        "endSeconds": 3.6,
+        "reason": "The established source and result remain readable."
+      },
+      "handoff": {
+        "toBeatId": "B02",
+        "object": "verified result card",
+        "midpointSeconds": 3.8,
+        "midpointAssertion": "The verified result stays visible as the reading hold begins."
+      },
+      "deletionTest": "Without the route, the source-to-result claim is not proved.",
+      "rejectionConditions": ["A generic fade-up replaces the causal route."],
+      "acceptanceFrames": [
+        {
+          "atSeconds": 0,
+          "role": "start",
+          "assertions": ["The source is visible without the result connection."]
+        },
+        {
+          "atSeconds": 2.8,
+          "role": "state_complete",
+          "assertions": ["The source and result are visibly connected."]
+        },
+        {
+          "atSeconds": 3.8,
+          "role": "transition_midpoint",
+          "assertions": ["The verified result remains readable."]
+        }
+      ]
+    },
+    {
+      "beatId": "B02",
+      "startSeconds": 4,
+      "endSeconds": 7,
+      "mode": "readable-hold",
+      "state": {
+        "from": "The result has just been verified.",
+        "to": "The result can be inspected before validation.",
+        "newUnderstanding": "The viewer has time to read the evidence."
+      },
+      "primaryMotion": null,
+      "supportMotion": null,
+      "continuousMotions": [],
+      "stillReason": "Dense evidence needs a stable reading interval.",
+      "readableHold": {
+        "startSeconds": 4,
+        "endSeconds": 6.5,
+        "reason": "The evidence remains still and legible."
+      },
+      "handoff": {
+        "toBeatId": "B03",
+        "object": "verified result card",
+        "midpointSeconds": 6.8,
+        "midpointAssertion": "The result card becomes the anchored input to validation."
+      },
+      "deletionTest": "Removing the hold prevents inspection of the evidence.",
+      "rejectionConditions": ["The card floats, pulses, scans, or glows during reading."],
+      "acceptanceFrames": [
+        {
+          "atSeconds": 4,
+          "role": "start",
+          "assertions": ["The established evidence is already visible."]
+        },
+        {
+          "atSeconds": 5.5,
+          "role": "readable_hold",
+          "assertions": ["The evidence is static and unobstructed."]
+        },
+        {
+          "atSeconds": 6.8,
+          "role": "transition_midpoint",
+          "assertions": ["The evidence remains the subject of the handoff."]
+        }
+      ]
+    },
+    {
+      "beatId": "B03",
+      "startSeconds": 7,
+      "endSeconds": 12,
+      "mode": "motion",
+      "state": {
+        "from": "The verified result awaits validation.",
+        "to": "The validation locks as passed.",
+        "newUnderstanding": "The viewer sees the final proof state."
+      },
+      "primaryMotion": {
+        "id": "validate-and-lock-result",
+        "semanticReason": "The validation state changes from pending to passed."
+      },
+      "supportMotion": null,
+      "continuousMotions": [],
+      "stillReason": null,
+      "readableHold": {
+        "startSeconds": 9.2,
+        "endSeconds": 11.8,
+        "reason": "The pass state and evidence remain readable."
+      },
+      "handoff": null,
+      "deletionTest": "Without the validation lock, the conclusion is unsupported.",
+      "rejectionConditions": ["A generic AI icon replaces the validation evidence."],
+      "acceptanceFrames": [
+        {
+          "atSeconds": 7,
+          "role": "start",
+          "assertions": ["The validation is visibly pending."]
+        },
+        {
+          "atSeconds": 9.4,
+          "role": "state_complete",
+          "assertions": ["The passed validation and source evidence are both visible."]
+        }
+      ]
+    }
+  ]
+}

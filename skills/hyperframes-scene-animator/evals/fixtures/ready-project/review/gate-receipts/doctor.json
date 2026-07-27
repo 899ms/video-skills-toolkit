@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "doctor",
+  "status": "PASS",
+  "command": [
+    "npx",
+    "--yes",
+    "hyperframes@0.7.65",
+    "doctor"
+  ],
+  "commandSha256": "d22fa32830d472cbf28d66f2f730c0e8eb7636d6a05a4a64517788b54eac3696",
+  "cliVersion": "0.7.65",
+  "exitCode": 0,
+  "signal": null,
+  "timedOut": false,
+  "projectFingerprint": "635351c5f32db63b5fae5e5747ec05cec7d284d57b9ca032770b765b776b5d73",
+  "log": "review/cli/doctor.txt",
+  "logSha256": "d0125aa92f93e1bccaaf4a73cb3122b2deb6a0449b21fafa3cdde10573a3d8f5",
+  "startedAt": "2026-07-27T06:51:10.809Z",
+  "finishedAt": "2026-07-27T06:51:13.189Z",
+  "artifacts": []
+}

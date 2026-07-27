@@ -1,0 +1,136 @@
+{
+  "version": 1,
+  "pipeline": "hyperframes",
+  "fps": 30,
+  "timeline": {
+    "programDurationSeconds": 4,
+    "audioDurationSeconds": 4,
+    "captionsEndSeconds": 3.82
+  },
+  "sourceHashes": {
+    "directorScript": "f4da87e28a69affde92067471c3322efd9602f650b63829f191e16c9645daf95",
+    "productionSpec": "6ac773a2da328a9aad5530362355c655249c372b16d0c9257b967df82aecf5de",
+    "assetPlan": "24da6a7fb95a0573011a7b10458c14ab68b1c0e95e09bbe0947933bba8b06a24",
+    "audio": "bb26c05f469233f15412d1f6fc0ebc15bc69d380b3cee07b8db89b2ba29ee33f",
+    "captionsAligned": "967d3e26c3c89aa6d6dcd5a131c8babb0a7ee24007f91170795e19a9bcc0c1ea"
+  },
+  "hardRejections": [
+    "repeated-generic-entrance",
+    "decorative-continuous-motion",
+    "unanchored-decoration",
+    "generic-ai-decoration",
+    "empty-reset-transition",
+    "unreadable-transition-midpoint"
+  ],
+  "fixedStage": {
+    "template": "studio-warm-grid",
+    "contentMotionDefault": "none",
+    "globalSceneTransition": "none",
+    "continuousMotionAllowlist": ["studio-background"]
+  },
+  "beats": [
+    {
+      "beatId": "PROOF-B01",
+      "startSeconds": 0,
+      "endSeconds": 1.6,
+      "mode": "motion",
+      "state": {
+        "from": "The source and evidence are separate.",
+        "to": "The source is visibly routed into the evidence.",
+        "newUnderstanding": "The viewer sees where the proof came from."
+      },
+      "primaryMotion": {
+        "id": "route-source-into-evidence",
+        "semanticReason": "The route establishes provenance before the verification claim."
+      },
+      "supportMotion": null,
+      "continuousMotions": [],
+      "stillReason": null,
+      "readableHold": {
+        "startSeconds": 1.22,
+        "endSeconds": 1.55,
+        "reason": "The established provenance remains legible before the longer hold."
+      },
+      "handoff": {
+        "toBeatId": "PROOF-B02",
+        "object": "verified evidence tile",
+        "midpointSeconds": 1.56,
+        "midpointAssertion": "The evidence tile remains anchored as motion settles into reading."
+      },
+      "deletionTest": "Without the route, the evidence has no visible provenance.",
+      "rejectionConditions": ["A generic fade-up replaces the provenance route."],
+      "acceptanceFrames": [
+        { "atSeconds": 0.1, "role": "start", "assertions": ["The source is present while the evidence is still unresolved."] },
+        { "atSeconds": 0.42, "role": "cue_before", "assertions": ["The verified state has not appeared early."] },
+        { "atSeconds": 1.05, "role": "cue_after", "assertions": ["The source route now reaches the evidence tile."] },
+        { "atSeconds": 1.42, "role": "state_complete", "assertions": ["The provenance route and evidence tile are both readable."] },
+        { "atSeconds": 1.56, "role": "transition_midpoint", "assertions": ["The evidence tile remains anchored while the scene settles."] }
+      ]
+    },
+    {
+      "beatId": "PROOF-B02",
+      "startSeconds": 1.6,
+      "endSeconds": 2.4,
+      "mode": "readable-hold",
+      "state": {
+        "from": "The evidence has just been connected.",
+        "to": "The evidence can be inspected without movement.",
+        "newUnderstanding": "The viewer has time to read the proof."
+      },
+      "primaryMotion": null,
+      "supportMotion": null,
+      "continuousMotions": [],
+      "stillReason": "The proof needs an intentionally static reading interval.",
+      "readableHold": {
+        "startSeconds": 1.6,
+        "endSeconds": 2.18,
+        "reason": "The source, route, and evidence remain completely still."
+      },
+      "handoff": {
+        "toBeatId": "PROOF-B03",
+        "object": "verified evidence tile",
+        "midpointSeconds": 2.35,
+        "midpointAssertion": "The same evidence tile bridges into the validation slot."
+      },
+      "deletionTest": "Without the hold, the proof cannot be read before validation.",
+      "rejectionConditions": ["The evidence floats, pulses, scans, or glows during reading."],
+      "acceptanceFrames": [
+        { "atSeconds": 1.62, "role": "start", "assertions": ["The connected evidence is already established."] },
+        { "atSeconds": 1.95, "role": "readable_hold", "assertions": ["All foreground proof elements are static and unobstructed."] },
+        { "atSeconds": 2.35, "role": "transition_midpoint", "assertions": ["The evidence tile is visible between its source position and validation slot."] }
+      ]
+    },
+    {
+      "beatId": "PROOF-B03",
+      "startSeconds": 2.4,
+      "endSeconds": 4,
+      "mode": "motion",
+      "state": {
+        "from": "The transferred evidence awaits validation.",
+        "to": "The validation locks as passed.",
+        "newUnderstanding": "The viewer sees that the result passed a concrete check."
+      },
+      "primaryMotion": {
+        "id": "lock-validation-as-passed",
+        "semanticReason": "The validator changes from pending to passed after receiving the evidence."
+      },
+      "supportMotion": null,
+      "continuousMotions": [],
+      "stillReason": null,
+      "readableHold": {
+        "startSeconds": 3.36,
+        "endSeconds": 3.9,
+        "reason": "The passed state and final evidence remain legible through the audio ending."
+      },
+      "handoff": null,
+      "deletionTest": "Without the validation lock, the final claim is unsupported.",
+      "rejectionConditions": ["A generic AI icon replaces the concrete passed check."],
+      "acceptanceFrames": [
+        { "atSeconds": 2.42, "role": "start", "assertions": ["The validation state is visibly pending."] },
+        { "atSeconds": 2.72, "role": "cue_before", "assertions": ["The pass status has not appeared early."] },
+        { "atSeconds": 3.12, "role": "cue_after", "assertions": ["The validator shows an in-progress check after the evidence arrives."] },
+        { "atSeconds": 3.56, "role": "state_complete", "assertions": ["The validation is locked as passed and the evidence remains visible."] }
+      ]
+    }
+  ]
+}

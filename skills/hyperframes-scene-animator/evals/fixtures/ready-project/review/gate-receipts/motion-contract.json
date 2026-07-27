@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "id": "motion-contract",
+  "status": "PASS",
+  "command": [
+    "node",
+    "scripts/validate-motion-contract.mjs",
+    "inputs/motion-contract.json"
+  ],
+  "commandSha256": "c655785c124f499ec9184dd3b1414e99cb0afbc8fd0ee00525c2b1e2fdaccc71",
+  "cliVersion": "project-local",
+  "exitCode": 0,
+  "signal": null,
+  "timedOut": false,
+  "projectFingerprint": "635351c5f32db63b5fae5e5747ec05cec7d284d57b9ca032770b765b776b5d73",
+  "log": "review/cli/motion-contract.txt",
+  "logSha256": "02add00e2325162af34b54e8f0f7515a3a5b0147ce0960e699ba2baaf39a5013",
+  "startedAt": "2026-07-27T06:50:59.641Z",
+  "finishedAt": "2026-07-27T06:50:59.663Z",
+  "artifacts": []
+}

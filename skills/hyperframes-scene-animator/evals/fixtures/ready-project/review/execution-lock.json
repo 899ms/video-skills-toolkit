@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "executorId": "proof-fixture-executor",
+  "sourceContractSha256": "cb859f0bdf466d23493ab70f7b850f37eae6f60094973979d2d26e381fefb0c6",
+  "designSha256": "f0b16ac642540fcb646a9e4a4813e6e707f45dc92cb9dce4d040298caeccff63",
+  "takeoverFingerprint": "635351c5f32db63b5fae5e5747ec05cec7d284d57b9ca032770b765b776b5d73",
+  "createdAt": "2026-07-21T12:35:32.346Z"
+}

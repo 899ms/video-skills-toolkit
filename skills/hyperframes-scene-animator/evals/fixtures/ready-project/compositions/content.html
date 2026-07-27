@@ -1,0 +1,330 @@
+<template id="content-template">
+  <div
+    id="content"
+    class="content-canvas"
+    data-composition-id="content"
+    data-start="0"
+    data-duration="4"
+    data-width="1920"
+    data-height="1080"
+  >
+    <section
+      id="scene-evidence"
+      class="scene"
+      data-scene-id="scene-evidence"
+      data-layout-allow-overflow
+      data-transition-start="2.2"
+      data-transition-midpoint="anchored-evidence-handoff"
+      data-transition-midpoint-readable="true"
+    >
+      <div class="scene-content evidence-layout">
+        <header class="evidence-heading">
+          <span class="eyebrow">01 / SOURCE TRACE</span>
+          <div class="headline">证据从哪里来？</div>
+          <div class="dek">先连上来源，再谈结论。</div>
+        </header>
+        <div class="proof-flow" aria-label="Source routed into verified evidence">
+          <article id="source-record" class="source-record">
+            <span class="record-kind">LOCKED INPUT</span>
+            <strong>导演脚本.md</strong>
+            <code>sha256:f4da87e2…daf95</code>
+          </article>
+          <div
+            id="source-route"
+            class="route-line"
+            data-start-anchor="#source-record"
+            data-end-anchor="#verified-evidence"
+            data-job="prove-source-provenance"
+          >
+            <span class="route-node"></span>
+            <span class="route-arrow">→</span>
+          </div>
+          <article id="verified-evidence" class="verified-evidence">
+            <span class="evidence-index">EVIDENCE / A</span>
+            <strong>来源已校验</strong>
+            <span class="evidence-state">文本 · 哈希 · 时序一致</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="scene-validation"
+      class="scene"
+      data-scene-id="scene-validation"
+      data-layout-allow-overflow
+      data-transition-midpoint="anchored-evidence-handoff"
+      data-transition-midpoint-readable="true"
+    >
+      <div class="scene-content validation-layout">
+        <header class="validation-heading">
+          <span class="eyebrow">02 / VALIDATION LOCK</span>
+          <div class="headline">验证不是一个图标。</div>
+          <div class="dek">同一份证据进入校验槽，结果才能锁定。</div>
+        </header>
+        <div class="validation-machine" aria-label="Evidence validated and locked as passed">
+          <div id="validation-input-slot" class="validation-input-slot">
+            <span>INPUT / A</span>
+            <strong>f4da87e2</strong>
+          </div>
+          <div id="validation-rail" class="validation-rail">
+            <span class="rail-fill"></span>
+            <span class="rail-copy">HASH + TIMING + SOURCE</span>
+          </div>
+          <div id="validation-result" class="validation-result">
+            <span class="result-kicker">RESULT</span>
+            <strong id="validation-status">PASS</strong>
+            <span class="result-detail">3 / 3 CHECKS LOCKED</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      @font-face {
+        font-family: "Noto Sans SC";
+        src: url("assets/fonts/NotoSansSC-400.ttf") format("truetype");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Noto Sans SC";
+        src: url("assets/fonts/NotoSansSC-500.ttf") format("truetype");
+        font-weight: 500;
+      }
+      @font-face {
+        font-family: "Noto Sans SC";
+        src: url("assets/fonts/NotoSansSC-700.ttf") format("truetype");
+        font-weight: 700;
+      }
+      @font-face {
+        font-family: "Space Grotesk";
+        src: url("assets/fonts/SpaceGrotesk-400.ttf") format("truetype");
+        font-weight: 400;
+      }
+
+      #content {
+        position: absolute;
+        inset: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        color: #151922;
+        font-family: "Noto Sans SC", sans-serif;
+        background: transparent;
+      }
+      .scene {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: transparent;
+      }
+      .scene-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        padding: 96px 140px 220px;
+        gap: 54px;
+        box-sizing: border-box;
+      }
+      .eyebrow,
+      .record-kind,
+      .evidence-index,
+      .result-kicker,
+      .result-detail,
+      .validation-input-slot span,
+      .rail-copy {
+        font-family: "Space Grotesk", sans-serif;
+        letter-spacing: 0.13em;
+      }
+      .eyebrow {
+        color: #245bd4;
+        font-size: 20px;
+      }
+      .headline {
+        max-width: 1260px;
+        margin: 10px 0 8px;
+        font-size: 72px;
+        font-weight: 700;
+        line-height: 1.08;
+        letter-spacing: -0.035em;
+      }
+      .dek {
+        margin: 0;
+        color: #626771;
+        font-size: 30px;
+        line-height: 1.4;
+      }
+      .proof-flow {
+        display: grid;
+        grid-template-columns: 460px 320px 1fr;
+        align-items: stretch;
+        min-height: 250px;
+      }
+      .source-record {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 40px 44px;
+        border: 2px solid #b6bbb5;
+        border-radius: 26px;
+        background: rgba(247, 248, 243, 0.9);
+        box-shadow: 0 18px 48px rgba(21, 25, 34, 0.08);
+      }
+      .record-kind,
+      .evidence-index,
+      .result-kicker,
+      .result-detail,
+      .validation-input-slot span {
+        color: #626771;
+        font-size: 16px;
+      }
+      .source-record strong {
+        margin: 20px 0 16px;
+        font-size: 32px;
+      }
+      code {
+        color: #245bd4;
+        font-family: "Space Grotesk", monospace;
+        font-size: 18px;
+      }
+      .route-line {
+        position: relative;
+        align-self: center;
+        height: 4px;
+        margin: 0 34px;
+        transform-origin: left center;
+        background: #2f6fff;
+      }
+      .route-node {
+        position: absolute;
+        top: 50%;
+        left: -8px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        transform: translateY(-50%);
+        background: #2f6fff;
+      }
+      .route-arrow {
+        position: absolute;
+        top: 50%;
+        right: -4px;
+        color: #245bd4;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 38px;
+        transform: translate(50%, -54%);
+      }
+      .verified-evidence {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 38px 48px;
+        border: 3px solid #2f6fff;
+        border-radius: 26px;
+        background: #eef3ff;
+        box-shadow: 0 22px 60px rgba(47, 111, 255, 0.14);
+      }
+      .verified-evidence strong {
+        margin: 18px 0 12px;
+        font-size: 42px;
+      }
+      .evidence-state {
+        color: #445064;
+        font-size: 22px;
+      }
+      #scene-validation {
+        transform: translateX(1920px);
+      }
+      .validation-machine {
+        display: grid;
+        grid-template-columns: 330px 1fr 420px;
+        align-items: center;
+        min-height: 260px;
+        border-top: 2px solid #b6bbb5;
+        border-bottom: 2px solid #b6bbb5;
+        background: rgba(247, 248, 243, 0.72);
+      }
+      .validation-input-slot {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        padding: 0 44px;
+        border-right: 2px solid #b6bbb5;
+        box-sizing: border-box;
+      }
+      .validation-input-slot strong {
+        margin-top: 18px;
+        color: #245bd4;
+        font-family: "Space Grotesk", monospace;
+        font-size: 36px;
+      }
+      .validation-rail {
+        position: relative;
+        height: 10px;
+        margin: 0 64px;
+        overflow: visible;
+        background: #d9ddd8;
+      }
+      .rail-fill {
+        position: absolute;
+        inset: 0;
+        transform-origin: left center;
+        background: #2f6fff;
+      }
+      .rail-copy {
+        position: absolute;
+        top: 28px;
+        left: 0;
+        color: #626771;
+        font-size: 14px;
+      }
+      .validation-result {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        padding: 0 56px;
+        border-left: 2px solid #b6bbb5;
+        box-sizing: border-box;
+        background: #151922;
+        color: #f7f8f3;
+      }
+      .validation-result strong {
+        margin: 14px 0 10px;
+        color: #f6c466;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 76px;
+        line-height: 1;
+      }
+      .validation-result .result-kicker,
+      .validation-result .result-detail {
+        color: #b6bbb5;
+      }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.addLabel("source", 0)
+        .fromTo("#source-record", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.58, ease: "expo.out" }, 0.16)
+        .fromTo("#source-route", { scaleX: 0 }, { scaleX: 1, duration: 0.48, ease: "power2.inOut" }, 0.52)
+        .fromTo("#verified-evidence", { scale: 0.92, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.52, ease: "back.out(1.25)" }, 0.82)
+        .addLabel("readable-hold", 1.6)
+        .addLabel("evidence-handoff", 2.2)
+        .to("#scene-evidence", { x: -1920, duration: 0.4, ease: "power3.inOut" }, 2.2)
+        .fromTo("#scene-validation", { x: 1920 }, { x: 0, duration: 0.4, ease: "power3.inOut" }, 2.2)
+        .fromTo("#validation-input-slot", { clipPath: "inset(0 0 100% 0)" }, { clipPath: "inset(0 0 0% 0)", duration: 0.42, ease: "expo.out" }, 2.42)
+        .fromTo("#validation-rail .rail-fill", { scaleX: 0 }, { scaleX: 1, duration: 0.58, ease: "sine.inOut" }, 2.72)
+        .fromTo("#validation-result", { clipPath: "inset(0 0 0 100%)" }, { clipPath: "inset(0 0 0 0%)", duration: 0.46, ease: "power4.out" }, 3.02)
+        .fromTo("#validation-status", { scale: 0.84, color: "#b6bbb5" }, { scale: 1, color: "#f6c466", duration: 0.32, ease: "back.out(1.15)" }, 3.24)
+        .addLabel("final-hold", 3.56);
+      window.__timelines["content"] = tl;
+    </script>
+  </div>
+</template>

@@ -1,0 +1,25 @@
+[BrowserManager] Browser launched (HeadlessChrome/152.0.7928.2, screenshot, gl=--use-gl=angle --use-angle=swiftshader, headlessShell=true, platform=darwin)
+[initSession:screenshot] page.goto start (0ms)
+[HyperFrames] render runtime fps [object Object]
+[initSession:screenshot] page.goto complete (967ms)
+[initSession:screenshot] GSAP proxy flush complete (2363ms)
+[initSession:screenshot] pollHfReady complete (2364ms)
+[initSession:screenshot] pollSubCompositionTimelines complete (ready) (2365ms)
+[initSession:screenshot] applyVideoMetadataHints complete (2365ms)
+[initSession:screenshot] media + fonts + tailwind ready (2366ms)
+[initSession:screenshot] static-frame dedup: disabled (static-dedup frame analysis limit (1000000)) (2370ms)
+
+Animation map: 9/11 tweens (skipped 2 micro-tweens)
+  offscreen: 2
+Timeline (4.0s, each char ≈ 0.07s):
+  0s                                                    4s
+  ┼───────────────────────────────────────────────────────────┤
+     █████████                                                  #source-record clipPath
+          ████████                                              #source-route scaleX
+              █████████                                         #verified-evidence scale+opacity
+                                   ███████                      #scene-evidence x
+                                   ███████                      #scene-validation x
+                                      ████████                  #validation-input-slot clipPath
+                                           ██████████           span.rail-fill scaleX
+                                               ████████         #validation-result clipPath
+                                                   █████        #validation-status scale+color

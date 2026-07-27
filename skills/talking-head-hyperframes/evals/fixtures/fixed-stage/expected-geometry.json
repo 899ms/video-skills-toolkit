@@ -1,0 +1,50 @@
+{
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "grid": {
+    "nearY": -78,
+    "farY": 342,
+    "planeHeight": 420,
+    "rowStep": 62,
+    "rowSpeedPixelsPerSecond": 34,
+    "rowCount": 8,
+    "verticalCount": 23,
+    "verticalIndexMin": -11,
+    "verticalIndexMax": 11,
+    "rowProjection": {
+      "left": "-230 + t * 420",
+      "right": "2150 - t * 420"
+    },
+    "verticalProjection": {
+      "nearX": "960 + index * 154",
+      "farX": "960 + index * 76"
+    },
+    "bottomPlane": {
+      "mirror": "1080 - y",
+      "direction": "far-to-near"
+    }
+  },
+  "horizon": {
+    "top": 184,
+    "bottom": 184
+  },
+  "overlays": {
+    "captionBottom": 96,
+    "captionMaxWidth": 1680,
+    "pipSize": 206,
+    "pipRight": 104,
+    "pipBottom": 150,
+    "pipMediaSize": 190,
+    "pipMediaRight": 112,
+    "pipMediaBottom": 158,
+    "pipMediaZIndex": 89,
+    "pipFrameZIndex": 90,
+    "pipObjectPositionXPercent": 66.7,
+    "pipObjectPositionYPercent": 50,
+    "pipBackgroundOpaque": true,
+    "pipBackgroundBase": "#f2f6f8"
+  }
+}

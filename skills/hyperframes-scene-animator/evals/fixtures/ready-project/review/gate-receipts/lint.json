@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "lint",
+  "status": "PASS",
+  "command": [
+    "npx",
+    "--yes",
+    "hyperframes@0.7.65",
+    "lint"
+  ],
+  "commandSha256": "a86771a1a2386feaf366c99f21eef15bded3ab3e7ee7393dd7cbd76a3641b218",
+  "cliVersion": "0.7.65",
+  "exitCode": 0,
+  "signal": null,
+  "timedOut": false,
+  "projectFingerprint": "635351c5f32db63b5fae5e5747ec05cec7d284d57b9ca032770b765b776b5d73",
+  "log": "review/cli/lint.txt",
+  "logSha256": "f012c1188f27db0ad71985a5f9f8298b198b342741b84f5177bba5e0e11447e7",
+  "startedAt": "2026-07-27T06:51:13.243Z",
+  "finishedAt": "2026-07-27T06:51:15.030Z",
+  "artifacts": []
+}

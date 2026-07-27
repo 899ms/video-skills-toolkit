@@ -1,0 +1,7 @@
+{
+  "base": "valid-runtime-adaptation.json",
+  "mutation": {
+    "removeBeatMapping": "B03"
+  },
+  "expectedDiagnostic": "ADAPT_BEAT_COVERAGE"
+}

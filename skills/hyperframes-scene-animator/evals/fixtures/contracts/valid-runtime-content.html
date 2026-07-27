@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; }
+      #content { position: relative; width: 1920px; height: 1080px; }
+      .scene { position: absolute; inset: 0; }
+      #validation-rail, #source-route { display: block; width: 420px; height: 4px; transform-origin: left center; }
+    </style>
+  </head>
+  <body>
+    <div id="content" data-composition-id="content" data-width="1920" data-height="1080" data-start="0" data-duration="12">
+      <section id="scene-evidence" class="scene" data-scene-id="scene-evidence">
+        <article id="evidence-panel">Evidence</article>
+        <div id="source-route" data-start-anchor="#source" data-end-anchor="#verified-result-card" data-job="connect"></div>
+        <article id="verified-result-card">Verified result</article>
+      </section>
+      <section id="scene-validation" class="scene" data-scene-id="scene-validation">
+        <div id="validation-input-slot">Input</div>
+        <div id="validation-rail">Validation</div>
+      </section>
+      <video id="presenter-video" data-start="0" data-duration="12" muted src="assets/video/talking-head/presenter.mp4"></video>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true, defaults: { duration: 0.6, ease: "power2.out" } });
+      tl.addLabel("evidence", 0)
+        .fromTo("#evidence-panel", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)" }, "evidence")
+        .fromTo("#source-route", { scaleX: 0 }, { scaleX: 1 }, "evidence+=0.2")
+        .addLabel("hold", 4)
+        .addLabel("validation", 6.6)
+        .to("#scene-evidence", { x: -1920, duration: 0.6 }, "validation")
+        .fromTo("#scene-validation", { x: 1920 }, { x: 0, duration: 0.6 }, "validation")
+        .fromTo("#validation-rail", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)" }, "validation+=0.4");
+      window.__timelines["content"] = tl;
+    </script>
+  </body>
+</html>

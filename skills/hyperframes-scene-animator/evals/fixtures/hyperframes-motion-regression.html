@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; }
+      .scene { position: absolute; inset: 0; }
+      .floating-glow { animation: decorative-float 2s ease-in-out infinite; }
+      @keyframes decorative-float { 50% { transform: translateY(-12px); filter: drop-shadow(0 0 24px cyan); } }
+    </style>
+  </head>
+  <body>
+    <div id="content" data-composition-id="content" data-width="1920" data-height="1080" data-start="0" data-duration="8">
+      <section id="scene-a" class="scene" data-scene-id="scene-a" data-transition-start="4">
+        <h1 class="headline">Evidence</h1>
+        <article id="evidence-card">Unverified</article>
+        <svg class="decorative-line connector"><path d="M0,0 L400,0" /></svg>
+        <img class="generic-ai-decoration" src="assets/images/generated/generic-ai-chip.png" alt="generic AI chip" />
+        <div id="decorative-glow" class="floating-glow">Glow</div>
+      </section>
+      <section id="scene-b" class="scene" data-scene-id="scene-b" data-transition-midpoint-readable="false">
+        <h1 class="headline">Validation</h1>
+      </section>
+      <video id="presenter-video" data-start="0" data-duration="8" src="assets/video/talking-head/presenter.mp4"></video>
+    </div>
+    <script>
+      const seededWrongly = Math.random() + Date.now();
+      const enterStyle = { opacity: 0, y: 40 };
+      function universalCrossfade(outgoing, incoming, at) {
+        tl.to(outgoing, { opacity: 0 }, at).to(incoming, { opacity: 1 }, at);
+      }
+      const tl = gsap.timeline({ paused: false, repeat: -1 });
+      tl.fromTo("#scene-a .headline", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1 }, 0)
+        .fromTo("#scene-b .headline", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1 }, 4)
+        .to("#evidence-card", { opacity: 0, duration: 1 }, 1)
+        .to("#evidence-card", { opacity: 1, duration: 1 }, 1.2)
+        .to("#scene-a", { opacity: 0, duration: 0.4 }, 3.5)
+        .set(".scene", { opacity: 0 }, 4)
+        .to("#decorative-glow", { y: -12, boxShadow: "0 0 24px cyan", repeat: -1, yoyo: true }, 0)
+        .to("#presenter-video", { y: 30, autoAlpha: 0 }, 2);
+      const looseTimeline = gsap.timeline({ paused: true });
+      async function buildLateTimeline() {
+        await Promise.resolve();
+        setTimeout(() => gsap.timeline({ paused: true }), 0);
+      }
+      document.querySelector("#presenter-video").play();
+      document.querySelector("#presenter-video").currentTime = seededWrongly;
+      document.querySelector("#presenter-video").pause();
+    </script>
+  </body>
+</html>

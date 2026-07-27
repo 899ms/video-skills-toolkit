@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "id": "fixed-stage",
+  "status": "PASS",
+  "command": [
+    "node",
+    "scripts/check-fixed-stage.mjs",
+    "."
+  ],
+  "commandSha256": "43ecb4dff2c50e28b8b7be37398aaaa1185895da6bbd12d72023e07bd955d6ba",
+  "cliVersion": "project-local",
+  "exitCode": 0,
+  "signal": null,
+  "timedOut": false,
+  "projectFingerprint": "635351c5f32db63b5fae5e5747ec05cec7d284d57b9ca032770b765b776b5d73",
+  "log": "review/cli/fixed-stage.txt",
+  "logSha256": "41b60a41af0ad4ab8d99beba639e87c6b7207893bf0cc1f8e7a0fe5ccd72ad29",
+  "startedAt": "2026-07-27T06:50:59.499Z",
+  "finishedAt": "2026-07-27T06:50:59.602Z",
+  "artifacts": []
+}

@@ -1,0 +1,1 @@
+PASS /Users/bozhou/my/视频工程/video-skills-toolkit/skills/hyperframes-scene-animator/evals/fixtures/ready-project/inputs/motion-contract.json (hyperframes, 3 beats, full 30fps timeline)

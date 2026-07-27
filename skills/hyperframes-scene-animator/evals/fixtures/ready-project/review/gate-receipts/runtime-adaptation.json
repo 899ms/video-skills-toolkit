@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "id": "runtime-adaptation",
+  "status": "PASS",
+  "command": [
+    "node",
+    "scripts/validate-runtime-adaptation.mjs",
+    "runtime-adaptation.json",
+    "inputs/motion-contract.json",
+    "--html",
+    "compositions/content.html"
+  ],
+  "commandSha256": "a8d94876a0b65ac2165854cf4133abaa46583f2f44b9a2c0102dd74c88ae3251",
+  "cliVersion": "project-local",
+  "exitCode": 0,
+  "signal": null,
+  "timedOut": false,
+  "projectFingerprint": "635351c5f32db63b5fae5e5747ec05cec7d284d57b9ca032770b765b776b5d73",
+  "log": "review/cli/runtime-adaptation.txt",
+  "logSha256": "0248f09c5ead99a7a49e714c2067bb72e849b29233c6f06815a8c026b56a6618",
+  "startedAt": "2026-07-27T06:50:59.706Z",
+  "finishedAt": "2026-07-27T06:50:59.733Z",
+  "artifacts": []
+}

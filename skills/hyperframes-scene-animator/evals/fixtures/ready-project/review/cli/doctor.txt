@@ -1,0 +1,25 @@
+
+hyperframes doctor
+
+  ✗ Version          0.7.65 → 0.7.76 available
+                     Run: hyperframes upgrade
+  ✓ Node.js          v23.11.0 (darwin arm64)
+  ✓ CPU              15 cores · Apple M5 Pro @ 2400MHz
+  ✓ Memory           24.0 GB total · 4.5 GB available
+  ✓ Disk             1255.3 GB free
+  ✓ Frames cache     /var/folders/zp/dlpc0l294vg84z74cnx04lnm0000gn/T/hyperframes-extract-cache-501 · 1255.3 GB free at /var/folders/zp/dlpc0l294vg84z74cnx04lnm0000gn/T/hyperframes-extract-cache-501 · default
+  ✓ Archive extractor unzip
+  ✓ Environment      non-TTY
+  ✗ whisper-cpp      Not found (optional — needed for transcription)
+                     brew install whisper-cpp
+  ✗ TTS (Kokoro)     Not installed (optional — local voice fallback)
+                     pip install kokoro-onnx soundfile
+  ✓ BGM (MusicGen)   MusicGen deps installed
+  ✓ FFmpeg           ffmpeg 8.1.1 at /opt/homebrew/bin/ffmpeg
+  ✓ FFprobe          ffprobe 8.1.1 at /opt/homebrew/bin/ffprobe
+  ✓ Chrome           cache: /Users/bozhou/.cache/hyperframes/chrome/chrome-headless-shell/mac_arm-152.0.7928.2/chrome-headless-shell-mac-arm64/chrome-headless-shell
+  ✓ Docker           Docker version 28.0.4, build b8034c0ed7
+  ✓ Docker running   Running
+
+  ◇  Some checks failed — see hints above
+

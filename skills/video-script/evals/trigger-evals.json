@@ -1,0 +1,22 @@
+[
+  {"query": "最终音频和校准字幕已锁定，根据同版定稿做完整分镜，配 B-roll、花字和音效策略。", "should_trigger": true},
+  {"query": "口播最终音频和时间码字幕已锁定，每个 beat 应该放什么画面？", "should_trigger": true},
+  {"query": "成稿、最终音频和对齐字幕版本一致，把它整理成管线无关的视频导演稿。", "should_trigger": true},
+  {"query": "最终旁白和时间码字幕已锁定，设计录屏、截图和图形动画，后续用 Remotion。", "should_trigger": true},
+  {"query": "逐字稿、最终音频和校准字幕已锁定，继续做 ChatCut 前的通用分镜。", "should_trigger": true},
+  {"query": "一分钟真人口播的最终音频和校准字幕已锁定，只帮我规划剪辑和少量 B-roll。", "should_trigger": true},
+  {"query": "最终音频和对齐字幕已锁定，上一版导演方案像 PPT，请重新设计全片视觉母题和 beat graph，不直接改代码。", "should_trigger": true},
+  {"query": "最终声音与对齐字幕已锁定，先给同版定稿做三个不同导演方向，我选完再展开。", "should_trigger": true},
+  {"query": "最终音频和校准字幕已锁定，帮我确定这条技术口播的贯穿物、证据系统和镜头接力。", "should_trigger": true},
+  {"query": "这条爆款结构逐字稿、最终音频和对齐字幕已锁定，请做分镜，让第一眼、证据递进和结尾兑现继续服务完播。", "should_trigger": true},
+  {"query": "把这个 AI 选题写成 90 秒逐字稿。", "should_trigger": false},
+  {"query": "这篇口播不顺，整篇重写并审查衔接。", "should_trigger": false},
+  {"query": "从 video.mp4 提取逐字稿和 SRT。", "should_trigger": false},
+  {"query": "只优化前五秒，给三个更抓人的开头。", "should_trigger": false},
+  {"query": "给这个选题三个视频角度和提案，不写正文。", "should_trigger": false},
+  {"query": "MG-S03 已定稿，直接在 ChatCut 创建并放到 V3。", "should_trigger": false},
+  {"query": "用 Remotion 实现现有分镜并渲染。", "should_trigger": false},
+  {"query": "把旁白生成我的声音。", "should_trigger": false},
+  {"query": "审查这段 GSAP 动画为什么掉帧并直接修代码。", "should_trigger": false},
+  {"query": "只分析这份逐字稿的爆款公式和开头钩子，帮我改稿，还没有最终音频和字幕。", "should_trigger": false}
+]

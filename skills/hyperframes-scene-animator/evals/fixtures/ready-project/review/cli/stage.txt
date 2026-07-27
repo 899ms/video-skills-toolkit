@@ -1,0 +1,1 @@
+PASS fixed-stage parity at 0s, 4s, and 9s (SSIM >= 0.995)

@@ -1,10 +1,15 @@
 # Skills
 
-| Skill | Purpose |
+This directory contains the seven current workflow packages. Keep them as sibling directories because several handoffs and validation commands intentionally resolve adjacent skills.
+
+| Skill | Stage |
 |---|---|
-| `talking-head-remotion` | Build reusable Remotion projects for talking-head explainer videos. |
-| `sketch-story-remotion` | Build hand-drawn story videos for the "小白学 AI" series. |
-| `audio-to-subtitles` | Convert audio/video to SRT, VTT, and JSON subtitle data. |
+| `viral-video-benchmark` | Benchmark discovery, scoring, evidence, analysis, archive |
+| `minimax-voice-director` | Voice direction, approval, generation, take selection |
+| `audio-to-subtitles` | Final-audio ASR and aligned subtitle delivery |
+| `video-script` | Director treatment, Beat Graph, production contract |
+| `talking-head-hyperframes` | HyperFrames fixed-stage template factory |
+| `hyperframes-scene-animator` | HyperFrames scene execution and proof review |
+| `douyin-cover` | Short-video cover diagnosis and generation |
 
-Each skill keeps its own `SKILL.md`, scripts, templates, and references.
-
+Each package owns its `SKILL.md`, references, scripts, assets, evals, and tests. Read the package's `SKILL.md` before invoking its scripts directly.

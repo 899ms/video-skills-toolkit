@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "id": "media",
+  "status": "PASS",
+  "command": [
+    "node",
+    "scripts/analyze-preview.mjs",
+    "--input",
+    "renders/internal-preview-v1.mp4",
+    "--output",
+    "review/media-analysis-v1.json"
+  ],
+  "commandSha256": "32bdb9b45fe8f1192be2ae17d7c821888180a5e522f28c741b5a37c7cf5eae67",
+  "cliVersion": "project-local",
+  "exitCode": 0,
+  "signal": null,
+  "timedOut": false,
+  "projectFingerprint": "635351c5f32db63b5fae5e5747ec05cec7d284d57b9ca032770b765b776b5d73",
+  "log": "review/cli/media.txt",
+  "logSha256": "0f99c1fddc299cef7429655697f220dcabb911ca73bd2bd2604a994c1d902f92",
+  "startedAt": "2026-07-27T06:52:16.375Z",
+  "finishedAt": "2026-07-27T06:52:16.549Z",
+  "artifacts": [
+    {
+      "path": "review/media-analysis-v1.json",
+      "sha256": "3d35c01acd51733fb086d601383ce0be4d98aa4cb9db8fb8a1a8174576766f91",
+      "bytes": 1885
+    },
+    {
+      "path": "review/media/audio-first-region.txt",
+      "sha256": "2cb16ab10bf134b81389ac4a1a08f157bc72cfdf48464e19989ab6d31d543b0f",
+      "bytes": 1829
+    },
+    {
+      "path": "review/media/audio-last-region.txt",
+      "sha256": "e6363438d062f307c53e44807567a3d4c387378f2d944009085742b983785f5f",
+      "bytes": 1829
+    },
+    {
+      "path": "review/media/black-tail.txt",
+      "sha256": "c1232f4fdd74c432a9abab691a3f945ea99f2c218dce043b0c93cd631913300c",
+      "bytes": 1602
+    },
+    {
+      "path": "review/media/ffprobe.json",
+      "sha256": "e132445c51b23244ada48274e0e8e82e93f2104489bc7ae90baf586a0d2ed589",
+      "bytes": 320
+    },
+    {
+      "path": "review/media/full-watch-decode.txt",
+      "sha256": "174bc374a1099893ee326ef670f8636cbe5af2d2195dc4b93d10aba7ec33cd25",
+      "bytes": 1844
+    },
+    {
+      "path": "review/media/silent-tail.txt",
+      "sha256": "08928479e97e0ca63114df26f0ebcbc616519b4f5abe415b835f324c65076101",
+      "bytes": 1498
+    }
+  ]
+}

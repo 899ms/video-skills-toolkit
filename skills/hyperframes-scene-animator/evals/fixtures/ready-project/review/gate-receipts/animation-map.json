@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "id": "animation-map",
+  "status": "PASS",
+  "command": [
+    "node",
+    "scripts/build-animation-map.mjs"
+  ],
+  "commandSha256": "2d6ec70c84112313c8e9d2de192209513090ffb61213ac90afc86a348e466a15",
+  "cliVersion": "project-local",
+  "exitCode": 0,
+  "signal": null,
+  "timedOut": false,
+  "projectFingerprint": "635351c5f32db63b5fae5e5747ec05cec7d284d57b9ca032770b765b776b5d73",
+  "log": "review/cli/animation-map.txt",
+  "logSha256": "b4da6a8e5d7093671faadf25d1f92864677676c0d40e167ae9c0cc790d76f635",
+  "startedAt": "2026-07-27T06:51:57.596Z",
+  "finishedAt": "2026-07-27T06:52:08.878Z",
+  "artifacts": [
+    {
+      "path": "review/animation-map-v1/animation-map.json",
+      "sha256": "948d61aa6de2e9fc7af6288275514e56fbf76029ea9f5b0dad8404d8beac734c",
+      "bytes": 40292
+    }
+  ]
+}

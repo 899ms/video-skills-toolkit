@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "id": "inputs",
+  "status": "PASS",
+  "command": [
+    "node",
+    "scripts/check-inputs.mjs",
+    "."
+  ],
+  "commandSha256": "1a139343018b9a0698a1c15be319a724deefd1dd51e1473f1414f2d696a218ec",
+  "cliVersion": "project-local",
+  "exitCode": 0,
+  "signal": null,
+  "timedOut": false,
+  "projectFingerprint": "635351c5f32db63b5fae5e5747ec05cec7d284d57b9ca032770b765b776b5d73",
+  "log": "review/cli/inputs.txt",
+  "logSha256": "ecd42d6c63e373d20b853f1fc21a84e51c9fca0890be687d43f0438c72eb42f8",
+  "startedAt": "2026-07-27T06:50:59.367Z",
+  "finishedAt": "2026-07-27T06:50:59.459Z",
+  "artifacts": []
+}

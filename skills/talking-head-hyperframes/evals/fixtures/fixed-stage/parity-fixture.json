@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "goldenAuthority": "User-directed HyperFrames narrow-center-grid fixed stage rendered without content, captions, or PIP",
+  "goldenStatus": "generated after the explicit requirement that the top and bottom center-column grid remain visible while the horizontal middle band stays unchanged",
+  "timestampsSeconds": [0, 4, 9],
+  "goldens": [
+    {
+      "atSeconds": 0,
+      "path": "../../../assets/golden-backgrounds/narrow-center-grid-t000.png",
+      "sha256": "0d480d93f1e4fad0ad1f8526eddbce5a77a940157485a4b329ec0cf52719a0cf"
+    },
+    {
+      "atSeconds": 4,
+      "path": "../../../assets/golden-backgrounds/narrow-center-grid-t004.png",
+      "sha256": "69acc380bf992fd351a4cedd952b94a79e4f124f96bb4041d88edd78e8da98ed"
+    },
+    {
+      "atSeconds": 9,
+      "path": "../../../assets/golden-backgrounds/narrow-center-grid-t009.png",
+      "sha256": "388e9390d09d44cd56ebb5a55b56dc5dbc92b061a88efcc550d2a855f65fc18a"
+    }
+  ],
+  "comparisonColorSpace": "yuv420p",
+  "minimumSsim": 0.995,
+  "candidate": "HyperFrames narrow-center-grid studio-fixed-stage snapshot with visually empty content and caption mounts",
+  "excludedLayers": [
+    "TopBar",
+    "project content",
+    "cards",
+    "captions",
+    "PIP"
+  ]
+}

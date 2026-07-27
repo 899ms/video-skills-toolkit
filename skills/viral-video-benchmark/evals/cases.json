@@ -1,0 +1,91 @@
+[
+  {
+    "name": "ordinary_account_anomaly_without_breakout",
+    "input": {
+      "schema_version": 1,
+      "platform": "douyin",
+      "followers_raw": "100万",
+      "target": {"post_id": "ordinary", "likes_raw": "30000"},
+      "recent_posts": [
+        {"post_id": "o1", "likes_raw": "100"}, {"post_id": "o2", "likes_raw": "100"},
+        {"post_id": "o3", "likes_raw": "100"}, {"post_id": "o4", "likes_raw": "100"},
+        {"post_id": "o5", "likes_raw": "100"}, {"post_id": "o6", "likes_raw": "100"},
+        {"post_id": "o7", "likes_raw": "100"}, {"post_id": "o8", "likes_raw": "100"},
+        {"post_id": "o9", "likes_raw": "100"}, {"post_id": "o10", "likes_raw": "100"}
+      ]
+    },
+    "expected": {"grade": "普通", "deep_process": false, "requires_confirmation": false}
+  },
+  {
+    "name": "small_hit",
+    "input": {
+      "schema_version": 1,
+      "platform": "douyin",
+      "followers_raw": "10万",
+      "target": {"post_id": "small", "likes_raw": "10000"},
+      "recent_posts": [
+        {"post_id": "s1", "likes_raw": "4000"}, {"post_id": "s2", "likes_raw": "4000"},
+        {"post_id": "s3", "likes_raw": "4000"}, {"post_id": "s4", "likes_raw": "4000"},
+        {"post_id": "s5", "likes_raw": "4000"}, {"post_id": "s6", "likes_raw": "4000"},
+        {"post_id": "s7", "likes_raw": "4000"}, {"post_id": "s8", "likes_raw": "4000"},
+        {"post_id": "s9", "likes_raw": "4000"}, {"post_id": "s10", "likes_raw": "4000"}
+      ]
+    },
+    "expected": {"grade": "小爆", "deep_process": false, "requires_confirmation": false}
+  },
+  {
+    "name": "breakout",
+    "input": {
+      "schema_version": 1,
+      "platform": "douyin",
+      "followers_raw": "10万",
+      "target": {"post_id": "breakout", "likes_raw": "16000"},
+      "recent_posts": [
+        {"post_id": "b1", "likes_raw": "1000"}, {"post_id": "b2", "likes_raw": "1000"},
+        {"post_id": "b3", "likes_raw": "1000"}, {"post_id": "b4", "likes_raw": "1000"},
+        {"post_id": "b5", "likes_raw": "1000"}, {"post_id": "b6", "likes_raw": "1000"},
+        {"post_id": "b7", "likes_raw": "1000"}, {"post_id": "b8", "likes_raw": "1000"},
+        {"post_id": "b9", "likes_raw": "1000"}, {"post_id": "b10", "likes_raw": "1000"}
+      ]
+    },
+    "expected": {"grade": "爆款", "deep_process": true, "requires_confirmation": false}
+  },
+  {
+    "name": "phenomenon",
+    "input": {
+      "schema_version": 1,
+      "platform": "xhs",
+      "followers_raw": "1万",
+      "target": {"post_id": "phenomenon", "likes_raw": "1万", "collects_raw": "1万"},
+      "recent_posts": [
+        {"post_id": "p1", "likes_raw": "500", "collects_raw": "500"},
+        {"post_id": "p2", "likes_raw": "500", "collects_raw": "500"},
+        {"post_id": "p3", "likes_raw": "500", "collects_raw": "500"},
+        {"post_id": "p4", "likes_raw": "500", "collects_raw": "500"},
+        {"post_id": "p5", "likes_raw": "500", "collects_raw": "500"},
+        {"post_id": "p6", "likes_raw": "500", "collects_raw": "500"},
+        {"post_id": "p7", "likes_raw": "500", "collects_raw": "500"},
+        {"post_id": "p8", "likes_raw": "500", "collects_raw": "500"},
+        {"post_id": "p9", "likes_raw": "500", "collects_raw": "500"},
+        {"post_id": "p10", "likes_raw": "500", "collects_raw": "500"}
+      ]
+    },
+    "expected": {"grade": "现象级", "deep_process": true, "requires_confirmation": false}
+  },
+  {
+    "name": "low_confidence_requires_confirmation",
+    "input": {
+      "schema_version": 1,
+      "platform": "douyin",
+      "followers_raw": "1万",
+      "target": {"post_id": "low-confidence", "likes_raw": "5000"},
+      "recent_posts": [
+        {"post_id": "l1", "likes_raw": "500"}, {"post_id": "l2", "likes_raw": "500"},
+        {"post_id": "l3", "likes_raw": "500"}, {"post_id": "l4", "likes_raw": "500"},
+        {"post_id": "l5", "likes_raw": "500"}, {"post_id": "l6", "likes_raw": "500"},
+        {"post_id": "l7", "likes_raw": "500"}
+      ]
+    },
+    "expected": {"grade": "现象级", "deep_process": false, "requires_confirmation": true}
+  }
+]

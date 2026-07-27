@@ -22,13 +22,13 @@ For media inputs:
 
 For local video-engine projects:
 
-1. If the media belongs to a `talking-head-remotion` project under `<VIDEO_WORKSPACE>`, save subtitles under that project's `work/captions/`.
+1. If the media belongs to a `talking-head-hyperframes` project under `<VIDEO_WORKSPACE>`, save subtitles under that project's `work/captions/`.
 2. Use `captions.srt` and `captions.vtt` as the main cleaned files, keep raw ASR backups as `captions.raw.srt` and `captions.raw.vtt`, and keep the MediaKit payload as `asr-result.json`.
-3. Also write `captions_aligned.json` parsed from the cleaned SRT so Remotion work can sync `src/demoData.ts`.
-4. Current project default for 《两个提示词让 AI 少返工》:
+3. Also write `captions_aligned.json` parsed from the cleaned SRT so `video-script`, `talking-head-hyperframes`, and `hyperframes-scene-animator` share the same locked timeline.
+4. The project-local output convention is:
 
 ```text
-<VIDEO_WORKSPACE>/your-talking-head-project/work/captions
+<VIDEO_WORKSPACE>/<project>/work/captions
 ```
 
 For text inputs:
@@ -40,7 +40,8 @@ For text inputs:
 ## CLI
 
 ```bash
-SKILL_DIR="./skills/audio-to-subtitles"
+# Set this to the directory containing this installed skill (not the current working directory).
+SKILL_DIR="<SKILL_ROOT>/audio-to-subtitles"
 
 # Local audio/video: upload to R2, then transcribe
 npx -y bun "$SKILL_DIR/scripts/main.ts" audio.mp3 --language zh-CN --out-dir subtitles
@@ -154,4 +155,4 @@ Required for local-file uploads:
 - Supported API languages are currently Simplified Chinese and English.
 - Single media duration should not exceed the AI MediaKit limit of 3 hours.
 - Do not print API keys or commit real `.env.r2` values.
-- Do not leave finished video subtitles only in `<NOTES_VAULT>`; for Remotion video work, copy or write them into the matching `<VIDEO_WORKSPACE>/<project>/work/captions/` directory.
+- Do not leave finished video subtitles outside the video project. Copy or write them into the matching `<VIDEO_WORKSPACE>/<project>/work/captions/` directory.

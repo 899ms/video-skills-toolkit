@@ -1,0 +1,254 @@
+{
+  "version": 1,
+  "sourceContract": {
+    "path": "valid-legacy-remotion.json",
+    "sha256": "b184b88f616aab50cd7ca9d6fb477fde9a7072eb39ec1c44fca9369a5d3d5806",
+    "pipeline": "remotion",
+    "preservedVerbatim": true
+  },
+  "design": {
+    "path": "DESIGN.md",
+    "sha256": "ffdc5d887351b6058b9ea568dc8bcbdb72b41c46290c4b2caeae2f0bc4a93e12"
+  },
+  "runtime": {
+    "engine": "gsap",
+    "compositionId": "content",
+    "masterTimeline": {
+      "synchronous": true,
+      "paused": true,
+      "registeredKey": "content",
+      "labels": ["evidence", "hold", "validation"]
+    },
+    "visibilityPolicy": "opacity-clip-transform-only",
+    "frameworkOwnsClipLifecycle": true,
+    "mediaPolicy": {
+      "frameworkOwnedPlayback": true,
+      "timedVideoMotionTarget": "wrapper"
+    }
+  },
+  "fixedBoundary": {
+    "contentOwned": [
+      "compositions/content.html",
+      "compositions/scenes/**",
+      "runtime-adaptation.json",
+      "STORYBOARD.md",
+      "SCENE_SCHEMA.json",
+      "VECTOR_TEMPLATES.json",
+      "MOTION_PRIMITIVES.json",
+      "MOTION_MAP.json",
+      "assets/images/**",
+      "assets/audio/music/**",
+      "assets/audio/sfx/**",
+      "snapshots/acceptance/**",
+      "snapshots/transitions/**",
+      "review/executor-*.md",
+      "renders/internal-preview-*.mp4"
+    ],
+    "protected": [
+      "DESIGN.md",
+      "manifest.json",
+      "inputs/**",
+      "index.html",
+      "styles.css",
+      "compositions/studio-background.html",
+      "compositions/caption-overlay.html",
+      "compositions/pip-overlay.html",
+      "assets/video/talking-head/**",
+      "assets/audio/voice/**"
+    ]
+  },
+  "continuousMotionPolicy": {
+    "defaultAllowlist": ["studio-background"],
+    "contractOverrides": []
+  },
+  "scenes": [
+    {
+      "sceneId": "scene-evidence",
+      "beatIds": ["B01", "B02"],
+      "entrance": {
+        "id": "reveal-evidence-through-source-aperture",
+        "semanticReason": "The source aperture opens to establish where the evidence came from.",
+        "selectors": ["#evidence-panel", "#source-route"],
+        "properties": ["clipPath", "scaleX"],
+        "startSeconds": 0,
+        "endSeconds": 0.8,
+        "sharedHelper": false
+      },
+      "transitionOut": {
+        "transitionId": "evidence-card-locks-into-validation",
+        "kind": "anchored-card-lock",
+        "semanticReason": "The verified card becomes the input slot of the validation scene.",
+        "toSceneId": "scene-validation",
+        "startSeconds": 6.6,
+        "endSeconds": 7.2,
+        "midpointSeconds": 6.8,
+        "midpointReadable": true,
+        "emptyReset": false,
+        "outgoingPreFade": false,
+        "anchors": {
+          "start": "#verified-result-card",
+          "end": "#validation-input-slot"
+        },
+        "properties": ["x", "clipPath"]
+      }
+    },
+    {
+      "sceneId": "scene-validation",
+      "beatIds": ["B03"],
+      "entrance": {
+        "id": "seat-card-and-reveal-validation-rail",
+        "semanticReason": "The incoming evidence seats into the validator before the pass state resolves.",
+        "selectors": ["#validation-input-slot", "#validation-rail"],
+        "properties": ["x", "clipPath"],
+        "startSeconds": 6.6,
+        "endSeconds": 7.4,
+        "sharedHelper": false
+      },
+      "transitionOut": null
+    }
+  ],
+  "beatMappings": [
+    {
+      "beatId": "B01",
+      "sceneId": "scene-evidence",
+      "stateId": "evidence-connected",
+      "kind": "scene-state",
+      "entersScene": true,
+      "replaysEntrance": false,
+      "primaryMotionId": "connect-source-to-result",
+      "supportMotionId": null,
+      "continuousMotions": []
+    },
+    {
+      "beatId": "B02",
+      "sceneId": "scene-evidence",
+      "stateId": "evidence-readable-hold",
+      "kind": "readable-hold",
+      "entersScene": false,
+      "replaysEntrance": false,
+      "primaryMotionId": null,
+      "supportMotionId": null,
+      "continuousMotions": [],
+      "readableHold": {
+        "startSeconds": 4,
+        "endSeconds": 6.5,
+        "static": true
+      }
+    },
+    {
+      "beatId": "B03",
+      "sceneId": "scene-validation",
+      "stateId": "validation-passed",
+      "kind": "scene-state",
+      "entersScene": true,
+      "replaysEntrance": false,
+      "primaryMotionId": "validate-and-lock-result",
+      "supportMotionId": null,
+      "continuousMotions": []
+    }
+  ],
+  "handoffMappings": [
+    {
+      "fromBeatId": "B01",
+      "toBeatId": "B02",
+      "type": "state-continuity",
+      "sceneId": "scene-evidence",
+      "object": "verified result card",
+      "midpointSeconds": 3.8,
+      "midpointAssertion": "The verified result stays visible as the reading hold begins.",
+      "anchored": true,
+      "startAnchor": "#verified-result-card",
+      "endAnchor": "#verified-result-card"
+    },
+    {
+      "fromBeatId": "B02",
+      "toBeatId": "B03",
+      "type": "scene-transition",
+      "transitionId": "evidence-card-locks-into-validation",
+      "object": "verified result card",
+      "midpointSeconds": 6.8,
+      "midpointAssertion": "The result card becomes the anchored input to validation.",
+      "anchored": true,
+      "startAnchor": "#verified-result-card",
+      "endAnchor": "#validation-input-slot"
+    }
+  ],
+  "acceptanceMappings": [
+    {
+      "beatId": "B01",
+      "sourceAtSeconds": 0,
+      "sourceRole": "start",
+      "snapshotId": "b01-start",
+      "path": "snapshots/acceptance/b01-start.png",
+      "assertions": ["The source is visible without the result connection."]
+    },
+    {
+      "beatId": "B01",
+      "sourceAtSeconds": 2.8,
+      "sourceRole": "state_complete",
+      "snapshotId": "b01-state-complete",
+      "path": "snapshots/acceptance/b01-state-complete.png",
+      "assertions": ["The source and result are visibly connected."]
+    },
+    {
+      "beatId": "B01",
+      "sourceAtSeconds": 3.8,
+      "sourceRole": "transition_midpoint",
+      "snapshotId": "b01-transition-midpoint",
+      "path": "snapshots/acceptance/b01-transition-midpoint.png",
+      "assertions": ["The verified result remains readable."]
+    },
+    {
+      "beatId": "B02",
+      "sourceAtSeconds": 4,
+      "sourceRole": "start",
+      "snapshotId": "b02-start",
+      "path": "snapshots/acceptance/b02-start.png",
+      "assertions": ["The established evidence is already visible."]
+    },
+    {
+      "beatId": "B02",
+      "sourceAtSeconds": 5.5,
+      "sourceRole": "readable_hold",
+      "snapshotId": "b02-readable-hold",
+      "path": "snapshots/acceptance/b02-readable-hold.png",
+      "assertions": ["The evidence is static and unobstructed."]
+    },
+    {
+      "beatId": "B02",
+      "sourceAtSeconds": 6.8,
+      "sourceRole": "transition_midpoint",
+      "snapshotId": "b02-transition-midpoint",
+      "path": "snapshots/acceptance/b02-transition-midpoint.png",
+      "assertions": ["The evidence remains the subject of the handoff."]
+    },
+    {
+      "beatId": "B03",
+      "sourceAtSeconds": 7,
+      "sourceRole": "start",
+      "snapshotId": "b03-start",
+      "path": "snapshots/acceptance/b03-start.png",
+      "assertions": ["The validation is visibly pending."]
+    },
+    {
+      "beatId": "B03",
+      "sourceAtSeconds": 9.4,
+      "sourceRole": "state_complete",
+      "snapshotId": "b03-state-complete",
+      "path": "snapshots/acceptance/b03-state-complete.png",
+      "assertions": ["The passed validation and source evidence are both visible."]
+    }
+  ],
+  "derivedContracts": {
+    "choreographyComplexity": "complex",
+    "sourceContractSha256": "b184b88f616aab50cd7ca9d6fb477fde9a7072eb39ec1c44fca9369a5d3d5806",
+    "designSha256": "ffdc5d887351b6058b9ea568dc8bcbdb72b41c46290c4b2caeae2f0bc4a93e12",
+    "artifacts": {
+      "storyboard": "STORYBOARD.md",
+      "sceneSchema": "SCENE_SCHEMA.json",
+      "vectorTemplates": "VECTOR_TEMPLATES.json",
+      "motionPrimitives": "MOTION_PRIMITIVES.json",
+      "motionMap": "MOTION_MAP.json"
+    }
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "skill_name": "video-script",
+  "evals": [
+    {
+      "id": 1,
+      "name": "pipeline-neutral-director-script",
+      "prompt": "附件是同一版已锁定的技术口播逐字稿、最终完整音频、主字幕和校准字幕。先核对实物再根据原文设计一份视频导演稿，我没有指定制作软件，也不要改正文。",
+      "expected_output": "输出管线无关的导演契约与 Beat Graph，逐镜准确引用同一版逐字稿，不改正文，不默认选择 ChatCut、Remotion 或 HyperFrames。",
+      "files": [
+        "<VIDEO_WORKSPACE>/j-space-explained/work/source/J-space 是什么·视频逐字稿.md",
+        "<VIDEO_WORKSPACE>/j-space-explained/public/assets/audio/voice.m4a",
+        "<VIDEO_WORKSPACE>/j-space-explained/work/captions/captions.srt",
+        "<VIDEO_WORKSPACE>/j-space-explained/work/captions/captions_aligned.json"
+      ],
+      "expectations": [
+        "记录逐字稿来源或版本并保持逐镜引用一致",
+        "明确一句话观看记忆、视觉命题、贯穿物、证据系统、节奏曲线和有限运动语法",
+        "每个 beat 有具体主承载物、开始状态、结束状态、事件或静止理由以及下一 beat 接力",
+        "真实可证明内容使用界面、录屏、截图、数字或案例，没有被通用隐喻替代",
+        "没有逐字稿改写建议或暗中重排正文",
+        "没有默认 pipeline、MG 工单、组件代码或平台属性"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "explicit-remotion-branch",
+      "prompt": "附件是同一版已锁定的逐字稿、最终完整音频、主字幕和校准字幕。先核对实物，再设计完整视频导演稿，后续用 Remotion 制作。现在不要写代码，也不要改文案。",
+      "expected_output": "核心导演契约保持通用，只追加最少必要的 Remotion 应用说明；不写实现代码。",
+      "files": [
+        "<VIDEO_WORKSPACE>/j-space-explained/work/source/J-space 是什么·视频逐字稿.md",
+        "<VIDEO_WORKSPACE>/j-space-explained/public/assets/audio/voice.m4a",
+        "<VIDEO_WORKSPACE>/j-space-explained/work/captions/captions.srt",
+        "<VIDEO_WORKSPACE>/j-space-explained/work/captions/captions_aligned.json"
+      ],
+      "expectations": [
+        "核心导演契约和 Beat Graph 使用管线无关的画面语言",
+        "Remotion 约束只出现在应用分支或附录",
+        "明确下游不得静默改变视觉命题、贯穿物、证据顺序和 beat 接力",
+        "没有 ChatCut 专属属性、逐 MG 工单或 JSX",
+        "没有改写逐字稿"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "upstream-copy-blocker",
+      "prompt": "请把下面这段稿子直接做成分镜：‘它负责一路推到成片。所以，价格是每百万 Token 输入五美元。再说两个最容易混的词。’",
+      "expected_output": "识别相邻句存在上游逐字稿阻塞，引用断裂位置并转到当前可用的逐字稿修订流程；若无专用 Skill 就明确告知用户先修稿。除非用户明确要求原样使用，否则不继续用画面掩盖问题。",
+      "files": [],
+      "expectations": [
+        "明确引用成片、价格和模式之间的断裂",
+        "把问题标为上游逐字稿阻塞而不是剪辑问题",
+        "路由到当前可用的逐字稿修订流程，或明确说明未安装专用 Skill 时的上游处理",
+        "没有自行顺手改几句后继续出导演稿"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "claimed-lock-without-files",
+      "prompt": "最终音频和字幕都锁定了，直接帮我做完整导演稿吧。",
+      "expected_output": "由于没有提供可核对的逐字稿、完整音频、主字幕和校准字幕实物，停在输入门禁并请求路径/附件，不生成正式导演稿。",
+      "files": [],
+      "expectations": [
+        "不因用户口头说已锁定就跳过实物校验",
+        "明确列出需要的四类文件及版本/时长/hash 信息",
+        "没有伪造时间码、Beat Graph 或导演契约"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "open-direction-gate",
+      "prompt": "附件是同一版已锁定的 J-space 长口播逐字稿、最终完整音频、主字幕和校准字幕。后续会完整制作，但我还没想好做成真实证据主导、真人讲解还是动效片。先帮我做导演方案。",
+      "expected_output": "先输出 2–3 个在叙事载体、视觉世界、证据方式或节奏上真正不同的方向卡，推荐一个并停下等待确认。",
+      "files": [
+        "<VIDEO_WORKSPACE>/j-space-explained/work/source/J-space 是什么·视频逐字稿.md",
+        "<VIDEO_WORKSPACE>/j-space-explained/public/assets/audio/voice.m4a",
+        "<VIDEO_WORKSPACE>/j-space-explained/work/captions/captions.srt",
+        "<VIDEO_WORKSPACE>/j-space-explained/work/captions/captions_aligned.json"
+      ],
+      "expectations": [
+        "给出 2–3 个不是换配色的不同导演方向",
+        "每个方向含观看记忆、视觉命题、贯穿物、证据方式、节奏形状、代表镜头和风险",
+        "明确推荐方向并说明淘汰理由",
+        "没有在方向确认前展开完整分镜、生成资产或写实现代码"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "motion-first-anti-ppt",
+      "prompt": "附件是同一版已锁定的 J-space 纯旁白逐字稿、最终完整音频、主字幕和校准字幕。我要做一条动效主导的视频，但上一版导演方案全是大字和卡片淡入，很像 PPT。请重新做导演稿，不要直接改 Remotion 代码。",
+      "expected_output": "建立一条可演进的 Motion Thesis 与贯穿物，用有限运动语法和连续接力重写 Beat Graph，并在实现前执行 Anti-PPT gate。",
+      "files": [
+        "<VIDEO_WORKSPACE>/j-space-explained/work/source/J-space 是什么·视频逐字稿.md",
+        "<VIDEO_WORKSPACE>/j-space-explained/public/assets/audio/voice.m4a",
+        "<VIDEO_WORKSPACE>/j-space-explained/work/captions/captions.srt",
+        "<VIDEO_WORKSPACE>/j-space-explained/work/captions/captions_aligned.json"
+      ],
+      "expectations": [
+        "Motion Thesis 描述具体主角从开始状态到结束状态并证明核心判断",
+        "不设全片运动比例；每个 motion beat 有超越淡入、滑入或换字的语义状态变化，阅读/证据段可以是有理由的 readable-hold",
+        "相邻 beat 使用对象、方向、形状、镜头、声音或问题接力",
+        "连续三个 beat 不复用相同布局、进场和节奏",
+        "每个动效主导 beat 写明一个主运动原语、最多一个辅助运动、可读锁定和转场中点",
+        "明确拒绝重复 opacity+y、统一漂浮呼吸、无锚装饰线、通用 AI 图标/粒子和空白淡出重启",
+        "包含运动删除测试和可判定的 PPT/AI 味失败条件"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "evidence-before-metaphor",
+      "prompt": "附件是同一版已锁定的 J-space 逐字稿、最终完整音频、主字幕和校准字幕。请做分镜，代码 bug/ERROR、蜘蛛换蚂蚁、法国换中国和邮件安全测试这些可证明主张的内容不要被抽象科技动画代替。",
+      "expected_output": "把代码、词块替换、问答结果和邮件安全测试作为证据主线，剧院/广播台等抽象动画只解释看不见的因果。",
+      "files": [
+        "<VIDEO_WORKSPACE>/j-space-explained/work/source/J-space 是什么·视频逐字稿.md",
+        "<VIDEO_WORKSPACE>/j-space-explained/public/assets/audio/voice.m4a",
+        "<VIDEO_WORKSPACE>/j-space-explained/work/captions/captions.srt",
+        "<VIDEO_WORKSPACE>/j-space-explained/work/captions/captions_aligned.json"
+      ],
+      "expectations": [
+        "源文本视觉词典把代码、ERROR、词块替换、问答结果和邮件安全测试映射到具体画面",
+        "每项真实证据说明它证明哪句主张",
+        "没有用通用 AI 芯片、发光球或科技卡片替代可录屏内容",
+        "贯穿物在多个 beat 中改变状态，而不是每镜重新开始",
+        "资产计划在画面决定之后生成"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "post-audio-production-handoff",
+      "prompt": "附件是已确认的 J-space 导演稿、最终配音、主字幕和校准字幕。请继续给 Remotion 制作人一份可执行规格。",
+      "expected_output": "读取已确认导演契约和 Beat Graph，补组件、真实内容、精确 cue、状态时间线和抽帧验收，并生成覆盖整片的 work/motion-contract.json，不重新导演。",
+      "files": [
+        "<VIDEO_WORKSPACE>/j-space-explained/视频脚本.md",
+        "<VIDEO_WORKSPACE>/j-space-explained/public/assets/audio/voice.m4a",
+        "<VIDEO_WORKSPACE>/j-space-explained/work/captions/captions.srt",
+        "<VIDEO_WORKSPACE>/j-space-explained/work/captions/captions_aligned.json"
+      ],
+      "expectations": [
+        "保留观看记忆、视觉命题、贯穿物、证据顺序、运动语法和 beat 接力",
+        "使用最终音频和字幕的真实时间码，不手工猜偏移",
+        "仿真 UI、代码、邮件或数据面板包含实际显示内容而不是占位词",
+        "每个 motion beat 包含状态变化、主/辅运动、可读锁定、接力、删除测试、拒绝条件和验收帧；组件只在本身承担该语义变化时引用，静态容器/证据不造动作",
+        "motion contract 从 0 无空洞覆盖到整片结束，记录音频/字幕时长、五个锁定输入 hash 与六个 Anti-PPT 硬拒绝 ID",
+        "实现不可行时记录冲突与替代方案并返回确认",
+        "输出制作规格而不是直接写 Remotion 代码"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "reject-ai-flavored-motion-spec",
+      "prompt": "附件是已锁定的 J-space 导演稿、最终配音、主字幕和校准字幕。请写 Remotion 制作规格。上一版所有卡片都是上移淡入、漂浮呼吸、放大一下再淡出，AI 味很重，这次明确不要。",
+      "expected_output": "用语义动效契约取代‘所有组件都填生命周期’：motion beat 写清状态变化、一个主运动、最多一个辅助运动、可读锁定、镜头接力、删除测试、AI 味拒绝条件与验收帧；readable-hold 和静态组件不补动作。",
+      "files": [
+        "<VIDEO_WORKSPACE>/j-space-explained/视频脚本.md",
+        "<VIDEO_WORKSPACE>/j-space-explained/public/assets/audio/voice.m4a",
+        "<VIDEO_WORKSPACE>/j-space-explained/work/captions/captions.srt",
+        "<VIDEO_WORKSPACE>/j-space-explained/work/captions/captions_aligned.json"
+      ],
+      "expectations": [
+        "没有把进场/持续/强调/退出当成完整的动效设计",
+        "每个 motion beat 说明状态 A 到 B 后观众新增的理解或证明；组件只在本身发生该变化时引用",
+        "motion beat 最多一个主运动和一个辅助运动，重要内容落位后停稳；readable-hold 与静态容器没有主/辅运动",
+        "明确拒绝重复 opacity+y、统一漂浮呼吸、通用粒子/AI 图标、无锚装饰线和空白淡出重启",
+        "重要转场包含接力物和中点验收帧",
+        "额外持续运动只能通过 continuousMotions 写明对象、周期、振幅、起止、语义理由和删除测试",
+        "保留 Remotion 帧驱动约束，没有照搬 GSAP 或 HyperFrames 黑金风格"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "id": "render",
+  "status": "PASS",
+  "command": [
+    "npx",
+    "--yes",
+    "hyperframes@0.7.65",
+    "render",
+    "--quality",
+    "draft",
+    "--fps",
+    "30",
+    "--resolution",
+    "1080p",
+    "--workers",
+    "2",
+    "--output",
+    "renders/internal-preview-v1.mp4"
+  ],
+  "commandSha256": "b674e3af101ef13a83abe2ced2d6e5538216cbdef19255a213502c8c663c16ab",
+  "cliVersion": "0.7.65",
+  "exitCode": 0,
+  "signal": null,
+  "timedOut": false,
+  "projectFingerprint": "635351c5f32db63b5fae5e5747ec05cec7d284d57b9ca032770b765b776b5d73",
+  "log": "review/cli/render.txt",
+  "logSha256": "62538ba72b5ab8030a25e85964375a0c63a83cb6eb6886e0015eb36ff6f766be",
+  "startedAt": "2026-07-27T06:52:08.926Z",
+  "finishedAt": "2026-07-27T06:52:15.985Z",
+  "artifacts": [
+    {
+      "path": "renders/internal-preview-v1.mp4",
+      "sha256": "1ae6e573d697527d05e34827301781271a2572669c64d570397d8220d1ac2a18",
+      "bytes": 1336116
+    }
+  ]
+}

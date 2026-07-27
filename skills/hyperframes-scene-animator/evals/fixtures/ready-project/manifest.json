@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "title": "HyperFrames proof fixture",
+  "status": "READY_FOR_EXECUTION",
+  "durationSeconds": 4,
+  "fixedStage": {
+    "version": "studio-warm-white-fixed-stage-v3",
+    "compositionId": "studio-fixed-stage",
+    "geometryContract": "studio-blue-gold-narrow-center-grid-v2",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "background": "studio-background",
+    "content": "content",
+    "captions": "caption-overlay",
+    "pipMounted": false,
+    "pipMode": "absent",
+    "pipContract": {
+      "frameRegion": {
+        "x": 1610,
+        "y": 724,
+        "width": 206,
+        "height": 206,
+        "right": 104,
+        "bottom": 150,
+        "zIndex": 90
+      },
+      "mediaRegion": {
+        "x": 1618,
+        "y": 732,
+        "width": 190,
+        "height": 190,
+        "right": 112,
+        "bottom": 158,
+        "zIndex": 89
+      },
+      "sourceCrop": {
+        "fit": "cover",
+        "objectPositionXPercent": 66.7,
+        "objectPositionYPercent": 50,
+        "profile": "bozhou-digital-twin-v1"
+      },
+      "background": {
+        "mode": "pale-blue-gray-c",
+        "opaque": true,
+        "base": "#f2f6f8"
+      },
+      "subjectSafeArea": {
+        "faceCenterXPercent": [
+          48,
+          52
+        ],
+        "hairTopYPercent": [
+          25,
+          32
+        ],
+        "eyeLineYPercent": [
+          45,
+          52
+        ],
+        "chinYPercent": [
+          68,
+          76
+        ],
+        "shoulderWidthPercent": [
+          70,
+          90
+        ]
+      },
+      "review": {
+        "staticBeforeMotion": true,
+        "encodedZoomRequired": true,
+        "crop": "300:300:1560:680",
+        "scale": "900:900"
+      }
+    },
+    "contentMotionDefault": "none",
+    "globalSceneTransition": "none"
+  },
+  "design": {
+    "path": "DESIGN.md",
+    "sha256": "f0b16ac642540fcb646a9e4a4813e6e707f45dc92cb9dce4d040298caeccff63",
+    "bytes": 5784
+  },
+  "inputs": {
+    "directorScript": {
+      "sourcePath": "/Users/bozhou/my/视频工程/.claude/skills/hyperframes-scene-animator/evals/fixtures/ready-project/inputs/视频脚本.md",
+      "path": "inputs/视频脚本.md",
+      "sha256": "f4da87e28a69affde92067471c3322efd9602f650b63829f191e16c9645daf95",
+      "bytes": 243
+    },
+    "productionSpec": {
+      "sourcePath": "/Users/bozhou/my/视频工程/.claude/skills/hyperframes-scene-animator/evals/fixtures/ready-project/inputs/制作规格.md",
+      "path": "inputs/制作规格.md",
+      "sha256": "6ac773a2da328a9aad5530362355c655249c372b16d0c9257b967df82aecf5de",
+      "bytes": 300
+    },
+    "assetPlan": {
+      "sourcePath": "/Users/bozhou/my/视频工程/.claude/skills/hyperframes-scene-animator/evals/fixtures/ready-project/inputs/素材计划.md",
+      "path": "inputs/素材计划.md",
+      "sha256": "24da6a7fb95a0573011a7b10458c14ab68b1c0e95e09bbe0947933bba8b06a24",
+      "bytes": 233
+    },
+    "motionContract": {
+      "sourcePath": "/Users/bozhou/my/视频工程/.claude/skills/hyperframes-scene-animator/evals/fixtures/ready-project/inputs/motion-contract.json",
+      "path": "inputs/motion-contract.json",
+      "sha256": "cb859f0bdf466d23493ab70f7b850f37eae6f60094973979d2d26e381fefb0c6",
+      "bytes": 5972
+    },
+    "audio": {
+      "sourcePath": "/Users/bozhou/my/视频工程/.claude/skills/hyperframes-scene-animator/evals/fixtures/ready-project/assets/audio/voice/voice.mp3",
+      "path": "assets/audio/voice/voice.mp3",
+      "sha256": "bb26c05f469233f15412d1f6fc0ebc15bc69d380b3cee07b8db89b2ba29ee33f",
+      "bytes": 81701,
+      "durationSeconds": 4
+    },
+    "talkingHead": null,
+    "captionsAligned": {
+      "sourcePath": "/Users/bozhou/my/视频工程/.claude/skills/hyperframes-scene-animator/evals/fixtures/ready-project/inputs/captions/captions_aligned.json",
+      "path": "inputs/captions/captions_aligned.json",
+      "sha256": "967d3e26c3c89aa6d6dcd5a131c8babb0a7ee24007f91170795e19a9bcc0c1ea",
+      "bytes": 290
+    },
+    "captionsSrt": null,
+    "captionsVtt": null,
+    "screenRecordings": [],
+    "screenshots": [],
+    "fonts": []
+  },
+  "motionContract": {
+    "version": 1,
+    "pipeline": "hyperframes"
+  },
+  "validation": {
+    "audioDecodable": true,
+    "alignedCaptionCount": 2,
+    "alignedCaptionsEndSeconds": 3.82,
+    "captionBoundsValid": true,
+    "contractSchemaValid": true,
+    "contractSourcesMatch": true
+  },
+  "missingInputs": [],
+  "nextSkill": "hyperframes-scene-animator"
+}

@@ -1,0 +1,1975 @@
+{
+  "composition": "/Users/bozhou/my/视频工程/video-skills-toolkit/skills/hyperframes-scene-animator/evals/fixtures/ready-project",
+  "duration": 4,
+  "totalTweens": 11,
+  "mappedTweens": 9,
+  "skippedMicroTweens": 2,
+  "tweens": [
+    {
+      "index": 1,
+      "selector": "#source-record",
+      "targets": 1,
+      "props": [
+        "clipPath"
+      ],
+      "start": 0.2,
+      "end": 0.78,
+      "duration": 0.58,
+      "ease": "expo.out",
+      "bboxes": [
+        {
+          "t": 0.248,
+          "x": 140,
+          "y": 462,
+          "w": 460,
+          "h": 250,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 0.345,
+          "x": 140,
+          "y": 462,
+          "w": 460,
+          "h": 250,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 0.442,
+          "x": 140,
+          "y": 462,
+          "w": 460,
+          "h": 250,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 0.538,
+          "x": 140,
+          "y": 462,
+          "w": 460,
+          "h": 250,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 0.635,
+          "x": 140,
+          "y": 462,
+          "w": 460,
+          "h": 250,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 0.732,
+          "x": 140,
+          "y": 462,
+          "w": 460,
+          "h": 250,
+          "opacity": 1,
+          "visible": true
+        }
+      ],
+      "flags": [],
+      "summary": "#source-record animates clipPath over 0.58s (expo.out). ends at (140, 462) 460×250px."
+    },
+    {
+      "index": 2,
+      "selector": "#source-route",
+      "targets": 1,
+      "props": [
+        "scaleX"
+      ],
+      "start": 0.56,
+      "end": 1.04,
+      "duration": 0.48,
+      "ease": "power2.inOut",
+      "bboxes": [
+        {
+          "t": 0.6,
+          "x": 634,
+          "y": 585,
+          "w": 5,
+          "h": 4,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 0.68,
+          "x": 634,
+          "y": 585,
+          "w": 29,
+          "h": 4,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 0.76,
+          "x": 634,
+          "y": 585,
+          "w": 89,
+          "h": 4,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 0.84,
+          "x": 634,
+          "y": 585,
+          "w": 210,
+          "h": 4,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 0.92,
+          "x": 634,
+          "y": 585,
+          "w": 243,
+          "h": 4,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 1,
+          "x": 634,
+          "y": 585,
+          "w": 252,
+          "h": 4,
+          "opacity": 1,
+          "visible": true
+        }
+      ],
+      "flags": [],
+      "summary": "#source-route animates scaleX over 0.48s (power2.inOut). scales. width 5→252px. ends at (634, 585) 252×4px."
+    },
+    {
+      "index": 3,
+      "selector": "#verified-evidence",
+      "targets": 1,
+      "props": [
+        "scale",
+        "opacity"
+      ],
+      "start": 0.86,
+      "end": 1.38,
+      "duration": 0.52,
+      "ease": "back.out(1.25)",
+      "bboxes": [
+        {
+          "t": 0.903,
+          "x": 936,
+          "y": 467,
+          "w": 828,
+          "h": 241,
+          "opacity": 0.5319,
+          "visible": true
+        },
+        {
+          "t": 0.99,
+          "x": 926,
+          "y": 464,
+          "w": 847,
+          "h": 246,
+          "opacity": 0.8117,
+          "visible": true
+        },
+        {
+          "t": 1.077,
+          "x": 919,
+          "y": 462,
+          "w": 861,
+          "h": 250,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 1.163,
+          "x": 918,
+          "y": 461,
+          "w": 864,
+          "h": 251,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 1.25,
+          "x": 919,
+          "y": 462,
+          "w": 862,
+          "h": 251,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 1.337,
+          "x": 920,
+          "y": 462,
+          "w": 860,
+          "h": 250,
+          "opacity": 1,
+          "visible": true
+        }
+      ],
+      "flags": [],
+      "summary": "#verified-evidence animates scale+opacity over 0.52s (back.out(1.25)). moves 5px up and 16px left. opacity 0.5→1.0. scales. width 828→860px. height 241→250px. ends at (920, 462) 860×250px."
+    },
+    {
+      "index": 4,
+      "selector": "#scene-evidence",
+      "targets": 1,
+      "props": [
+        "x"
+      ],
+      "start": 2.24,
+      "end": 2.64,
+      "duration": 0.4,
+      "ease": "power3.inOut",
+      "bboxes": [
+        {
+          "t": 2.273,
+          "x": -12,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 2.34,
+          "x": -190,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 2.407,
+          "x": -960,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 2.473,
+          "x": -1730,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 2.54,
+          "x": -1908,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 2.607,
+          "x": -1920,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1,
+          "visible": true
+        }
+      ],
+      "flags": [
+        "offscreen"
+      ],
+      "summary": "#scene-evidence animates x over 0.40s (power3.inOut). moves 1908px left. ends at (-1920, 0) 1920×1080px. FLAGS: offscreen."
+    },
+    {
+      "index": 5,
+      "selector": "#scene-validation",
+      "targets": 1,
+      "props": [
+        "x"
+      ],
+      "start": 2.24,
+      "end": 2.64,
+      "duration": 0.4,
+      "ease": "power3.inOut",
+      "bboxes": [
+        {
+          "t": 2.273,
+          "x": 1908,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 2.34,
+          "x": 1730,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 2.407,
+          "x": 960,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 2.473,
+          "x": 190,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 2.54,
+          "x": 12,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 2.607,
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1,
+          "visible": true
+        }
+      ],
+      "flags": [
+        "offscreen"
+      ],
+      "summary": "#scene-validation animates x over 0.40s (power3.inOut). moves 1908px left. ends at (0, 0) 1920×1080px. FLAGS: offscreen."
+    },
+    {
+      "index": 6,
+      "selector": "#validation-input-slot",
+      "targets": 1,
+      "props": [
+        "clipPath"
+      ],
+      "start": 2.46,
+      "end": 2.88,
+      "duration": 0.42,
+      "ease": "expo.out",
+      "bboxes": [
+        {
+          "t": 2.495,
+          "x": 330,
+          "y": 459,
+          "w": 330,
+          "h": 256,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 2.565,
+          "x": 152,
+          "y": 459,
+          "w": 330,
+          "h": 256,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 2.635,
+          "x": 140,
+          "y": 459,
+          "w": 330,
+          "h": 256,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 2.705,
+          "x": 140,
+          "y": 459,
+          "w": 330,
+          "h": 256,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 2.775,
+          "x": 140,
+          "y": 459,
+          "w": 330,
+          "h": 256,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 2.845,
+          "x": 140,
+          "y": 459,
+          "w": 330,
+          "h": 256,
+          "opacity": 1,
+          "visible": true
+        }
+      ],
+      "flags": [],
+      "summary": "#validation-input-slot animates clipPath over 0.42s (expo.out). moves 190px left. ends at (140, 459) 330×256px."
+    },
+    {
+      "index": 7,
+      "selector": "span.rail-fill",
+      "targets": 1,
+      "props": [
+        "scaleX"
+      ],
+      "start": 2.76,
+      "end": 3.34,
+      "duration": 0.58,
+      "ease": "sine.inOut",
+      "bboxes": [
+        {
+          "t": 2.808,
+          "x": 534,
+          "y": 582,
+          "w": 35,
+          "h": 10,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 2.905,
+          "x": 534,
+          "y": 582,
+          "w": 167,
+          "h": 10,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 3.002,
+          "x": 534,
+          "y": 582,
+          "w": 360,
+          "h": 10,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 3.098,
+          "x": 534,
+          "y": 582,
+          "w": 496,
+          "h": 10,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 3.195,
+          "x": 534,
+          "y": 582,
+          "w": 667,
+          "h": 10,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 3.292,
+          "x": 534,
+          "y": 582,
+          "w": 756,
+          "h": 10,
+          "opacity": 1,
+          "visible": true
+        }
+      ],
+      "flags": [],
+      "summary": "span.rail-fill animates scaleX over 0.58s (sine.inOut). scales. width 35→756px. ends at (534, 582) 756×10px."
+    },
+    {
+      "index": 8,
+      "selector": "#validation-result",
+      "targets": 1,
+      "props": [
+        "clipPath"
+      ],
+      "start": 3.06,
+      "end": 3.52,
+      "duration": 0.46,
+      "ease": "power4.out",
+      "bboxes": [
+        {
+          "t": 3.098,
+          "x": 1360,
+          "y": 459,
+          "w": 420,
+          "h": 256,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 3.175,
+          "x": 1360,
+          "y": 459,
+          "w": 420,
+          "h": 256,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 3.252,
+          "x": 1360,
+          "y": 459,
+          "w": 420,
+          "h": 256,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 3.328,
+          "x": 1360,
+          "y": 459,
+          "w": 420,
+          "h": 256,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 3.405,
+          "x": 1360,
+          "y": 459,
+          "w": 420,
+          "h": 256,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 3.482,
+          "x": 1360,
+          "y": 459,
+          "w": 420,
+          "h": 256,
+          "opacity": 1,
+          "visible": true
+        }
+      ],
+      "flags": [],
+      "summary": "#validation-result animates clipPath over 0.46s (power4.out). ends at (1360, 459) 420×256px."
+    },
+    {
+      "index": 9,
+      "selector": "#validation-status",
+      "targets": 1,
+      "props": [
+        "scale",
+        "color"
+      ],
+      "start": 3.28,
+      "end": 3.6,
+      "duration": 0.32,
+      "ease": "back.out(1.15)",
+      "bboxes": [
+        {
+          "t": 3.307,
+          "x": 1428,
+          "y": 553,
+          "w": 287,
+          "h": 71,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 3.36,
+          "x": 1423,
+          "y": 552,
+          "w": 297,
+          "h": 74,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 3.413,
+          "x": 1418,
+          "y": 551,
+          "w": 307,
+          "h": 76,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 3.467,
+          "x": 1417,
+          "y": 551,
+          "w": 308,
+          "h": 77,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 3.52,
+          "x": 1417,
+          "y": 551,
+          "w": 307,
+          "h": 76,
+          "opacity": 1,
+          "visible": true
+        },
+        {
+          "t": 3.573,
+          "x": 1418,
+          "y": 551,
+          "w": 306,
+          "h": 76,
+          "opacity": 1,
+          "visible": true
+        }
+      ],
+      "flags": [],
+      "summary": "#validation-status animates scale+color over 0.32s (back.out(1.15)). moves 10px left. scales. width 287→306px. ends at (1418, 551) 306×76px."
+    }
+  ],
+  "choreography": "Timeline (4.0s, each char ≈ 0.07s):\n  0s                                                    4s\n  ┼───────────────────────────────────────────────────────────┤\n     █████████                                                  #source-record clipPath\n          ████████                                              #source-route scaleX\n              █████████                                         #verified-evidence scale+opacity\n                                   ███████                      #scene-evidence x\n                                   ███████                      #scene-validation x\n                                      ████████                  #validation-input-slot clipPath\n                                           ██████████           span.rail-fill scaleX\n                                               ████████         #validation-result clipPath\n                                                   █████        #validation-status scale+color",
+  "density": [
+    {
+      "t": 0,
+      "activeTweens": 1
+    },
+    {
+      "t": 0.5,
+      "activeTweens": 3
+    },
+    {
+      "t": 1,
+      "activeTweens": 2
+    },
+    {
+      "t": 1.5,
+      "activeTweens": 0
+    },
+    {
+      "t": 2,
+      "activeTweens": 3
+    },
+    {
+      "t": 2.5,
+      "activeTweens": 4
+    },
+    {
+      "t": 3,
+      "activeTweens": 3
+    },
+    {
+      "t": 3.5,
+      "activeTweens": 2
+    }
+  ],
+  "staggers": [],
+  "elements": {
+    "#source-record": {
+      "firstAppears": 0.2,
+      "lastAnimates": 0.78,
+      "tweenCount": 1,
+      "props": [
+        "clipPath"
+      ],
+      "endsVisible": true,
+      "finalPosition": {
+        "x": 140,
+        "y": 462,
+        "w": 460,
+        "h": 250
+      }
+    },
+    "#source-route": {
+      "firstAppears": 0.56,
+      "lastAnimates": 1.04,
+      "tweenCount": 1,
+      "props": [
+        "scaleX"
+      ],
+      "endsVisible": true,
+      "finalPosition": {
+        "x": 634,
+        "y": 585,
+        "w": 252,
+        "h": 4
+      }
+    },
+    "#verified-evidence": {
+      "firstAppears": 0.86,
+      "lastAnimates": 1.38,
+      "tweenCount": 1,
+      "props": [
+        "scale",
+        "opacity"
+      ],
+      "endsVisible": true,
+      "finalPosition": {
+        "x": 920,
+        "y": 462,
+        "w": 860,
+        "h": 250
+      }
+    },
+    "#scene-evidence": {
+      "firstAppears": 2.24,
+      "lastAnimates": 2.64,
+      "tweenCount": 1,
+      "props": [
+        "x"
+      ],
+      "endsVisible": true,
+      "finalPosition": {
+        "x": -1920,
+        "y": 0,
+        "w": 1920,
+        "h": 1080
+      }
+    },
+    "#scene-validation": {
+      "firstAppears": 2.24,
+      "lastAnimates": 2.64,
+      "tweenCount": 1,
+      "props": [
+        "x"
+      ],
+      "endsVisible": true,
+      "finalPosition": {
+        "x": 0,
+        "y": 0,
+        "w": 1920,
+        "h": 1080
+      }
+    },
+    "#validation-input-slot": {
+      "firstAppears": 2.46,
+      "lastAnimates": 2.88,
+      "tweenCount": 1,
+      "props": [
+        "clipPath"
+      ],
+      "endsVisible": true,
+      "finalPosition": {
+        "x": 140,
+        "y": 459,
+        "w": 330,
+        "h": 256
+      }
+    },
+    "span.rail-fill": {
+      "firstAppears": 2.76,
+      "lastAnimates": 3.34,
+      "tweenCount": 1,
+      "props": [
+        "scaleX"
+      ],
+      "endsVisible": true,
+      "finalPosition": {
+        "x": 534,
+        "y": 582,
+        "w": 756,
+        "h": 10
+      }
+    },
+    "#validation-result": {
+      "firstAppears": 3.06,
+      "lastAnimates": 3.52,
+      "tweenCount": 1,
+      "props": [
+        "clipPath"
+      ],
+      "endsVisible": true,
+      "finalPosition": {
+        "x": 1360,
+        "y": 459,
+        "w": 420,
+        "h": 256
+      }
+    },
+    "#validation-status": {
+      "firstAppears": 3.28,
+      "lastAnimates": 3.6,
+      "tweenCount": 1,
+      "props": [
+        "scale",
+        "color"
+      ],
+      "endsVisible": true,
+      "finalPosition": {
+        "x": 1418,
+        "y": 551,
+        "w": 306,
+        "h": 76
+      }
+    }
+  },
+  "deadZones": [],
+  "snapshots": [
+    {
+      "t": 0,
+      "visibleElements": 27,
+      "animatingNow": [],
+      "elements": [
+        {
+          "id": "fixed-stage-root",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "background-mount",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "ambient-wash",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "perspective-grid",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "top-plane",
+          "x": -734,
+          "y": -78,
+          "w": 3388,
+          "h": 420,
+          "opacity": 0.76
+        },
+        {
+          "id": "top-rows",
+          "x": -230,
+          "y": -78,
+          "w": 2380,
+          "h": 372,
+          "opacity": 1
+        },
+        {
+          "id": "top-verticals",
+          "x": -734,
+          "y": -78,
+          "w": 3388,
+          "h": 420,
+          "opacity": 1
+        },
+        {
+          "id": "bottom-plane",
+          "x": -734,
+          "y": 738,
+          "w": 3388,
+          "h": 420,
+          "opacity": 0.76
+        },
+        {
+          "id": "bottom-rows",
+          "x": -230,
+          "y": 786,
+          "w": 2380,
+          "h": 372,
+          "opacity": 1
+        },
+        {
+          "id": "bottom-verticals",
+          "x": -734,
+          "y": 738,
+          "w": 3388,
+          "h": 420,
+          "opacity": 1
+        },
+        {
+          "id": "horizon-top",
+          "x": 0,
+          "y": 184,
+          "w": 1920,
+          "h": 1,
+          "opacity": 0.36
+        },
+        {
+          "id": "horizon-bottom",
+          "x": 0,
+          "y": 895,
+          "w": 1920,
+          "h": 1,
+          "opacity": 0.36
+        },
+        {
+          "id": "center-veil",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "grain",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 0.06
+        },
+        {
+          "id": "content-mount",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "scene-evidence",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "source-record",
+          "x": 140,
+          "y": 462,
+          "w": 460,
+          "h": 250,
+          "opacity": 1
+        },
+        {
+          "id": "scene-validation",
+          "x": 1920,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "validation-input-slot",
+          "x": 2060,
+          "y": 459,
+          "w": 330,
+          "h": 256,
+          "opacity": 1
+        },
+        {
+          "id": "validation-rail",
+          "x": 2454,
+          "y": 582,
+          "w": 762,
+          "h": 10,
+          "opacity": 1
+        },
+        {
+          "id": "validation-result",
+          "x": 3280,
+          "y": 459,
+          "w": 420,
+          "h": 256,
+          "opacity": 1
+        },
+        {
+          "id": "validation-status",
+          "x": 3362,
+          "y": 557,
+          "w": 257,
+          "h": 64,
+          "opacity": 1
+        },
+        {
+          "id": "caption-mount",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "caption-group-0",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "caption-body-0",
+          "x": 120,
+          "y": 934,
+          "w": 1680,
+          "h": 50,
+          "opacity": 1
+        },
+        {
+          "id": "caption-group-1",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "caption-body-1",
+          "x": 120,
+          "y": 934,
+          "w": 1680,
+          "h": 50,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "t": 1,
+      "visibleElements": 29,
+      "animatingNow": [
+        "#source-route",
+        "#verified-evidence"
+      ],
+      "elements": [
+        {
+          "id": "fixed-stage-root",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "background-mount",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "ambient-wash",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "perspective-grid",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "top-plane",
+          "x": -734,
+          "y": -78,
+          "w": 3388,
+          "h": 420,
+          "opacity": 0.78
+        },
+        {
+          "id": "top-rows",
+          "x": -196,
+          "y": -44,
+          "w": 2312,
+          "h": 372,
+          "opacity": 1
+        },
+        {
+          "id": "top-verticals",
+          "x": -734,
+          "y": -78,
+          "w": 3388,
+          "h": 420,
+          "opacity": 1
+        },
+        {
+          "id": "bottom-plane",
+          "x": -734,
+          "y": 738,
+          "w": 3388,
+          "h": 420,
+          "opacity": 0.78
+        },
+        {
+          "id": "bottom-rows",
+          "x": -196,
+          "y": 752,
+          "w": 2312,
+          "h": 372,
+          "opacity": 1
+        },
+        {
+          "id": "bottom-verticals",
+          "x": -734,
+          "y": 738,
+          "w": 3388,
+          "h": 420,
+          "opacity": 1
+        },
+        {
+          "id": "horizon-top",
+          "x": 0,
+          "y": 184,
+          "w": 1920,
+          "h": 1,
+          "opacity": 0.38
+        },
+        {
+          "id": "horizon-bottom",
+          "x": 0,
+          "y": 895,
+          "w": 1920,
+          "h": 1,
+          "opacity": 0.38
+        },
+        {
+          "id": "center-veil",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "grain",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 0.06
+        },
+        {
+          "id": "content-mount",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "scene-evidence",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "source-record",
+          "x": 140,
+          "y": 462,
+          "w": 460,
+          "h": 250,
+          "opacity": 1
+        },
+        {
+          "id": "source-route",
+          "x": 634,
+          "y": 585,
+          "w": 252,
+          "h": 4,
+          "opacity": 1
+        },
+        {
+          "id": "verified-evidence",
+          "x": 923,
+          "y": 463,
+          "w": 853,
+          "h": 248,
+          "opacity": 0.91
+        },
+        {
+          "id": "scene-validation",
+          "x": 1920,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "validation-input-slot",
+          "x": 2060,
+          "y": 459,
+          "w": 330,
+          "h": 256,
+          "opacity": 1
+        },
+        {
+          "id": "validation-rail",
+          "x": 2454,
+          "y": 582,
+          "w": 762,
+          "h": 10,
+          "opacity": 1
+        },
+        {
+          "id": "validation-result",
+          "x": 3280,
+          "y": 459,
+          "w": 420,
+          "h": 256,
+          "opacity": 1
+        },
+        {
+          "id": "validation-status",
+          "x": 3362,
+          "y": 557,
+          "w": 257,
+          "h": 64,
+          "opacity": 1
+        },
+        {
+          "id": "caption-mount",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "caption-group-0",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "caption-body-0",
+          "x": 120,
+          "y": 934,
+          "w": 1680,
+          "h": 50,
+          "opacity": 1
+        },
+        {
+          "id": "caption-group-1",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "caption-body-1",
+          "x": 120,
+          "y": 934,
+          "w": 1680,
+          "h": 50,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "t": 2,
+      "visibleElements": 28,
+      "animatingNow": [],
+      "elements": [
+        {
+          "id": "fixed-stage-root",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "background-mount",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "ambient-wash",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "perspective-grid",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "top-plane",
+          "x": -734,
+          "y": -78,
+          "w": 3388,
+          "h": 420,
+          "opacity": 0.79
+        },
+        {
+          "id": "top-rows",
+          "x": -224,
+          "y": -72,
+          "w": 2368,
+          "h": 372,
+          "opacity": 1
+        },
+        {
+          "id": "top-verticals",
+          "x": -734,
+          "y": -78,
+          "w": 3388,
+          "h": 420,
+          "opacity": 1
+        },
+        {
+          "id": "bottom-plane",
+          "x": -734,
+          "y": 738,
+          "w": 3388,
+          "h": 420,
+          "opacity": 0.79
+        },
+        {
+          "id": "bottom-rows",
+          "x": -224,
+          "y": 780,
+          "w": 2368,
+          "h": 372,
+          "opacity": 1
+        },
+        {
+          "id": "bottom-verticals",
+          "x": -734,
+          "y": 738,
+          "w": 3388,
+          "h": 420,
+          "opacity": 1
+        },
+        {
+          "id": "horizon-top",
+          "x": 0,
+          "y": 184,
+          "w": 1920,
+          "h": 1,
+          "opacity": 0.39
+        },
+        {
+          "id": "horizon-bottom",
+          "x": 0,
+          "y": 895,
+          "w": 1920,
+          "h": 1,
+          "opacity": 0.39
+        },
+        {
+          "id": "center-veil",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "grain",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 0.06
+        },
+        {
+          "id": "content-mount",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "scene-evidence",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "source-record",
+          "x": 140,
+          "y": 462,
+          "w": 460,
+          "h": 250,
+          "opacity": 1
+        },
+        {
+          "id": "source-route",
+          "x": 634,
+          "y": 585,
+          "w": 252,
+          "h": 4,
+          "opacity": 1
+        },
+        {
+          "id": "verified-evidence",
+          "x": 920,
+          "y": 462,
+          "w": 860,
+          "h": 250,
+          "opacity": 1
+        },
+        {
+          "id": "scene-validation",
+          "x": 1920,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "validation-input-slot",
+          "x": 2060,
+          "y": 459,
+          "w": 330,
+          "h": 256,
+          "opacity": 1
+        },
+        {
+          "id": "validation-rail",
+          "x": 2454,
+          "y": 582,
+          "w": 762,
+          "h": 10,
+          "opacity": 1
+        },
+        {
+          "id": "validation-result",
+          "x": 3280,
+          "y": 459,
+          "w": 420,
+          "h": 256,
+          "opacity": 1
+        },
+        {
+          "id": "validation-status",
+          "x": 3362,
+          "y": 557,
+          "w": 257,
+          "h": 64,
+          "opacity": 1
+        },
+        {
+          "id": "caption-mount",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "caption-group-0",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "caption-group-1",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "caption-body-1",
+          "x": 120,
+          "y": 934,
+          "w": 1680,
+          "h": 50,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "t": 3,
+      "visibleElements": 28,
+      "animatingNow": [
+        "span.rail-fill"
+      ],
+      "elements": [
+        {
+          "id": "fixed-stage-root",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "background-mount",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "ambient-wash",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "perspective-grid",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "top-plane",
+          "x": -734,
+          "y": -78,
+          "w": 3388,
+          "h": 420,
+          "opacity": 0.8
+        },
+        {
+          "id": "top-rows",
+          "x": -190,
+          "y": -38,
+          "w": 2300,
+          "h": 372,
+          "opacity": 1
+        },
+        {
+          "id": "top-verticals",
+          "x": -734,
+          "y": -78,
+          "w": 3388,
+          "h": 420,
+          "opacity": 1
+        },
+        {
+          "id": "bottom-plane",
+          "x": -734,
+          "y": 738,
+          "w": 3388,
+          "h": 420,
+          "opacity": 0.8
+        },
+        {
+          "id": "bottom-rows",
+          "x": -190,
+          "y": 746,
+          "w": 2300,
+          "h": 372,
+          "opacity": 1
+        },
+        {
+          "id": "bottom-verticals",
+          "x": -734,
+          "y": 738,
+          "w": 3388,
+          "h": 420,
+          "opacity": 1
+        },
+        {
+          "id": "horizon-top",
+          "x": 0,
+          "y": 184,
+          "w": 1920,
+          "h": 1,
+          "opacity": 0.4
+        },
+        {
+          "id": "horizon-bottom",
+          "x": 0,
+          "y": 895,
+          "w": 1920,
+          "h": 1,
+          "opacity": 0.4
+        },
+        {
+          "id": "center-veil",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "grain",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 0.06
+        },
+        {
+          "id": "content-mount",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "scene-evidence",
+          "x": -1920,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "source-record",
+          "x": -1780,
+          "y": 462,
+          "w": 460,
+          "h": 250,
+          "opacity": 1
+        },
+        {
+          "id": "source-route",
+          "x": -1286,
+          "y": 585,
+          "w": 252,
+          "h": 4,
+          "opacity": 1
+        },
+        {
+          "id": "verified-evidence",
+          "x": -1000,
+          "y": 462,
+          "w": 860,
+          "h": 250,
+          "opacity": 1
+        },
+        {
+          "id": "scene-validation",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "validation-input-slot",
+          "x": 140,
+          "y": 459,
+          "w": 330,
+          "h": 256,
+          "opacity": 1
+        },
+        {
+          "id": "validation-rail",
+          "x": 534,
+          "y": 582,
+          "w": 762,
+          "h": 10,
+          "opacity": 1
+        },
+        {
+          "id": "validation-result",
+          "x": 1360,
+          "y": 459,
+          "w": 420,
+          "h": 256,
+          "opacity": 1
+        },
+        {
+          "id": "validation-status",
+          "x": 1442,
+          "y": 557,
+          "w": 257,
+          "h": 64,
+          "opacity": 1
+        },
+        {
+          "id": "caption-mount",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "caption-group-0",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "caption-group-1",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "caption-body-1",
+          "x": 120,
+          "y": 934,
+          "w": 1680,
+          "h": 50,
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "t": 3.9,
+      "visibleElements": 27,
+      "animatingNow": [],
+      "elements": [
+        {
+          "id": "fixed-stage-root",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "background-mount",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "ambient-wash",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "perspective-grid",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "top-plane",
+          "x": -734,
+          "y": -78,
+          "w": 3388,
+          "h": 420,
+          "opacity": 0.8
+        },
+        {
+          "id": "top-rows",
+          "x": -221,
+          "y": -69,
+          "w": 2363,
+          "h": 372,
+          "opacity": 1
+        },
+        {
+          "id": "top-verticals",
+          "x": -734,
+          "y": -78,
+          "w": 3388,
+          "h": 420,
+          "opacity": 1
+        },
+        {
+          "id": "bottom-plane",
+          "x": -734,
+          "y": 738,
+          "w": 3388,
+          "h": 420,
+          "opacity": 0.8
+        },
+        {
+          "id": "bottom-rows",
+          "x": -221,
+          "y": 777,
+          "w": 2363,
+          "h": 372,
+          "opacity": 1
+        },
+        {
+          "id": "bottom-verticals",
+          "x": -734,
+          "y": 738,
+          "w": 3388,
+          "h": 420,
+          "opacity": 1
+        },
+        {
+          "id": "horizon-top",
+          "x": 0,
+          "y": 184,
+          "w": 1920,
+          "h": 1,
+          "opacity": 0.4
+        },
+        {
+          "id": "horizon-bottom",
+          "x": 0,
+          "y": 895,
+          "w": 1920,
+          "h": 1,
+          "opacity": 0.4
+        },
+        {
+          "id": "center-veil",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "grain",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 0.06
+        },
+        {
+          "id": "content-mount",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "scene-evidence",
+          "x": -1920,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "source-record",
+          "x": -1780,
+          "y": 462,
+          "w": 460,
+          "h": 250,
+          "opacity": 1
+        },
+        {
+          "id": "source-route",
+          "x": -1286,
+          "y": 585,
+          "w": 252,
+          "h": 4,
+          "opacity": 1
+        },
+        {
+          "id": "verified-evidence",
+          "x": -1000,
+          "y": 462,
+          "w": 860,
+          "h": 250,
+          "opacity": 1
+        },
+        {
+          "id": "scene-validation",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "validation-input-slot",
+          "x": 140,
+          "y": 459,
+          "w": 330,
+          "h": 256,
+          "opacity": 1
+        },
+        {
+          "id": "validation-rail",
+          "x": 534,
+          "y": 582,
+          "w": 762,
+          "h": 10,
+          "opacity": 1
+        },
+        {
+          "id": "validation-result",
+          "x": 1360,
+          "y": 459,
+          "w": 420,
+          "h": 256,
+          "opacity": 1
+        },
+        {
+          "id": "validation-status",
+          "x": 1418,
+          "y": 551,
+          "w": 306,
+          "h": 76,
+          "opacity": 1
+        },
+        {
+          "id": "caption-mount",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "caption-group-0",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        },
+        {
+          "id": "caption-group-1",
+          "x": 0,
+          "y": 0,
+          "w": 1920,
+          "h": 1080,
+          "opacity": 1
+        }
+      ]
+    }
+  ]
+}

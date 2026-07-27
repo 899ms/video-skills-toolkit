@@ -1,0 +1,511 @@
+{
+  "version": 1,
+  "proofVersion": 1,
+  "lifecycle": {
+    "status": "PREVIEW_READY"
+  },
+  "executor": {
+    "id": "proof-fixture-executor",
+    "proofVersion": 1,
+    "previewSha256": "1ae6e573d697527d05e34827301781271a2572669c64d570397d8220d1ac2a18",
+    "projectFingerprint": "635351c5f32db63b5fae5e5747ec05cec7d284d57b9ca032770b765b776b5d73",
+    "executionLockSha256": "8264fc3b3ed45bbadab50a611c3734814866d4fa41dfb0ffff40c1a300fdcaaa"
+  },
+  "commandGates": [
+    {
+      "id": "inputs",
+      "status": "PASS",
+      "evidence": "review/cli/inputs.txt",
+      "receipt": "review/gate-receipts/inputs.json"
+    },
+    {
+      "id": "fixed-stage",
+      "status": "PASS",
+      "evidence": "review/cli/fixed-stage.txt",
+      "receipt": "review/gate-receipts/fixed-stage.json"
+    },
+    {
+      "id": "motion-contract",
+      "status": "PASS",
+      "evidence": "review/cli/motion-contract.txt",
+      "receipt": "review/gate-receipts/motion-contract.json"
+    },
+    {
+      "id": "runtime-adaptation",
+      "status": "PASS",
+      "evidence": "review/cli/runtime-adaptation.txt",
+      "receipt": "review/gate-receipts/runtime-adaptation.json"
+    },
+    {
+      "id": "stage",
+      "status": "PASS",
+      "evidence": "review/cli/stage.txt",
+      "receipt": "review/gate-receipts/stage.json"
+    },
+    {
+      "id": "doctor",
+      "status": "PASS",
+      "evidence": "review/cli/doctor.txt",
+      "receipt": "review/gate-receipts/doctor.json"
+    },
+    {
+      "id": "lint",
+      "status": "PASS",
+      "evidence": "review/cli/lint.txt",
+      "receipt": "review/gate-receipts/lint.json"
+    },
+    {
+      "id": "validate",
+      "status": "PASS",
+      "evidence": "review/cli/validate.txt",
+      "receipt": "review/gate-receipts/validate.json"
+    },
+    {
+      "id": "inspect",
+      "status": "PASS",
+      "evidence": "review/cli/inspect.txt",
+      "receipt": "review/gate-receipts/inspect.json"
+    },
+    {
+      "id": "check",
+      "status": "PASS",
+      "evidence": "review/cli/check.txt",
+      "receipt": "review/gate-receipts/check.json"
+    },
+    {
+      "id": "snapshot",
+      "status": "PASS",
+      "evidence": "review/cli/snapshot.txt",
+      "receipt": "review/gate-receipts/snapshot.json"
+    },
+    {
+      "id": "animation-map",
+      "status": "PASS",
+      "evidence": "review/cli/animation-map.txt",
+      "receipt": "review/gate-receipts/animation-map.json"
+    },
+    {
+      "id": "render",
+      "status": "PASS",
+      "evidence": "review/cli/render.txt",
+      "receipt": "review/gate-receipts/render.json"
+    },
+    {
+      "id": "contact-sheet",
+      "status": "PASS",
+      "evidence": "review/cli/contact-sheet.txt",
+      "receipt": "review/gate-receipts/contact-sheet.json"
+    },
+    {
+      "id": "media",
+      "status": "PASS",
+      "evidence": "review/cli/media.txt",
+      "receipt": "review/gate-receipts/media.json"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "accept-proof-b01-start",
+      "role": "source_acceptance",
+      "status": "PASS",
+      "sourceKey": "PROOF-B01@0.1#start",
+      "path": "snapshots/acceptance/frame-00-at-0.1s.png"
+    },
+    {
+      "id": "accept-proof-b01-cue-before",
+      "role": "source_acceptance",
+      "status": "PASS",
+      "sourceKey": "PROOF-B01@0.42#cue_before",
+      "path": "snapshots/acceptance/frame-01-at-0.42s.png"
+    },
+    {
+      "id": "accept-proof-b01-cue-after",
+      "role": "source_acceptance",
+      "status": "PASS",
+      "sourceKey": "PROOF-B01@1.05#cue_after",
+      "path": "snapshots/acceptance/frame-02-at-1.05s.png"
+    },
+    {
+      "id": "accept-proof-b01-state-complete",
+      "role": "source_acceptance",
+      "status": "PASS",
+      "sourceKey": "PROOF-B01@1.42#state_complete",
+      "path": "snapshots/acceptance/frame-03-at-1.42s.png"
+    },
+    {
+      "id": "accept-proof-b01-state-handoff",
+      "role": "source_acceptance",
+      "status": "PASS",
+      "sourceKey": "PROOF-B01@1.56#transition_midpoint",
+      "path": "snapshots/acceptance/frame-04-at-1.56s.png"
+    },
+    {
+      "id": "accept-proof-b02-start",
+      "role": "source_acceptance",
+      "status": "PASS",
+      "sourceKey": "PROOF-B02@1.62#start",
+      "path": "snapshots/acceptance/frame-05-at-1.62s.png"
+    },
+    {
+      "id": "accept-proof-b02-readable-hold",
+      "role": "source_acceptance",
+      "status": "PASS",
+      "sourceKey": "PROOF-B02@1.95#readable_hold",
+      "path": "snapshots/acceptance/frame-06-at-1.95s.png"
+    },
+    {
+      "id": "accept-proof-b02-transition-midpoint",
+      "role": "source_acceptance",
+      "status": "PASS",
+      "sourceKey": "PROOF-B02@2.35#transition_midpoint",
+      "path": "snapshots/acceptance/frame-07-at-2.35s.png"
+    },
+    {
+      "id": "accept-proof-b03-start",
+      "role": "source_acceptance",
+      "status": "PASS",
+      "sourceKey": "PROOF-B03@2.42#start",
+      "path": "snapshots/acceptance/frame-08-at-2.42s.png"
+    },
+    {
+      "id": "accept-proof-b03-cue-before",
+      "role": "source_acceptance",
+      "status": "PASS",
+      "sourceKey": "PROOF-B03@2.72#cue_before",
+      "path": "snapshots/acceptance/frame-09-at-2.72s.png"
+    },
+    {
+      "id": "accept-proof-b03-cue-after",
+      "role": "source_acceptance",
+      "status": "PASS",
+      "sourceKey": "PROOF-B03@3.12#cue_after",
+      "path": "snapshots/acceptance/frame-10-at-3.12s.png"
+    },
+    {
+      "id": "accept-proof-b03-state-complete",
+      "role": "source_acceptance",
+      "status": "PASS",
+      "sourceKey": "PROOF-B03@3.56#state_complete",
+      "path": "snapshots/acceptance/frame-11-at-3.56s.png"
+    },
+    {
+      "id": "cue-before-proof-b01-cue-before",
+      "role": "cue_before",
+      "status": "PASS",
+      "sourceKey": "PROOF-B01@0.42#cue_before",
+      "path": "snapshots/acceptance/frame-01-at-0.42s.png"
+    },
+    {
+      "id": "cue-before-proof-b03-cue-before",
+      "role": "cue_before",
+      "status": "PASS",
+      "sourceKey": "PROOF-B03@2.72#cue_before",
+      "path": "snapshots/acceptance/frame-09-at-2.72s.png"
+    },
+    {
+      "id": "cue-after-proof-b01-cue-after",
+      "role": "cue_after",
+      "status": "PASS",
+      "sourceKey": "PROOF-B01@1.05#cue_after",
+      "path": "snapshots/acceptance/frame-02-at-1.05s.png"
+    },
+    {
+      "id": "cue-after-proof-b03-cue-after",
+      "role": "cue_after",
+      "status": "PASS",
+      "sourceKey": "PROOF-B03@3.12#cue_after",
+      "path": "snapshots/acceptance/frame-10-at-3.12s.png"
+    },
+    {
+      "id": "chapter-scene-evidence",
+      "role": "chapter_state",
+      "status": "PASS",
+      "path": "snapshots/acceptance/frame-03-at-1.42s.png"
+    },
+    {
+      "id": "transition-evidence-tile-enters-validation-slot",
+      "role": "transition_midpoint",
+      "status": "PASS",
+      "transitionId": "evidence-tile-enters-validation-slot",
+      "path": "snapshots/acceptance/frame-07-at-2.35s.png"
+    },
+    {
+      "id": "chapter-scene-validation",
+      "role": "chapter_state",
+      "status": "PASS",
+      "path": "snapshots/acceptance/frame-11-at-3.56s.png"
+    },
+    {
+      "id": "hold-PROOF-B02",
+      "role": "readable_hold",
+      "status": "PASS",
+      "beatId": "PROOF-B02",
+      "path": "snapshots/acceptance/frame-06-at-1.95s.png"
+    },
+    {
+      "id": "density-state",
+      "role": "density_state",
+      "status": "PASS",
+      "path": "snapshots/acceptance/frame-03-at-1.42s.png"
+    },
+    {
+      "id": "widest-caption",
+      "role": "widest_caption",
+      "status": "PASS",
+      "path": "snapshots/acceptance/frame-09-at-2.72s.png"
+    },
+    {
+      "id": "pip-not-supplied",
+      "role": "pip_crop",
+      "status": "NOT_APPLICABLE",
+      "path": "manifest.json"
+    },
+    {
+      "id": "audio-first",
+      "role": "audio_first_region",
+      "status": "PASS",
+      "path": "review/media-analysis-v1.json"
+    },
+    {
+      "id": "audio-last",
+      "role": "audio_last_region",
+      "status": "PASS",
+      "path": "review/media-analysis-v1.json"
+    },
+    {
+      "id": "full-watch-decode",
+      "role": "full_watch_decode",
+      "status": "PASS",
+      "path": "review/media/full-watch-decode.txt"
+    },
+    {
+      "id": "black-tail",
+      "role": "black_tail",
+      "status": "PASS",
+      "path": "review/media-analysis-v1.json"
+    },
+    {
+      "id": "silent-tail",
+      "role": "silent_tail",
+      "status": "PASS",
+      "path": "review/media-analysis-v1.json"
+    },
+    {
+      "id": "animation-map",
+      "role": "animation_map",
+      "status": "PASS",
+      "path": "review/animation-map-v1/animation-map.json"
+    },
+    {
+      "id": "montage-sheet",
+      "role": "contact_sheet",
+      "status": "PASS",
+      "path": "review/executor-contact-sheet-v1.png"
+    },
+    {
+      "id": "internal-preview",
+      "role": "internal_preview",
+      "status": "PASS",
+      "path": "renders/internal-preview-v1.mp4"
+    },
+    {
+      "id": "executor-report",
+      "role": "executor_report",
+      "status": "PASS",
+      "path": "review/executor-report-v1.md"
+    },
+    {
+      "id": "lead-review",
+      "role": "lead_review",
+      "status": "PASS",
+      "path": "review/lead-review-v1.md"
+    },
+    {
+      "id": "preview-v1",
+      "role": "preview_v1",
+      "status": "PASS",
+      "path": "renders/preview-v1.mp4",
+      "sha256": "1ae6e573d697527d05e34827301781271a2572669c64d570397d8220d1ac2a18",
+      "projectFingerprint": "635351c5f32db63b5fae5e5747ec05cec7d284d57b9ca032770b765b776b5d73",
+      "executionLockSha256": "8264fc3b3ed45bbadab50a611c3734814866d4fa41dfb0ffff40c1a300fdcaaa",
+      "proofVersion": 1
+    }
+  ],
+  "animationMapReview": {
+    "status": "PASS",
+    "explainedFlags": [
+      {
+        "selector": "#scene-evidence",
+        "flag": "offscreen",
+        "reason": "The outgoing scene container moves offscreen during the authored anchored handoff.",
+        "evidence": "review/executor-report-v1.md"
+      },
+      {
+        "selector": "#scene-validation",
+        "flag": "offscreen",
+        "reason": "The incoming scene container starts offscreen and lands during the same authored handoff.",
+        "evidence": "review/executor-report-v1.md"
+      }
+    ],
+    "unexplainedFlags": []
+  },
+  "reports": {
+    "executor": {
+      "status": "PASS",
+      "path": "review/executor-report-v1.md",
+      "proofVersion": 1,
+      "previewSha256": "1ae6e573d697527d05e34827301781271a2572669c64d570397d8220d1ac2a18",
+      "projectFingerprint": "635351c5f32db63b5fae5e5747ec05cec7d284d57b9ca032770b765b776b5d73",
+      "executionLockSha256": "8264fc3b3ed45bbadab50a611c3734814866d4fa41dfb0ffff40c1a300fdcaaa",
+      "artifactSha256": "0c6342fb604e17d5b3bf147a532f807c92ce8e0d65a91a25d7a25b6564ac43f1",
+      "artifactBytes": 3449
+    },
+    "lead": {
+      "status": "PASS",
+      "path": "review/lead-review-v1.md",
+      "proofVersion": 1,
+      "previewSha256": "1ae6e573d697527d05e34827301781271a2572669c64d570397d8220d1ac2a18",
+      "projectFingerprint": "635351c5f32db63b5fae5e5747ec05cec7d284d57b9ca032770b765b776b5d73",
+      "executionLockSha256": "8264fc3b3ed45bbadab50a611c3734814866d4fa41dfb0ffff40c1a300fdcaaa",
+      "artifactSha256": "478bf2ee0d777e9dce5c14c2f43bbe65039a10b40f2111f0d829534f85d42f8e",
+      "artifactBytes": 2241
+    }
+  },
+  "reviews": {
+    "revisionOwner": "proof-fixture-executor",
+    "fourPasses": {
+      "montage": {
+        "status": "PASS",
+        "readCaptions": false,
+        "evidenceRoles": [
+          "contact_sheet"
+        ],
+        "proofVersion": 1,
+        "previewSha256": "1ae6e573d697527d05e34827301781271a2572669c64d570397d8220d1ac2a18",
+        "projectFingerprint": "635351c5f32db63b5fae5e5747ec05cec7d284d57b9ca032770b765b776b5d73",
+        "executionLockSha256": "8264fc3b3ed45bbadab50a611c3734814866d4fa41dfb0ffff40c1a300fdcaaa"
+      },
+      "static": {
+        "status": "PASS",
+        "evidenceRoles": [
+          "source_acceptance",
+          "widest_caption",
+          "pip_crop"
+        ],
+        "proofVersion": 1,
+        "previewSha256": "1ae6e573d697527d05e34827301781271a2572669c64d570397d8220d1ac2a18",
+        "projectFingerprint": "635351c5f32db63b5fae5e5747ec05cec7d284d57b9ca032770b765b776b5d73",
+        "executionLockSha256": "8264fc3b3ed45bbadab50a611c3734814866d4fa41dfb0ffff40c1a300fdcaaa"
+      },
+      "motion": {
+        "status": "PASS",
+        "watchedFullPreview": true,
+        "evidenceRoles": [
+          "internal_preview",
+          "full_watch_decode",
+          "transition_midpoint",
+          "readable_hold"
+        ],
+        "proofVersion": 1,
+        "previewSha256": "1ae6e573d697527d05e34827301781271a2572669c64d570397d8220d1ac2a18",
+        "projectFingerprint": "635351c5f32db63b5fae5e5747ec05cec7d284d57b9ca032770b765b776b5d73",
+        "executionLockSha256": "8264fc3b3ed45bbadab50a611c3734814866d4fa41dfb0ffff40c1a300fdcaaa"
+      },
+      "delivery": {
+        "status": "PASS",
+        "evidenceRoles": [
+          "internal_preview",
+          "full_watch_decode",
+          "audio_first_region",
+          "audio_last_region",
+          "black_tail",
+          "silent_tail"
+        ],
+        "proofVersion": 1,
+        "previewSha256": "1ae6e573d697527d05e34827301781271a2572669c64d570397d8220d1ac2a18",
+        "projectFingerprint": "635351c5f32db63b5fae5e5747ec05cec7d284d57b9ca032770b765b776b5d73",
+        "executionLockSha256": "8264fc3b3ed45bbadab50a611c3734814866d4fa41dfb0ffff40c1a300fdcaaa"
+      }
+    },
+    "findings": [
+      {
+        "id": "MINOR-001",
+        "severity": "MINOR",
+        "status": "CLOSED",
+        "blocksPreview": true,
+        "evidence": "review/rechecks/minor-001-contrast.md",
+        "recheck": {
+          "status": "PASS",
+          "evidence": "review/cli/check.txt",
+          "proofVersion": 1,
+          "previewSha256": "1ae6e573d697527d05e34827301781271a2572669c64d570397d8220d1ac2a18",
+          "projectFingerprint": "635351c5f32db63b5fae5e5747ec05cec7d284d57b9ca032770b765b776b5d73",
+          "executionLockSha256": "8264fc3b3ed45bbadab50a611c3734814866d4fa41dfb0ffff40c1a300fdcaaa",
+          "evidenceSha256": "a3ff6823f736aa5d234a27e5360fd0513a2b0fb13176aaf78d4ea386d7c4ddc8",
+          "evidenceBytes": 3342
+        },
+        "proofVersion": 1,
+        "executionLockSha256": "8264fc3b3ed45bbadab50a611c3734814866d4fa41dfb0ffff40c1a300fdcaaa",
+        "evidenceSha256": "ad16529f6bd28a6826f4d9e7795bbe7b80183e00c3f6b4e7b4a09d0bf10b5791",
+        "evidenceBytes": 633
+      }
+    ]
+  },
+  "previews": {
+    "internal": {
+      "status": "PASS",
+      "path": "renders/internal-preview-v1.mp4",
+      "sha256": "1ae6e573d697527d05e34827301781271a2572669c64d570397d8220d1ac2a18"
+    },
+    "previewV1": {
+      "status": "PASS",
+      "path": "renders/preview-v1.mp4",
+      "sha256": "1ae6e573d697527d05e34827301781271a2572669c64d570397d8220d1ac2a18"
+    }
+  },
+  "approval": {
+    "previewV1Approved": true,
+    "reviewer": "lead-review-v1",
+    "approvedProofVersion": 1,
+    "proofVersion": 1,
+    "previewSha256": "1ae6e573d697527d05e34827301781271a2572669c64d570397d8220d1ac2a18",
+    "projectFingerprint": "635351c5f32db63b5fae5e5747ec05cec7d284d57b9ca032770b765b776b5d73",
+    "executionLockSha256": "8264fc3b3ed45bbadab50a611c3734814866d4fa41dfb0ffff40c1a300fdcaaa",
+    "reviewBundleSha256": "965c78327aa15e091871948a8198186ad6eae2425d4c35191a7c3761c57a3c40",
+    "decisionSha256": "97d274c98b7f6be953904cd1a68d2bbb61c99133e42f70f6154b00112a7e307d",
+    "receiptPath": "review/approval-receipt-v1.json",
+    "receiptSha256": "8b8b7e35c1429957e8d99cee659a1dbd525e7ddf6778765a7ab0ac5f1de01df0"
+  },
+  "formalRelease": {
+    "status": "NOT_APPLICABLE",
+    "deferred": true,
+    "target": "1920x1080, 30fps, H.264 High, yuv420p, 12 Mbps, slow two-pass"
+  },
+  "projectFingerprint": "635351c5f32db63b5fae5e5747ec05cec7d284d57b9ca032770b765b776b5d73",
+  "reviewBundle": {
+    "version": 1,
+    "artifacts": [
+      {
+        "path": "review/cli/check.txt",
+        "sha256": "a3ff6823f736aa5d234a27e5360fd0513a2b0fb13176aaf78d4ea386d7c4ddc8",
+        "bytes": 3342
+      },
+      {
+        "path": "review/executor-report-v1.md",
+        "sha256": "0c6342fb604e17d5b3bf147a532f807c92ce8e0d65a91a25d7a25b6564ac43f1",
+        "bytes": 3449
+      },
+      {
+        "path": "review/lead-review-v1.md",
+        "sha256": "478bf2ee0d777e9dce5c14c2f43bbe65039a10b40f2111f0d829534f85d42f8e",
+        "bytes": 2241
+      },
+      {
+        "path": "review/rechecks/minor-001-contrast.md",
+        "sha256": "ad16529f6bd28a6826f4d9e7795bbe7b80183e00c3f6b4e7b4a09d0bf10b5791",
+        "bytes": 633
+      }
+    ],
+    "sha256": "965c78327aa15e091871948a8198186ad6eae2425d4c35191a7c3761c57a3c40"
+  }
+}

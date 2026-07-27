@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "previewPath": "renders/internal-preview-v1.mp4",
+  "previewSha256": "1ae6e573d697527d05e34827301781271a2572669c64d570397d8220d1ac2a18",
+  "probe": {
+    "status": "PASS",
+    "command": "ffprobe -v error -show_entries format=duration,size:stream=codec_type,width,height,avg_frame_rate -of json renders/internal-preview-v1.mp4",
+    "evidence": "review/media/ffprobe.json",
+    "durationSeconds": 4.010667
+  },
+  "fullDecode": {
+    "status": "PASS",
+    "decodedFrames": 120,
+    "expectedFrames": 120,
+    "command": "ffmpeg -hide_banner -i renders/internal-preview-v1.mp4 -map 0:v:0 -map 0:a:0? -f null -",
+    "evidence": "review/media/full-watch-decode.txt"
+  },
+  "blackTail": {
+    "status": "PASS",
+    "checkedFromSeconds": 3.511,
+    "detectedBlackInterval": false,
+    "command": "ffmpeg -hide_banner -ss 3.511 -i renders/internal-preview-v1.mp4 -vf blackdetect=d=0.08:pic_th=0.98:pix_th=0.1 -an -f null -",
+    "evidence": "review/media/black-tail.txt"
+  },
+  "silentTail": {
+    "status": "PASS",
+    "trailingSilenceSeconds": 0,
+    "allowedTrailingSilenceSeconds": 0.15,
+    "command": "ffmpeg -hide_banner -i renders/internal-preview-v1.mp4 -af silencedetect=n=-45dB:d=0.15 -vn -f null -",
+    "evidence": "review/media/silent-tail.txt"
+  },
+  "firstAudioRegion": {
+    "status": "PASS",
+    "startSeconds": 0,
+    "durationSeconds": 0.4,
+    "maxVolumeDb": -1.7,
+    "command": "ffmpeg -hide_banner -ss 0.000 -t 0.4 -i renders/internal-preview-v1.mp4 -vn -af volumedetect -f null -",
+    "evidence": "review/media/audio-first-region.txt"
+  },
+  "lastAudioRegion": {
+    "status": "PASS",
+    "startSeconds": 3.611,
+    "durationSeconds": 0.4,
+    "maxVolumeDb": -2.6,
+    "command": "ffmpeg -hide_banner -ss 3.611 -t 0.4 -i renders/internal-preview-v1.mp4 -vn -af volumedetect -f null -",
+    "evidence": "review/media/audio-last-region.txt"
+  }
+}

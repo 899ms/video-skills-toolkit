@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "id": "stage",
+  "status": "PASS",
+  "command": [
+    "node",
+    "scripts/proof-stage.mjs"
+  ],
+  "commandSha256": "e9df9cc8119367cd4f936cbb949f612ff1fa235b08738bb19de9cdab47d9a6ef",
+  "cliVersion": "project-local",
+  "exitCode": 0,
+  "signal": null,
+  "timedOut": false,
+  "projectFingerprint": "635351c5f32db63b5fae5e5747ec05cec7d284d57b9ca032770b765b776b5d73",
+  "log": "review/cli/stage.txt",
+  "logSha256": "7d23ec22da0114c100c4593cc32cf0b36ec622a3b6caffa7f8e9ff0b45060000",
+  "startedAt": "2026-07-27T06:50:59.772Z",
+  "finishedAt": "2026-07-27T06:51:10.763Z",
+  "artifacts": [
+    {
+      "path": "review/stage-parity/hyperframes-t000.png",
+      "sha256": "0d480d93f1e4fad0ad1f8526eddbce5a77a940157485a4b329ec0cf52719a0cf",
+      "bytes": 334900
+    },
+    {
+      "path": "review/stage-parity/hyperframes-t004.png",
+      "sha256": "69acc380bf992fd351a4cedd952b94a79e4f124f96bb4041d88edd78e8da98ed",
+      "bytes": 344443
+    },
+    {
+      "path": "review/stage-parity/hyperframes-t009.png",
+      "sha256": "388e9390d09d44cd56ebb5a55b56dc5dbc92b061a88efcc550d2a855f65fc18a",
+      "bytes": 342459
+    },
+    {
+      "path": "review/stage-parity/stage-parity-receipt.json",
+      "sha256": "792a20443802119b8614122504a5ca020c4a7f9d0bea02e7ca2bf5363da2a6be",
+      "bytes": 1169
+    }
+  ]
+}

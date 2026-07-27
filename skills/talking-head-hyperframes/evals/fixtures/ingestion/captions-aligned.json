@@ -1,0 +1,17 @@
+{
+  "captions": [
+    {
+      "start": 0.1,
+      "end": 1.05,
+      "text": "First verified caption"
+    },
+    {
+      "start": 1.03,
+      "end": 2.2,
+      "parts": [
+        { "text": "Second " },
+        { "text": "caption", "accent": true }
+      ]
+    }
+  ]
+}

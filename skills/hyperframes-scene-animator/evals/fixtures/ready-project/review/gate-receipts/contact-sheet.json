@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "id": "contact-sheet",
+  "status": "PASS",
+  "command": [
+    "node",
+    "scripts/build-contact-sheet.mjs"
+  ],
+  "commandSha256": "210c704494fc791ef3fbb76f5061dff98656342286b37c4dc8d534258ba759ed",
+  "cliVersion": "project-local",
+  "exitCode": 0,
+  "signal": null,
+  "timedOut": false,
+  "projectFingerprint": "635351c5f32db63b5fae5e5747ec05cec7d284d57b9ca032770b765b776b5d73",
+  "log": "review/cli/contact-sheet.txt",
+  "logSha256": "f37ec150594e5717c1bfc49a334be140c7b55ea7e49608a979e7ad676a38844d",
+  "startedAt": "2026-07-27T06:52:16.034Z",
+  "finishedAt": "2026-07-27T06:52:16.336Z",
+  "artifacts": [
+    {
+      "path": "review/executor-contact-sheet-v1.png",
+      "sha256": "a04fcf2cf5ae45496607dd77982e62b3b9faebbe00d22bb6fe4fe25aaa803ac0",
+      "bytes": 521198
+    }
+  ]
+}

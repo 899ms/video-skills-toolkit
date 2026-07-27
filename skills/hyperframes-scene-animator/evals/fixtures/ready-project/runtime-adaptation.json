@@ -1,0 +1,272 @@
+{
+  "version": 1,
+  "sourceContract": {
+    "path": "inputs/motion-contract.json",
+    "sha256": "cb859f0bdf466d23493ab70f7b850f37eae6f60094973979d2d26e381fefb0c6",
+    "pipeline": "hyperframes",
+    "preservedVerbatim": true
+  },
+  "design": {
+    "path": "DESIGN.md",
+    "sha256": "f0b16ac642540fcb646a9e4a4813e6e707f45dc92cb9dce4d040298caeccff63"
+  },
+  "runtime": {
+    "engine": "gsap",
+    "compositionId": "content",
+    "masterTimeline": {
+      "synchronous": true,
+      "paused": true,
+      "registeredKey": "content",
+      "labels": ["source", "readable-hold", "evidence-handoff", "final-hold"]
+    },
+    "visibilityPolicy": "opacity-clip-transform-only",
+    "frameworkOwnsClipLifecycle": true,
+    "mediaPolicy": {
+      "frameworkOwnedPlayback": true,
+      "timedVideoMotionTarget": "wrapper"
+    }
+  },
+  "fixedBoundary": {
+    "contentOwned": [
+      "compositions/content.html",
+      "compositions/scenes/**",
+      "runtime-adaptation.json",
+      "snapshots/acceptance/**",
+      "snapshots/transitions/**",
+      "review/executor-*.md",
+      "renders/internal-preview-*.mp4"
+    ],
+    "protected": [
+      "DESIGN.md",
+      "manifest.json",
+      "inputs/**",
+      "index.html",
+      "styles.css",
+      "compositions/studio-background.html",
+      "compositions/caption-overlay.html",
+      "compositions/pip-overlay.html",
+      "assets/video/talking-head/**",
+      "assets/audio/voice/**"
+    ]
+  },
+  "continuousMotionPolicy": {
+    "defaultAllowlist": ["studio-background"],
+    "contractOverrides": []
+  },
+  "scenes": [
+    {
+      "sceneId": "scene-evidence",
+      "beatIds": ["PROOF-B01", "PROOF-B02"],
+      "entrance": {
+        "id": "trace-source-into-evidence",
+        "semanticReason": "The source opens, the provenance route draws, and the verified evidence resolves in causal order.",
+        "selectors": ["#source-record", "#source-route", "#verified-evidence"],
+        "properties": ["clipPath", "scaleX", "scale", "opacity"],
+        "startSeconds": 0.16,
+        "endSeconds": 1.34,
+        "sharedHelper": false
+      },
+      "transitionOut": {
+        "transitionId": "evidence-tile-enters-validation-slot",
+        "kind": "anchored-horizontal-handoff",
+        "semanticReason": "The established evidence remains the subject while the visual world changes from provenance to validation.",
+        "toSceneId": "scene-validation",
+        "startSeconds": 2.2,
+        "endSeconds": 2.6,
+        "midpointSeconds": 2.35,
+        "midpointReadable": true,
+        "emptyReset": false,
+        "outgoingPreFade": false,
+        "anchors": {
+          "start": "#verified-evidence",
+          "end": "#validation-input-slot"
+        },
+        "properties": ["x"]
+      }
+    },
+    {
+      "sceneId": "scene-validation",
+      "beatIds": ["PROOF-B03"],
+      "entrance": {
+        "id": "seat-evidence-and-lock-validator",
+        "semanticReason": "The evidence seats into a distinct validator, whose rail resolves before the pass state locks.",
+        "selectors": ["#scene-validation", "#validation-input-slot", "#validation-rail", "#validation-result"],
+        "properties": ["x", "clipPath", "scaleX", "color"],
+        "startSeconds": 2.2,
+        "endSeconds": 3.56,
+        "sharedHelper": false
+      },
+      "transitionOut": null
+    }
+  ],
+  "beatMappings": [
+    {
+      "beatId": "PROOF-B01",
+      "sceneId": "scene-evidence",
+      "stateId": "source-routed-to-evidence",
+      "kind": "scene-state",
+      "entersScene": true,
+      "replaysEntrance": false,
+      "primaryMotionId": "route-source-into-evidence",
+      "supportMotionId": null,
+      "continuousMotions": []
+    },
+    {
+      "beatId": "PROOF-B02",
+      "sceneId": "scene-evidence",
+      "stateId": "evidence-readable-hold",
+      "kind": "readable-hold",
+      "entersScene": false,
+      "replaysEntrance": false,
+      "primaryMotionId": null,
+      "supportMotionId": null,
+      "continuousMotions": [],
+      "readableHold": {
+        "startSeconds": 1.6,
+        "endSeconds": 2.18,
+        "static": true
+      }
+    },
+    {
+      "beatId": "PROOF-B03",
+      "sceneId": "scene-validation",
+      "stateId": "validation-locked-pass",
+      "kind": "scene-state",
+      "entersScene": true,
+      "replaysEntrance": false,
+      "primaryMotionId": "lock-validation-as-passed",
+      "supportMotionId": null,
+      "continuousMotions": []
+    }
+  ],
+  "handoffMappings": [
+    {
+      "fromBeatId": "PROOF-B01",
+      "toBeatId": "PROOF-B02",
+      "type": "state-continuity",
+      "sceneId": "scene-evidence",
+      "object": "verified evidence tile",
+      "midpointSeconds": 1.56,
+      "midpointAssertion": "The evidence tile remains anchored as motion settles into reading.",
+      "anchored": true,
+      "startAnchor": "#verified-evidence",
+      "endAnchor": "#verified-evidence"
+    },
+    {
+      "fromBeatId": "PROOF-B02",
+      "toBeatId": "PROOF-B03",
+      "type": "scene-transition",
+      "transitionId": "evidence-tile-enters-validation-slot",
+      "object": "verified evidence tile",
+      "midpointSeconds": 2.35,
+      "midpointAssertion": "The same evidence tile bridges into the validation slot.",
+      "anchored": true,
+      "startAnchor": "#verified-evidence",
+      "endAnchor": "#validation-input-slot"
+    }
+  ],
+  "acceptanceMappings": [
+    {
+      "beatId": "PROOF-B01",
+      "sourceAtSeconds": 0.1,
+      "sourceRole": "start",
+      "snapshotId": "proof-b01-start",
+      "path": "snapshots/acceptance/frame-00-at-0.1s.png",
+      "assertions": ["The source is present while the evidence is still unresolved."]
+    },
+    {
+      "beatId": "PROOF-B01",
+      "sourceAtSeconds": 0.42,
+      "sourceRole": "cue_before",
+      "snapshotId": "proof-b01-cue-before",
+      "path": "snapshots/acceptance/frame-01-at-0.42s.png",
+      "assertions": ["The verified state has not appeared early."]
+    },
+    {
+      "beatId": "PROOF-B01",
+      "sourceAtSeconds": 1.05,
+      "sourceRole": "cue_after",
+      "snapshotId": "proof-b01-cue-after",
+      "path": "snapshots/acceptance/frame-02-at-1.05s.png",
+      "assertions": ["The source route now reaches the evidence tile."]
+    },
+    {
+      "beatId": "PROOF-B01",
+      "sourceAtSeconds": 1.42,
+      "sourceRole": "state_complete",
+      "snapshotId": "proof-b01-state-complete",
+      "path": "snapshots/acceptance/frame-03-at-1.42s.png",
+      "assertions": ["The provenance route and evidence tile are both readable."]
+    },
+    {
+      "beatId": "PROOF-B01",
+      "sourceAtSeconds": 1.56,
+      "sourceRole": "transition_midpoint",
+      "snapshotId": "proof-b01-state-handoff",
+      "path": "snapshots/acceptance/frame-04-at-1.56s.png",
+      "assertions": ["The evidence tile remains anchored while the scene settles."]
+    },
+    {
+      "beatId": "PROOF-B02",
+      "sourceAtSeconds": 1.62,
+      "sourceRole": "start",
+      "snapshotId": "proof-b02-start",
+      "path": "snapshots/acceptance/frame-05-at-1.62s.png",
+      "assertions": ["The connected evidence is already established."]
+    },
+    {
+      "beatId": "PROOF-B02",
+      "sourceAtSeconds": 1.95,
+      "sourceRole": "readable_hold",
+      "snapshotId": "proof-b02-readable-hold",
+      "path": "snapshots/acceptance/frame-06-at-1.95s.png",
+      "assertions": ["All foreground proof elements are static and unobstructed."]
+    },
+    {
+      "beatId": "PROOF-B02",
+      "sourceAtSeconds": 2.35,
+      "sourceRole": "transition_midpoint",
+      "snapshotId": "proof-b02-transition-midpoint",
+      "path": "snapshots/acceptance/frame-07-at-2.35s.png",
+      "assertions": ["The evidence tile is visible between its source position and validation slot."]
+    },
+    {
+      "beatId": "PROOF-B03",
+      "sourceAtSeconds": 2.42,
+      "sourceRole": "start",
+      "snapshotId": "proof-b03-start",
+      "path": "snapshots/acceptance/frame-08-at-2.42s.png",
+      "assertions": ["The validation state is visibly pending."]
+    },
+    {
+      "beatId": "PROOF-B03",
+      "sourceAtSeconds": 2.72,
+      "sourceRole": "cue_before",
+      "snapshotId": "proof-b03-cue-before",
+      "path": "snapshots/acceptance/frame-09-at-2.72s.png",
+      "assertions": ["The pass status has not appeared early."]
+    },
+    {
+      "beatId": "PROOF-B03",
+      "sourceAtSeconds": 3.12,
+      "sourceRole": "cue_after",
+      "snapshotId": "proof-b03-cue-after",
+      "path": "snapshots/acceptance/frame-10-at-3.12s.png",
+      "assertions": ["The validator shows an in-progress check after the evidence arrives."]
+    },
+    {
+      "beatId": "PROOF-B03",
+      "sourceAtSeconds": 3.56,
+      "sourceRole": "state_complete",
+      "snapshotId": "proof-b03-state-complete",
+      "path": "snapshots/acceptance/frame-11-at-3.56s.png",
+      "assertions": ["The validation is locked as passed and the evidence remains visible."]
+    }
+  ],
+  "derivedContracts": {
+    "choreographyComplexity": "simple",
+    "sourceContractSha256": "cb859f0bdf466d23493ab70f7b850f37eae6f60094973979d2d26e381fefb0c6",
+    "designSha256": "f0b16ac642540fcb646a9e4a4813e6e707f45dc92cb9dce4d040298caeccff63",
+    "artifacts": {}
+  }
+}

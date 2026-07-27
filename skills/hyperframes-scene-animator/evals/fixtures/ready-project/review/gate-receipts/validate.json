@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "validate",
+  "status": "PASS",
+  "command": [
+    "npx",
+    "--yes",
+    "hyperframes@0.7.65",
+    "validate"
+  ],
+  "commandSha256": "2b4c10b9be0f9b7ff8062edc4984358114d1dfcf96fd279d7db0015432aef6ca",
+  "cliVersion": "0.7.65",
+  "exitCode": 0,
+  "signal": null,
+  "timedOut": false,
+  "projectFingerprint": "635351c5f32db63b5fae5e5747ec05cec7d284d57b9ca032770b765b776b5d73",
+  "log": "review/cli/validate.txt",
+  "logSha256": "e4fa96d1a44c6ac4eba2d5c2af9e841f13b128a8d342529bb75531ded882b9a8",
+  "startedAt": "2026-07-27T06:51:15.075Z",
+  "finishedAt": "2026-07-27T06:51:22.425Z",
+  "artifacts": []
+}

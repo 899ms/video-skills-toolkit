@@ -1,0 +1,7 @@
+{
+  "base": "valid-runtime-adaptation.json",
+  "mutation": {
+    "removeAcceptanceMapping": "B02@5.5#readable_hold"
+  },
+  "expectedDiagnostic": "ADAPT_ACCEPTANCE_COVERAGE"
+}
